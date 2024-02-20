@@ -5,7 +5,14 @@ export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}', './.storybook/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        'loader-dots-animation': {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { transform: 'scale(0.6)', opacity: '0.5' },
+        },
+      },
+    },
   },
   plugins: [
     createThemes({
