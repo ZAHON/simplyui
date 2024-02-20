@@ -12,6 +12,7 @@ const meta: Meta<typeof Label> = {
   },
   argTypes: {
     size: { control: 'select' },
+    asChild: { control: false },
   },
 };
 
@@ -26,26 +27,13 @@ export const Disabled: Story = {
   },
 };
 
-export const SizeSM: Story = {
-  args: {
-    size: 'sm',
-  },
-};
-
-export const SizeMD: Story = {
-  args: {
-    size: 'md',
-  },
-};
-
-export const SizeLG: Story = {
-  args: {
-    size: 'lg',
-  },
-};
-
-export const SizeXL: Story = {
-  args: {
-    size: 'xl',
+export const WithIndicator: Story = {
+  render: ({ children, ...others }) => {
+    return (
+      <Label {...others}>
+        {children}
+        <Label.Indicator />
+      </Label>
+    );
   },
 };

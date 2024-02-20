@@ -1,20 +1,23 @@
 'use client';
-import type { LabelProps } from './label.types';
+import type { LabelRootProps } from './label-root.types';
 import type { MouseEvent } from 'react';
 import { forwardRef } from 'react';
+import { Slot } from '@radix-ui/react-slot';
 import { twMerge } from 'tailwind-merge';
 import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
-import { labelStyles } from './label.styles';
+import { labelRootStyles } from './label-root.styles';
 
-const defaultProps: Partial<LabelProps> = {
+const defaultProps: Partial<LabelRootProps> = {
   size: 'md',
 };
 
-export const Label = forwardRef<HTMLLabelElement, LabelProps>((props, ref) => {
-  const { size, disabled, onMouseDown, className, children, ...others } = applayComponentDefaultProps(
+export const LabelRoot = forwardRef<HTMLLabelElement, LabelRootProps>((props, ref) => {
+  const { asChild, size, disabled, onMouseDown, className, children, ...others } = applayComponentDefaultProps(
     defaultProps,
     props
   );
+
+  const Component = asChild ? Slot : 'label';
 
   function handleMouseDown(e: MouseEvent<HTMLLabelElement>) {
     if (onMouseDown) onMouseDown(e);
@@ -24,16 +27,16 @@ export const Label = forwardRef<HTMLLabelElement, LabelProps>((props, ref) => {
   }
 
   return (
-    <label
+    <Component
       ref={ref}
       data-disabled={disabled ? '' : undefined}
       onMouseDown={handleMouseDown}
-      className={twMerge(labelStyles({ size }), className)}
+      className={twMerge(labelRootStyles({ size }), className)}
       {...others}
     >
       {children}
-    </label>
+    </Component>
   );
 });
 
-Label.displayName = 'Label';
+LabelRoot.displayName = 'LabelRoot';

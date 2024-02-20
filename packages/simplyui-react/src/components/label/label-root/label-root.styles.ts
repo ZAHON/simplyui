@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority';
 
-export const labelStyles = cva(
-  ['text-default-12', 'motion-safe:transition', 'motion-safe:duration-100', 'data-[disabled]:text-default-11'],
+export const labelRootStyles = cva(
+  ['group', 'text-default-12', 'motion-safe:transition', 'motion-safe:duration-100', 'data-[disabled]:text-default-11'],
   {
     variants: {
       size: {
