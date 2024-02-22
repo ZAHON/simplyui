@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       keyframes: {
-        'loader-dots-animation': {
+        'loader-dots': {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
           '50%': { transform: 'scale(0.6)', opacity: '0.5' },
         },
