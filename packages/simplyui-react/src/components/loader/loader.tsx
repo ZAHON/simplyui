@@ -4,12 +4,12 @@ import { LoaderOval } from './loader-oval';
 import { LoaderDots } from './loader-dots';
 
 const defaultProps: Partial<LoaderProps> = {
-  size: 'md',
   color: 'primary',
-  variant: 'oval',
-  speedSafe: 1000,
-  speedReduce: 1500,
   label: 'Loading, please wait...',
+  size: 'md',
+  speedReduce: 1500,
+  speedSafe: 1000,
+  variant: 'oval',
 };
 
 export function Loader(props: LoaderProps) {

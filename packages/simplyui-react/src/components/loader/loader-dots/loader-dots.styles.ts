@@ -36,7 +36,7 @@ export const loaderDotsDotStyles = cva([
   'w-[calc(var(--loader-size)/3-var(--loader-size)/15)]',
   'rounded-full',
   'bg-current',
-  'motion-safe:animate-[loader-dots-animation_var(--loader-safe-animation-duration)_linear_infinite]',
-  'motion-reduce:animate-[loader-dots-animation_var(--loader-reduce-animation-duration)_linear_infinite]',
+  'motion-safe:animate-[loader-dots_var(--loader-safe-animation-duration)_linear_infinite]',
+  'motion-reduce:animate-[loader-dots_var(--loader-reduce-animation-duration)_linear_infinite]',
   '[&:nth-child(2)]:[animation-delay:400ms]',
 ]);
