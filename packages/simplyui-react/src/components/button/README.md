@@ -1,0 +1,9 @@
+# Button
+
+Trigger an action or event, such as submitting a form or displaying a dialog.
+
+## Import
+
+```jsx
+import { Button } from '@simplyui/react';
+```
