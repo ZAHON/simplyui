@@ -36,6 +36,7 @@ export const BurgerRoot = forwardRef<HTMLButtonElement, BurgerRootProps>((props,
       <Primitive.button
         ref={ref}
         type="button"
+        disabled={disabled}
         data-disabled={disabled ? '' : undefined}
         data-state={_open ? 'open' : 'closed'}
         onClick={handleClick}
