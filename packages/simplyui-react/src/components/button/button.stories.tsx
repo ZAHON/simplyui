@@ -22,6 +22,7 @@ const meta: Meta<typeof Button> = {
     color: { control: 'select' },
     radius: { control: 'select' },
     children: { control: false },
+    asChild: { control: false },
   },
   render: ({ size, ...others }) => {
     return (
