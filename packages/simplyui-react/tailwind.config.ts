@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss';
 import { createThemes } from 'tw-colors';
+import tailwindcssAnimate from 'tailwindcss-animate';
 
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}', './.storybook/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -211,5 +212,6 @@ export default {
         },
       },
     }),
+    tailwindcssAnimate,
   ],
 } satisfies Config;
