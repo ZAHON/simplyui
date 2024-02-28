@@ -65,6 +65,7 @@
     "storybook-addon-css-user-preferences": "^0.0.3",
     "storybook-dark-mode": "^3.0.3",
     "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
     "tsup": "^8.0.2",
     "tw-colors": "^3.3.1",
     "typescript": "^5.3.3",
