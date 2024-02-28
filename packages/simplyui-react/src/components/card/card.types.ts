@@ -8,6 +8,12 @@ export interface CardProps extends ComponentPropsWithRef<'div'> {
   asChild?: boolean;
 
   /**
+   * The background type of the card.
+   * @default "solid"
+   */
+  background?: 'solid' | 'translucent';
+
+  /**
    * The content of the card.
    */
   children: ReactNode;
@@ -17,6 +23,12 @@ export interface CardProps extends ComponentPropsWithRef<'div'> {
    * @default "md"
    */
   radius?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
+
+  /**
+   * The shadow of the card.
+   * @default "md"
+   */
+  shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
 
   /**
    * The size of the card.
