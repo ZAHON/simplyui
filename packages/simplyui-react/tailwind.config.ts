@@ -54,7 +54,9 @@ export default {
         background: '#ffffff',
         foreground: '#1c2024',
         surface: '#ffffffe6',
-        panel: '#ffffff',
+        overlay: '#00000066',
+        'panel-solid': '#ffffff',
+        'panel-translucent': '#ffffffcc',
         focus: '#8da4ef',
         selection: '#0044ff2d',
         default: {
@@ -132,7 +134,9 @@ export default {
         background: '#111113',
         foreground: '#edeef0',
         surface: '#00000040',
-        panel: '#18191b',
+        overlay: '#00000099',
+        'panel-solid': '#18191b',
+        'panel-translucent': '#1b1d1eb3',
         focus: '#435db1',
         selection: '#253974',
         default: {
