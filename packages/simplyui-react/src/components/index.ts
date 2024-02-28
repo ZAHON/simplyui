@@ -9,6 +9,7 @@ export * from './indicator';
 export * from './label';
 export * from './link';
 export * from './loader';
+export * from './menu';
 export * from './modal';
 export * from './native-select';
 export * from './popover';
