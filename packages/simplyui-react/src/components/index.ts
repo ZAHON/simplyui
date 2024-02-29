@@ -13,4 +13,5 @@ export * from './menu';
 export * from './modal';
 export * from './native-select';
 export * from './popover';
+export * from './scroll-area';
 export * from './slider';
