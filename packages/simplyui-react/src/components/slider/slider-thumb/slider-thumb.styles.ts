@@ -2,7 +2,10 @@ import { cva } from 'class-variance-authority';
 
 export const sliderThumbStyles = cva(
   [
-    'block',
+    'flex',
+    'justify-center',
+    'items-center',
+    'text-black',
     'bg-white',
     'drop-shadow',
     'origin-center',

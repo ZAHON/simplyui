@@ -9,10 +9,10 @@ import { sliderRangeStyles } from './slider-range.styles';
 export const SliderRange = forwardRef<HTMLSpanElement, SliderRangeProps>((props, ref) => {
   const { className, children, ...others } = props;
 
-  const { color, radius } = useSliderContext();
+  const { color, inverted, radius } = useSliderContext();
 
   return (
-    <Range ref={ref} className={twMerge(sliderRangeStyles({ color, radius }), className)} {...others}>
+    <Range ref={ref} className={twMerge(sliderRangeStyles({ color, inverted, radius }), className)} {...others}>
       {children}
     </Range>
   );

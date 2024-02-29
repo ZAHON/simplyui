@@ -7,10 +7,15 @@ export const sliderRootStyles = cva(
     'items-center',
     'select-none',
     'touch-none',
-    'h-fit',
 
     'motion-safe:transition',
     'motion-safe:duration-100',
+
+    'data-[orientation=horizontal]:flex-row',
+    'data-[orientation=horizontal]:w-full',
+
+    'data-[orientation=vertical]:flex-col',
+    'data-[orientation=vertical]:h-full',
 
     'data-[disabled]:opacity-60',
     'data-[disabled]:cursor-not-allowed',
@@ -18,10 +23,10 @@ export const sliderRootStyles = cva(
   {
     variants: {
       size: {
-        sm: ['h-4'],
-        md: ['h-5'],
-        lg: ['h-6'],
-        xl: ['h-7'],
+        sm: ['data-[orientation=horizontal]:h-4', 'data-[orientation=vertical]:w-4'],
+        md: ['data-[orientation=horizontal]:h-5', 'data-[orientation=vertical]:w-5'],
+        lg: ['data-[orientation=horizontal]:h-6', 'data-[orientation=vertical]:w-6'],
+        xl: ['data-[orientation=horizontal]:h-7', 'data-[orientation=vertical]:w-7'],
       },
     },
   }

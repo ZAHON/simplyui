@@ -7,6 +7,11 @@ export interface SliderContextValue {
   color?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
 
   /**
+   * The inverted state of the slider.
+   */
+  inverted?: boolean;
+
+  /**
    * The border radius value of the slider.
    */
   radius?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full';

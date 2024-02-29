@@ -14,11 +14,20 @@ const defaultProps: Partial<SliderRootProps> = {
 };
 
 export const SliderRoot = forwardRef<HTMLSpanElement, SliderRootProps>((props, ref) => {
-  const { color, radius, size, className, children, ...others } = applayComponentDefaultProps(defaultProps, props);
+  const { color, inverted, radius, size, className, children, ...others } = applayComponentDefaultProps(
+    defaultProps,
+    props
+  );
 
   return (
-    <SliderContextProvider value={{ color, radius, size }}>
-      <Root ref={ref} dir="ltr" className={twMerge(sliderRootStyles({ size }), className)} {...others}>
+    <SliderContextProvider value={{ color, inverted, radius, size }}>
+      <Root
+        ref={ref}
+        dir="ltr"
+        inverted={inverted}
+        className={twMerge(sliderRootStyles({ size }), className)}
+        {...others}
+      >
         {children}
       </Root>
     </SliderContextProvider>

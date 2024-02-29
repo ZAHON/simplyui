@@ -38,6 +38,13 @@ const meta: Meta<typeof Slider> = {
     size: { control: 'select' },
     value: { control: false },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ height: '20rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;
@@ -70,5 +77,42 @@ export const RangeSlider: Story = {
         <Slider.Thumb aria-label="Thumb 2" />
       </>
     ),
+  },
+};
+
+export const ThumbWithIcon: Story = {
+  render: ({ size, ...others }) => {
+    const iconSizes = {
+      sm: 12,
+      md: 16,
+      lg: 18,
+      xl: 20,
+    };
+
+    return (
+      <Slider size={size} {...others}>
+        <Slider.Track>
+          <Slider.Range />
+        </Slider.Track>
+        <Slider.Thumb aria-label="Thumb 1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height={iconSizes[size as NonNullable<typeof size>]}
+            width={iconSizes[size as NonNullable<typeof size>]}
+            aria-hidden="true"
+            focusable="false"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.5"
+            viewBox="0 0 24 24"
+          >
+            <path stroke="none" d="M0 0h24v24H0z"></path>
+            <path d="M15 8a5 5 0 010 8M17.7 5a9 9 0 010 14M6 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h2l3.5-4.5A.8.8 0 0111 5v14a.8.8 0 01-1.5.5L6 15"></path>
+          </svg>
+        </Slider.Thumb>
+      </Slider>
+    );
   },
 };
