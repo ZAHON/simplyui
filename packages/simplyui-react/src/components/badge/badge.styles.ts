@@ -32,6 +32,7 @@ export const badgeStyles = cva(
         sm: ['py-0.5', 'px-2', 'gap-x-1', 'text-xs'],
         md: ['py-1', 'px-3', 'gap-x-1.5', 'text-sm'],
         lg: ['py-1.5', 'px-4', 'gap-x-2', 'text-base'],
+        xl: ['py-2', 'px-5', 'gap-x-2.5', 'text-lg'],
       },
       variant: {
         filled: [''],
