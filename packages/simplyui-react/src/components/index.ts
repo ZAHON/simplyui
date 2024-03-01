@@ -17,4 +17,3 @@ export * from './popover';
 export * from './scroll-area';
 export * from './segmented-control';
 export * from './slider';
-export * from './status-dot';
