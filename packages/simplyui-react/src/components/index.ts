@@ -1,4 +1,5 @@
 export * from './avatar';
+export * from './badge';
 export * from './burger';
 export * from './button';
 export * from './card';
