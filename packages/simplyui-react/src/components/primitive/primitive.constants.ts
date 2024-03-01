@@ -1,1 +1,1 @@
-export const NODES = ['button', 'div'] as const;
+export const NODES = ['button', 'div', 'span'] as const;
