@@ -54,12 +54,24 @@ export default {
       light: {
         background: '#ffffff',
         foreground: '#1c2024',
+
         surface: '#ffffffe6',
+
         overlay: '#00000066',
+
         'panel-solid': '#ffffff',
         'panel-translucent': '#ffffffcc',
+
         focus: '#8da4ef',
+
         selection: '#0044ff2d',
+
+        'default-9-contrast': '#ffffff',
+        'primary-9-contrast': '#ffffff',
+        'success-9-contrast': '#ffffff',
+        'warning-9-contrast': '#21201c',
+        'danger-9-contrast': '#ffffff',
+
         default: {
           1: '#fcfcfd',
           2: '#f9f9fb',
@@ -140,6 +152,11 @@ export default {
         'panel-translucent': '#1b1d1eb3',
         focus: '#435db1',
         selection: '#253974',
+        'default-9-contrast': '#ffffff',
+        'primary-9-contrast': '#ffffff',
+        'success-9-contrast': '#ffffff',
+        'warning-9-contrast': '#21201c',
+        'danger-9-contrast': '#ffffff',
         default: {
           1: '#111113',
           2: '#18191b',
