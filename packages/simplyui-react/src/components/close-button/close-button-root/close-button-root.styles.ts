@@ -56,7 +56,12 @@ export const closeButtonRootStyles = cva(
       {
         color: 'default',
         variant: 'filled',
-        className: ['text-white', 'bg-default-9', 'enabled:hover:bg-default-10', 'enabled:active:bg-default-10'],
+        className: [
+          'text-default-9-contrast',
+          'bg-default-9',
+          'enabled:hover:bg-default-10',
+          'enabled:active:bg-default-10',
+        ],
       },
       {
         color: 'default',
@@ -84,7 +89,12 @@ export const closeButtonRootStyles = cva(
       {
         color: 'primary',
         variant: 'filled',
-        className: ['text-white', 'bg-primary-9', 'enabled:hover:bg-primary-10', 'enabled:active:bg-primary-10'],
+        className: [
+          'text-primary-9-contrast',
+          'bg-primary-9',
+          'enabled:hover:bg-primary-10',
+          'enabled:active:bg-primary-10',
+        ],
       },
       {
         color: 'primary',
@@ -112,7 +122,12 @@ export const closeButtonRootStyles = cva(
       {
         color: 'success',
         variant: 'filled',
-        className: ['text-white', 'bg-success-9', 'enabled:hover:bg-success-10', 'enabled:active:bg-success-10'],
+        className: [
+          'text-success-9-contrast',
+          'bg-success-9',
+          'enabled:hover:bg-success-10',
+          'enabled:active:bg-success-10',
+        ],
       },
       {
         color: 'success',
@@ -140,7 +155,12 @@ export const closeButtonRootStyles = cva(
       {
         color: 'warning',
         variant: 'filled',
-        className: ['text-black', 'bg-warning-9', 'enabled:hover:bg-warning-10', 'enabled:active:bg-warning-10'],
+        className: [
+          'text-warning-9-contrast',
+          'bg-warning-9',
+          'enabled:hover:bg-warning-10',
+          'enabled:active:bg-warning-10',
+        ],
       },
       {
         color: 'warning',
@@ -168,7 +188,12 @@ export const closeButtonRootStyles = cva(
       {
         color: 'danger',
         variant: 'filled',
-        className: ['text-white', 'bg-danger-9', 'enabled:hover:bg-danger-10', 'enabled:active:bg-danger-10'],
+        className: [
+          'text-danger-9-contrast',
+          'bg-danger-9',
+          'enabled:hover:bg-danger-10',
+          'enabled:active:bg-danger-10',
+        ],
       },
       {
         color: 'danger',
