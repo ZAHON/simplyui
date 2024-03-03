@@ -26,10 +26,10 @@ export const segmentedControlLabelStyles = cva(
     variants: {
       color: {
         default: ['data-[state=checked]:text-default-12'],
-        primary: ['data-[state=checked]:text-white'],
-        success: ['data-[state=checked]:text-white'],
-        warning: ['data-[state=checked]:text-black'],
-        danger: ['data-[state=checked]:text-white'],
+        primary: ['data-[state=checked]:text-primary-9-contrast'],
+        success: ['data-[state=checked]:text-success-9-contrast'],
+        warning: ['data-[state=checked]:text-warning-9-contrast'],
+        danger: ['data-[state=checked]:text-danger-9-contrast'],
       },
       radius: {
         none: ['rounded-none'],
