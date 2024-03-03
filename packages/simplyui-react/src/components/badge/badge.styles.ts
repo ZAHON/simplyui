@@ -45,7 +45,7 @@ export const badgeStyles = cva(
       {
         color: 'default',
         variant: 'filled',
-        className: ['text-white', 'bg-default-9'],
+        className: ['text-default-9-contrast', 'bg-default-9'],
       },
       {
         color: 'default',
@@ -62,7 +62,7 @@ export const badgeStyles = cva(
       {
         color: 'primary',
         variant: 'filled',
-        className: ['text-white', 'bg-primary-9'],
+        className: ['text-primary-9-contrast', 'bg-primary-9'],
       },
       {
         color: 'primary',
@@ -79,7 +79,7 @@ export const badgeStyles = cva(
       {
         color: 'success',
         variant: 'filled',
-        className: ['text-white', 'bg-success-9'],
+        className: ['text-success-9-contrast', 'bg-success-9'],
       },
       {
         color: 'success',
@@ -96,7 +96,7 @@ export const badgeStyles = cva(
       {
         color: 'warning',
         variant: 'filled',
-        className: ['text-black', 'bg-warning-9'],
+        className: ['text-warning-9-contrast', 'bg-warning-9'],
       },
       {
         color: 'warning',
@@ -113,7 +113,7 @@ export const badgeStyles = cva(
       {
         color: 'danger',
         variant: 'filled',
-        className: ['text-white', 'bg-danger-9'],
+        className: ['text-danger-9-contrast', 'bg-danger-9'],
       },
       {
         color: 'danger',
