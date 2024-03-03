@@ -24,13 +24,13 @@ export const menuItemStyles = cva(
       color: {
         primary: [
           'text-foreground',
-          'data-[highlighted]:text-white',
+          'data-[highlighted]:text-primary-9-contrast',
           'data-[highlighted]:bg-primary-9',
           'data-[highlighted]:active:bg-primary-9',
         ],
         danger: [
           'text-danger-11',
-          'data-[highlighted]:text-white',
+          'data-[highlighted]:text-danger-9-contrast',
           'data-[highlighted]:bg-danger-9',
           'data-[highlighted]:active:bg-danger-9',
         ],
