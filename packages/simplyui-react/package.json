@@ -33,6 +33,7 @@
     "framer-motion": "^11.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-merge-refs": "^2.1.1",
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
