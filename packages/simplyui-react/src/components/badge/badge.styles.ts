@@ -38,6 +38,7 @@ export const badgeStyles = cva(
         filled: [''],
         light: [''],
         outline: ['bg-transparent', 'ring-1', 'ring-inset'],
+        'light-outline': ['ring-1', 'ring-inset'],
       },
     },
     compoundVariants: [
@@ -57,6 +58,11 @@ export const badgeStyles = cva(
         variant: 'outline',
         className: ['text-default-11', 'ring-default-7'],
       },
+      {
+        color: 'default',
+        variant: 'light-outline',
+        className: ['text-default-11', 'bg-default-3', 'ring-default-7'],
+      },
 
       // color primary
       {
@@ -73,6 +79,11 @@ export const badgeStyles = cva(
         color: 'primary',
         variant: 'outline',
         className: ['text-primary-11', 'ring-primary-7'],
+      },
+      {
+        color: 'primary',
+        variant: 'light-outline',
+        className: ['text-primary-11', 'bg-primary-3', 'ring-primary-7'],
       },
 
       // color success
@@ -91,6 +102,11 @@ export const badgeStyles = cva(
         variant: 'outline',
         className: ['text-success-11', 'ring-success-7'],
       },
+      {
+        color: 'success',
+        variant: 'light-outline',
+        className: ['text-success-11', 'bg-success-3', 'ring-success-7'],
+      },
 
       // color warning
       {
@@ -108,6 +124,11 @@ export const badgeStyles = cva(
         variant: 'outline',
         className: ['text-warning-11', 'ring-warning-7'],
       },
+      {
+        color: 'warning',
+        variant: 'light-outline',
+        className: ['text-warning-11', 'bg-warning-3', 'ring-warning-7'],
+      },
 
       // color danger
       {
@@ -124,6 +145,11 @@ export const badgeStyles = cva(
         color: 'danger',
         variant: 'outline',
         className: ['text-danger-11', 'ring-danger-7'],
+      },
+      {
+        color: 'danger',
+        variant: 'light-outline',
+        className: ['text-danger-11', 'bg-danger-3', 'ring-danger-7'],
       },
     ],
   }

@@ -34,5 +34,5 @@ export interface BadgeProps extends ComponentPropsWithRef<'span'> {
    * The variant of the badge.
    * @default "light"
    */
-  variant?: 'filled' | 'light' | 'outline';
+  variant?: 'filled' | 'light' | 'outline' | 'light-outline';
 }
