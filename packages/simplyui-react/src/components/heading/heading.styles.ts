@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-export const headingStyles = cva(['tracking-tight'], {
+export const headingStyles = cva([''], {
   variants: {
     color: {
       foreground: ['text-foreground'],
