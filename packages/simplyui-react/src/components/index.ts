@@ -7,6 +7,7 @@ export * from './card';
 export * from './checkbox';
 export * from './close-button';
 export * from './code';
+export * from './heading';
 export * from './icon-button';
 export * from './indicator';
 export * from './label';
