@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef, ReactNode } from 'react';
+import type { ComponentPropsWithRef } from 'react';
 
 export interface CheckboxIndicatorProps extends ComponentPropsWithRef<'span'> {
   /**
@@ -6,9 +6,4 @@ export interface CheckboxIndicatorProps extends ComponentPropsWithRef<'span'> {
    * @default false
    */
   asChild?: boolean;
-
-  /**
-   * The content of the checkbox indicator.
-   */
-  children?: ReactNode;
 }

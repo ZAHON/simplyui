@@ -4,29 +4,34 @@ import { forwardRef } from 'react';
 import { Root } from '@radix-ui/react-checkbox';
 import { twMerge } from 'tailwind-merge';
 import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { CheckboxContextProvider } from '../checkbox-context';
 import { checkboxRootStyles } from './checkbox-root.styles';
 
 const defaultProps: Partial<CheckboxRootProps> = {
-  size: 'md',
-  radius: 'md',
-  variant: 'default',
   color: 'primary',
+  radius: 'md',
+  size: '2',
+  variant: 'default',
 };
 
 export const CheckboxRoot = forwardRef<HTMLButtonElement, CheckboxRootProps>((props, ref) => {
-  const { required, invalid, size, radius, variant, color, className, children, ...others } =
-    applayComponentDefaultProps(defaultProps, props);
+  const { color, invalid, radius, size, variant, className, children, ...others } = applayComponentDefaultProps(
+    defaultProps,
+    props
+  );
 
   return (
-    <Root
-      ref={ref}
-      aria-required={required ? true : undefined}
-      aria-invalid={invalid ? true : undefined}
-      className={twMerge(checkboxRootStyles({ size, radius, variant, color }), className)}
-      {...others}
-    >
-      {children}
-    </Root>
+    <CheckboxContextProvider value={{ invalid }}>
+      <Root
+        ref={ref}
+        aria-invalid={invalid ? true : undefined}
+        data-invalid={invalid ? '' : undefined}
+        className={twMerge(checkboxRootStyles({ color, radius, size, variant }), className)}
+        {...others}
+      >
+        {children}
+      </Root>
+    </CheckboxContextProvider>
   );
 });
 

@@ -2,35 +2,6 @@ import type { ComponentPropsWithRef, ReactNode } from 'react';
 
 export interface CheckboxRootProps extends ComponentPropsWithRef<'button'> {
   /**
-   * The content of the checkbox  - `<CheckboxIndicator />` component.
-   */
-  children: ReactNode;
-
-  /**
-   * The size of the checkbox.
-   * @default "md"
-   */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-
-  /**
-   * The border radius value of the checkbox.
-   * @default "md"
-   */
-  radius?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
-
-  /**
-   * The variant of the checkbox.
-   * @default "default"
-   */
-  variant?: 'default' | 'filled';
-
-  /**
-   * The color of the checkbox.
-   * @default "primary"
-   */
-  color?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
-
-  /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    * @default false
    */
@@ -52,22 +23,27 @@ export interface CheckboxRootProps extends ComponentPropsWithRef<'button'> {
   onCheckedChange?: (checked: boolean) => void;
 
   /**
+   * The content of the checkbox  - `Checkbox.Indicator` component.
+   */
+  children: ReactNode;
+
+  /**
+   * The color of the checkbox.
+   * @default "primary"
+   */
+  color?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
+
+  /**
    * When `true`, prevents the user from interacting with the checkbox.
    * @default false
    */
   disabled?: boolean;
 
   /**
-   * If `true`, the checkbox will be invalid. In this state component will have `aria-invalid` attribute set to `true`.
+   * If `true`, the checkbox will be invalid.
    * @default false
    */
   invalid?: boolean;
-
-  /**
-   * When `true`, indicates that the user must check the checkbox before the owning form can be submitted. In this state component will have `aria-required` attribute set to `true`
-   * @default false
-   */
-  required?: boolean;
 
   /**
    * The name of the checkbox. Submitted with its owning form as part of a name/value pair.
@@ -75,8 +51,32 @@ export interface CheckboxRootProps extends ComponentPropsWithRef<'button'> {
   name?: string;
 
   /**
+   * The border radius value of the checkbox.
+   * @default "md"
+   */
+  radius?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
+
+  /**
+   * When `true`, indicates that the user must check the checkbox before the owning form can be submitted.
+   * @default false
+   */
+  required?: boolean;
+
+  /**
+   * The size of the checkbox.
+   * @default "2"
+   */
+  size?: '1' | '2' | '3' | '4';
+
+  /**
    * The value given as data when submitted with a `name` property.
    * @default "on"
    */
   value?: string;
+
+  /**
+   * The variant of the checkbox.
+   * @default "default"
+   */
+  variant?: 'default' | 'filled';
 }

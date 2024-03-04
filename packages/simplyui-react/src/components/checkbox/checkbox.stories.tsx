@@ -6,27 +6,26 @@ const meta: Meta<typeof Checkbox> = {
   title: 'Inputs/Checkbox',
   component: Checkbox,
   args: {
-    defaultChecked: false,
-    size: 'md',
-    radius: 'md',
     variant: 'default',
     color: 'primary',
+    size: '2',
+    radius: 'md',
     disabled: false,
     invalid: false,
     required: false,
-    name: 'checkbox',
+    name: '',
     value: 'on',
     children: <Checkbox.Indicator />,
   },
   argTypes: {
-    size: { control: 'select' },
-    radius: { control: 'select' },
     variant: { control: 'select' },
     color: { control: 'select' },
+    radius: { control: 'select' },
+    size: { control: 'select' },
+    asChild: { control: false },
+    defaultChecked: { control: false },
     checked: { control: false },
     onCheckedChange: { control: false },
-    children: { control: false },
-    asChild: { control: false },
   },
 };
 
@@ -34,30 +33,6 @@ export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
 export const Default: Story = {};
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
-};
-
-export const Invalid: Story = {
-  args: {
-    invalid: true,
-  },
-};
-
-export const VariantDefault: Story = {
-  args: {
-    variant: 'default',
-  },
-};
-
-export const VariantFilled: Story = {
-  args: {
-    variant: 'filled',
-  },
-};
 
 export const WithLabel: Story = {
   render: ({ size, disabled, ...others }) => {
@@ -71,6 +46,18 @@ export const WithLabel: Story = {
         </Label>
       </div>
     );
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+};
+
+export const Invalid: Story = {
+  args: {
+    invalid: true,
   },
 };
 

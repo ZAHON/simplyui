@@ -14,6 +14,7 @@ export const CheckboxIcon = forwardRef<SVGSVGElement, CheckboxIconProps>((props,
       fill="currentColor"
       aria-hidden="true"
       focusable="false"
+      role="presentation"
       className={twMerge(checkboxIconStyles(), className)}
       {...others}
     >
