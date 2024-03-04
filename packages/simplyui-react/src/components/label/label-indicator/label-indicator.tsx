@@ -1,23 +1,26 @@
+'use client';
 import type { LabelIndicatorProps } from './label-indicator.types';
 import { forwardRef } from 'react';
-import { Slot } from '@radix-ui/react-slot';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { Primitive } from '@/components/primitive';
+import { useLabelContext } from '../label-context';
 import { labelIndicatorStyles } from './label-indicator.styles';
 
-const defaultProps: Partial<LabelIndicatorProps> = {
-  children: ' *',
-};
-
 export const LabelIndicator = forwardRef<HTMLSpanElement, LabelIndicatorProps>((props, ref) => {
-  const { asChild, className, children, ...others } = applayComponentDefaultProps(defaultProps, props);
+  const { className, children, ...others } = props;
 
-  const Component = asChild ? Slot : 'span';
+  const { disabled } = useLabelContext();
 
   return (
-    <Component ref={ref} aria-hidden="true" className={twMerge(labelIndicatorStyles(), className)} {...others}>
-      {children}
-    </Component>
+    <Primitive.span
+      ref={ref}
+      aria-hidden="true"
+      data-disabled={disabled ? '' : undefined}
+      className={twMerge(labelIndicatorStyles(), className)}
+      {...others}
+    >
+      {children ? children : ' *'}
+    </Primitive.span>
   );
 });
 

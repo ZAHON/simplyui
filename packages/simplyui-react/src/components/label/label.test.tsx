@@ -1,50 +1,49 @@
-import type { LabelRootProps, LabelIndicatorProps } from '.';
 import { createRef } from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Label } from '.';
 
+const LABEL_ROOT_TEST_ID = 'label-root-test-id';
+const LABEL_INDICATOR_TEST_ID = 'label-indicator-test-id';
+
+const LABEL_ROOT_CONTENT = 'label-root';
+const LABEL_INDICATOR_CONTENT = 'label-indicator';
+
 describe('Label', () => {
-  describe('LabelRoot', () => {
-    const labelContent = 'Label';
-
-    function LabelRootTest(props: Omit<LabelRootProps, 'children'>) {
-      return <Label {...props}>{labelContent}</Label>;
-    }
-
+  describe('Root', () => {
     it('should support ref', () => {
       const ref = createRef<HTMLLabelElement>();
 
-      render(<Label ref={ref}>{labelContent}</Label>);
+      render(<Label ref={ref}>{LABEL_ROOT_CONTENT}</Label>);
       expect(ref.current).toBeInstanceOf(HTMLLabelElement);
     });
 
     it('should be label element when asChild property not provided', () => {
-      const { container } = render(<LabelRootTest />);
+      const { container } = render(<Label data-testid={LABEL_ROOT_TEST_ID}>{LABEL_ROOT_CONTENT}</Label>);
 
-      expect(screen.getByText(labelContent)).toBeInstanceOf(HTMLLabelElement);
+      expect(screen.getByTestId(LABEL_ROOT_TEST_ID)).toBeInstanceOf(HTMLLabelElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      expect(container.querySelector('label')).toBeInTheDocument();
+      expect(container.querySelector(`label[data-testid="${LABEL_ROOT_TEST_ID}"]`)).toBeInTheDocument();
     });
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
-        <Label asChild>
-          <p>{labelContent}</p>
+        <Label asChild data-testid={LABEL_ROOT_TEST_ID}>
+          <p>{LABEL_ROOT_CONTENT}</p>
         </Label>
       );
 
-      expect(screen.getByText(labelContent)).toBeInstanceOf(HTMLParagraphElement);
+      expect(screen.getByTestId(LABEL_ROOT_TEST_ID)).toBeInstanceOf(HTMLParagraphElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      expect(container.querySelector('label')).not.toBeInTheDocument();
+      expect(container.querySelector(`label[data-testid="${LABEL_ROOT_TEST_ID}"]`)).not.toBeInTheDocument();
     });
 
     it('should prevent text selection when double clicking', async () => {
       const user = userEvent.setup();
-      render(<LabelRootTest />);
+      render(<Label>{LABEL_ROOT_CONTENT}</Label>);
 
-      const labelElement = screen.getByText(labelContent);
+      const labelElement = screen.getByText(LABEL_ROOT_CONTENT);
       await user.dblClick(labelElement);
 
       const clipboard = await user.copy();
@@ -52,80 +51,97 @@ describe('Label', () => {
     });
 
     it('should have not data-disabled attribute when disabled property not provided', () => {
-      render(<LabelRootTest disabled={false} />);
-      expect(screen.getByText(labelContent)).not.toHaveAttribute('data-disabled');
+      render(<Label disabled={false}>{LABEL_ROOT_CONTENT}</Label>);
+      expect(screen.getByText(LABEL_ROOT_CONTENT)).not.toHaveAttribute('data-disabled');
     });
 
     it('should have data-disabled attribute when disabled property provided', () => {
-      render(<LabelRootTest disabled={true} />);
-      expect(screen.getByText(labelContent)).toHaveAttribute('data-disabled');
+      render(<Label disabled={true}>{LABEL_ROOT_CONTENT}</Label>);
+      expect(screen.getByText(LABEL_ROOT_CONTENT)).toHaveAttribute('data-disabled');
     });
 
     it('should have class name handed over by className property', () => {
       const className = 'test';
 
-      render(<LabelRootTest className={className} />);
-      expect(screen.getByText(labelContent)).toHaveClass(className);
+      render(<Label className={className}>{LABEL_ROOT_CONTENT}</Label>);
+      expect(screen.getByText(LABEL_ROOT_CONTENT)).toHaveClass(className);
     });
   });
 
-  describe('LabelIndicator', () => {
-    const labelIndicatorContent = '[*]';
-
-    function LabelIndicatorTest(props: Omit<LabelIndicatorProps, 'children'>) {
-      return (
-        <Label>
-          Label
-          <Label.Indicator {...props}>{labelIndicatorContent}</Label.Indicator>
-        </Label>
-      );
-    }
-
+  describe('Indicator', () => {
     it('should support ref', () => {
       const ref = createRef<HTMLSpanElement>();
 
       render(
         <Label>
-          Label
-          <Label.Indicator ref={ref}>{labelIndicatorContent}</Label.Indicator>
+          <Label.Indicator ref={ref}>{LABEL_INDICATOR_CONTENT}</Label.Indicator>
         </Label>
       );
       expect(ref.current).toBeInstanceOf(HTMLSpanElement);
     });
 
     it('should be span element when asChild property not provided', () => {
-      const { container } = render(<LabelIndicatorTest />);
+      const { container } = render(
+        <Label>
+          <Label.Indicator data-testid={LABEL_INDICATOR_TEST_ID}>{LABEL_INDICATOR_CONTENT}</Label.Indicator>
+        </Label>
+      );
 
-      expect(screen.getByText(labelIndicatorContent)).toBeInstanceOf(HTMLSpanElement);
+      expect(screen.getByTestId(LABEL_INDICATOR_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      expect(container.querySelector('span')).toBeInTheDocument();
+      expect(container.querySelector(`span[data-testid="${LABEL_INDICATOR_TEST_ID}"]`)).toBeInTheDocument();
     });
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
         <Label>
-          Label
-          <Label.Indicator asChild>
-            <p>{labelIndicatorContent}</p>
+          <Label.Indicator asChild data-testid={LABEL_INDICATOR_TEST_ID}>
+            <p>{LABEL_INDICATOR_CONTENT}</p>
           </Label.Indicator>
         </Label>
       );
 
-      expect(screen.getByText(labelIndicatorContent)).toBeInstanceOf(HTMLParagraphElement);
+      expect(screen.getByTestId(LABEL_INDICATOR_TEST_ID)).toBeInstanceOf(HTMLParagraphElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      expect(container.querySelector('span')).not.toBeInTheDocument();
+      expect(container.querySelector(`span[data-testid="${LABEL_INDICATOR_TEST_ID}"]`)).not.toBeInTheDocument();
     });
 
     it('should have aria-hidden="true"', () => {
-      render(<LabelIndicatorTest />);
-      expect(screen.getByText(labelIndicatorContent)).toHaveAttribute('aria-hidden', 'true');
+      render(
+        <Label>
+          <Label.Indicator>{LABEL_INDICATOR_CONTENT}</Label.Indicator>
+        </Label>
+      );
+      expect(screen.getByText(LABEL_INDICATOR_CONTENT)).toHaveAttribute('aria-hidden', 'true');
+    });
+
+    it('should have not data-disabled attribute when disabled property not provided on Root element', () => {
+      render(
+        <Label disabled={false}>
+          <Label.Indicator>{LABEL_INDICATOR_CONTENT}</Label.Indicator>
+        </Label>
+      );
+      expect(screen.getByText(LABEL_INDICATOR_CONTENT)).not.toHaveAttribute('data-disabled');
+    });
+
+    it('should have data-disabled attribute when disabled property provided on Root element', () => {
+      render(
+        <Label disabled={true}>
+          <Label.Indicator>{LABEL_INDICATOR_CONTENT}</Label.Indicator>
+        </Label>
+      );
+      expect(screen.getByText(LABEL_INDICATOR_CONTENT)).toHaveAttribute('data-disabled');
     });
 
     it('should have class name handed over by className property', () => {
       const className = 'test';
 
-      render(<LabelIndicatorTest className={className} />);
-      expect(screen.getByText(labelIndicatorContent)).toHaveClass(className);
+      render(
+        <Label>
+          <Label.Indicator className={className}>{LABEL_INDICATOR_CONTENT}</Label.Indicator>
+        </Label>
+      );
+      expect(screen.getByText(LABEL_INDICATOR_CONTENT)).toHaveClass(className);
     });
   });
 });

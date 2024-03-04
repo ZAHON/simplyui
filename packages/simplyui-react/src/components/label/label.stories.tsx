@@ -5,13 +5,17 @@ const meta: Meta<typeof Label> = {
   title: 'Inputs/Label',
   component: Label,
   args: {
-    htmlFor: 'id',
-    children: 'Label',
-    size: 'md',
+    children: 'This is a label element.',
+    size: '2',
+    tracking: 'normal',
+    weight: 'regular',
     disabled: false,
+    htmlFor: 'id',
   },
   argTypes: {
     size: { control: 'select' },
+    tracking: { control: 'select' },
+    weight: { control: 'select' },
     asChild: { control: false },
   },
 };

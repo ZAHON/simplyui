@@ -2,15 +2,21 @@ import type { ComponentPropsWithRef, ReactNode } from 'react';
 
 export interface LabelRootProps extends ComponentPropsWithRef<'label'> {
   /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   * @default false
+   */
+  asChild?: boolean;
+
+  /**
    * The content of the label.
    */
   children: ReactNode;
 
   /**
-   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   * If `true`, the label will look like disabled and have `data-disabled` attribute.
    * @default false
    */
-  asChild?: boolean;
+  disabled?: boolean;
 
   /**
    * The id of the element the label is associated with.
@@ -19,13 +25,19 @@ export interface LabelRootProps extends ComponentPropsWithRef<'label'> {
 
   /**
    * The size of the label.
-   * @default "md"
+   * @default "2"
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13';
 
   /**
-   * If true, the label will look like disabled and have `data-disabled` attribute.
-   * @default false
+   * The tracking (letter spacing) of the label.
+   * @default "normal"
    */
-  disabled?: boolean;
+  tracking?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest';
+
+  /**
+   * The font weight of the label.
+   * @default "regular"
+   */
+  weight?: 'light' | 'regular' | 'medium' | 'semibold' | 'bold';
 }
