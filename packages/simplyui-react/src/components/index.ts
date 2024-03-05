@@ -21,3 +21,4 @@ export * from './scroll-area';
 export * from './segmented-control';
 export * from './slider';
 export * from './switch';
+export * from './text-field';
