@@ -4,11 +4,12 @@ export const avatarRootStyles = cva(
   ['inline-flex', 'justify-center', 'items-center', 'align-middle', 'overflow-hidden', 'select-none'],
   {
     variants: {
-      size: {
-        sm: ['size-6', 'text-xs'],
-        md: ['size-8', 'text-sm'],
-        lg: ['size-10', 'text-base'],
-        xl: ['size-12', 'text-lg'],
+      color: {
+        default: [''],
+        primary: [''],
+        success: [''],
+        warning: [''],
+        danger: [''],
       },
       radius: {
         none: ['rounded-none'],
@@ -18,18 +19,23 @@ export const avatarRootStyles = cva(
         xl: ['rounded-lg'],
         full: ['rounded-full'],
       },
+      size: {
+        '1': ['size-6', 'text-xs'],
+        '2': ['size-8', 'text-sm'],
+        '3': ['size-10', 'text-base'],
+        '4': ['size-12', 'text-lg'],
+        '5': ['size-16', 'text-2xl'],
+        '6': ['size-20', 'text-3xl'],
+        '7': ['size-24', 'text-3xl'],
+        '8': ['size-32', 'text-4xl'],
+        '9': ['size-40', 'text-6xl'],
+      },
       variant: {
         filled: [''],
         light: [''],
-        outline: ['bg-transparent', 'border'],
-        transparent: [''],
-      },
-      color: {
-        default: [''],
-        primary: [''],
-        success: [''],
-        warning: [''],
-        danger: [''],
+        outline: ['bg-transparent', 'ring-1'],
+        transparent: ['bg-transparent'],
+        'light-outline': ['ring-1'],
       },
     },
     compoundVariants: [
@@ -47,12 +53,17 @@ export const avatarRootStyles = cva(
       {
         color: 'default',
         variant: 'outline',
-        className: ['text-default-11', 'border-default-7'],
+        className: ['text-default-11', 'ring-default-7'],
       },
       {
         color: 'default',
         variant: 'transparent',
         className: ['text-default-11'],
+      },
+      {
+        color: 'default',
+        variant: 'light-outline',
+        className: ['text-default-11', 'bg-default-3', 'ring-default-7'],
       },
 
       // color primary
@@ -69,12 +80,17 @@ export const avatarRootStyles = cva(
       {
         color: 'primary',
         variant: 'outline',
-        className: ['text-primary-11', 'border-primary-7'],
+        className: ['text-primary-11', 'ring-primary-7'],
       },
       {
         color: 'primary',
         variant: 'transparent',
         className: ['text-primary-11'],
+      },
+      {
+        color: 'primary',
+        variant: 'light-outline',
+        className: ['text-primary-11', 'bg-primary-3', 'ring-primary-7'],
       },
 
       // color success
@@ -91,12 +107,17 @@ export const avatarRootStyles = cva(
       {
         color: 'success',
         variant: 'outline',
-        className: ['text-success-11', 'border-success-7'],
+        className: ['text-success-11', 'ring-success-7'],
       },
       {
         color: 'success',
         variant: 'transparent',
         className: ['text-success-11'],
+      },
+      {
+        color: 'success',
+        variant: 'light-outline',
+        className: ['text-success-11', 'bg-success-3', 'ring-success-7'],
       },
 
       // color warning
@@ -113,12 +134,17 @@ export const avatarRootStyles = cva(
       {
         color: 'warning',
         variant: 'outline',
-        className: ['text-warning-11', 'border-warning-7'],
+        className: ['text-warning-11', 'ring-warning-7'],
       },
       {
         color: 'warning',
         variant: 'transparent',
         className: ['text-warning-11'],
+      },
+      {
+        color: 'warning',
+        variant: 'light-outline',
+        className: ['text-warning-11', 'bg-warning-3', 'ring-warning-7'],
       },
 
       // color danger
@@ -135,12 +161,17 @@ export const avatarRootStyles = cva(
       {
         color: 'danger',
         variant: 'outline',
-        className: ['text-danger-11', 'border-danger-7'],
+        className: ['text-danger-11', 'ring-danger-7'],
       },
       {
         color: 'danger',
         variant: 'transparent',
         className: ['text-danger-11'],
+      },
+      {
+        color: 'danger',
+        variant: 'light-outline',
+        className: ['text-danger-11', 'bg-danger-3', 'ring-danger-7'],
       },
     ],
   }

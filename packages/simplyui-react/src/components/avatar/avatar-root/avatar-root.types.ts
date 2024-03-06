@@ -26,13 +26,13 @@ export interface AvatarRootProps extends ComponentPropsWithRef<'span'> {
 
   /**
    * The size of the avatar.
-   * @default "md"
+   * @default "3"
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 
   /**
    * The variant of the avatar.
    * @default "light"
    */
-  variant?: 'filled' | 'light' | 'outline' | 'transparent';
+  variant?: 'filled' | 'light' | 'outline' | 'transparent' | 'light-outline';
 }

@@ -9,18 +9,18 @@ import { avatarRootStyles } from './avatar-root.styles';
 const defaultProps: Partial<AvatarRootProps> = {
   color: 'primary',
   radius: 'md',
-  size: 'md',
+  size: '3',
   variant: 'light',
 };
 
 export const AvatarRoot = forwardRef<HTMLSpanElement, AvatarRootProps>((props, ref) => {
-  const { size, radius, variant, color, className, children, ...others } = applayComponentDefaultProps(
+  const { color, radius, size, variant, className, children, ...others } = applayComponentDefaultProps(
     defaultProps,
     props
   );
 
   return (
-    <Root ref={ref} className={twMerge(avatarRootStyles({ size, radius, variant, color }), className)} {...others}>
+    <Root ref={ref} className={twMerge(avatarRootStyles({ color, radius, size, variant }), className)} {...others}>
       {children}
     </Root>
   );
