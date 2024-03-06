@@ -20,6 +20,7 @@ export * from './native-select';
 export * from './popover';
 export * from './scroll-area';
 export * from './segmented-control';
+export * from './separator';
 export * from './slider';
 export * from './switch';
 export * from './text-field';
