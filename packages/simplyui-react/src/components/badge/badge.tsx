@@ -8,10 +8,11 @@ import { badgeStyles } from './badge.styles';
 const defaultProps: Partial<BadgeProps> = {
   color: 'primary',
   radius: 'full',
-  size: 'md',
+  size: '2',
   variant: 'light',
 };
 
+/** A stylized badge element. This component is based on the `span` element. */
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => {
   const { color, radius, size, variant, className, children, ...others } = applayComponentDefaultProps(
     defaultProps,

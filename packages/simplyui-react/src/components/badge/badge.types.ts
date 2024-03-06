@@ -26,9 +26,9 @@ export interface BadgeProps extends ComponentPropsWithRef<'span'> {
 
   /**
    * The size of the badge.
-   * @default "md"
+   * @default "2"
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
 
   /**
    * The variant of the badge.

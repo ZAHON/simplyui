@@ -8,7 +8,7 @@ const meta: Meta<typeof Badge> = {
     children: 'Badge',
     color: 'primary',
     radius: 'full',
-    size: 'md',
+    size: '2',
     variant: 'light',
   },
   argTypes: {
@@ -28,10 +28,10 @@ export const Default: Story = {};
 export const WithIcon: Story = {
   render: ({ size, children, ...others }) => {
     const iconSizes = {
-      sm: 14,
-      md: 16,
-      lg: 18,
-      xl: 20,
+      '1': 14,
+      '2': 16,
+      '3': 18,
+      '4': 20,
     };
 
     return (
