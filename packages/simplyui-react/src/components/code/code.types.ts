@@ -26,13 +26,25 @@ export interface CodeProps extends ComponentPropsWithRef<'code'> {
 
   /**
    * The size of the code.
-   * @default "md"
+   * @default "3"
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
+
+  /**
+   * The tracking (letter spacing) of the code.
+   * @default "normal"
+   */
+  tracking?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest';
 
   /**
    * The variant of the code.
    * @default "light"
    */
   variant?: 'filled' | 'light' | 'outline' | 'light-outline';
+
+  /**
+   * The font weight of the code.
+   * @default "regular"
+   */
+  weight?: 'light' | 'regular' | 'medium' | 'semibold' | 'bold';
 }

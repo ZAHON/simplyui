@@ -8,18 +8,23 @@ import { codeStyles } from './code.styles';
 const defaultProps: Partial<CodeProps> = {
   color: 'primary',
   radius: 'md',
-  size: 'md',
+  size: '3',
+  tracking: 'normal',
   variant: 'light',
+  weight: 'regular',
 };
 
+/** This component is based on the `code` element. */
 export const Code = forwardRef<HTMLElement, CodeProps>((props, ref) => {
-  const { color, radius, size, variant, className, children, ...others } = applayComponentDefaultProps(
-    defaultProps,
-    props
-  );
+  const { color, radius, size, tracking, variant, weight, className, children, ...others } =
+    applayComponentDefaultProps(defaultProps, props);
 
   return (
-    <Primitive.code ref={ref} className={twMerge(codeStyles({ color, radius, size, variant }), className)} {...others}>
+    <Primitive.code
+      ref={ref}
+      className={twMerge(codeStyles({ color, radius, size, tracking, variant, weight }), className)}
+      {...others}
+    >
       {children}
     </Primitive.code>
   );
