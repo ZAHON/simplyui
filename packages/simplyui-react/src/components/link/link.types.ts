@@ -37,13 +37,25 @@ export interface LinkProps extends ComponentPropsWithoutRef<'a'> {
 
   /**
    * The size of the link.
-   * @default "md"
+   * @default "3"
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 
   /**
-   * Sets the visibility of the underline affordance.
+   * The tracking (letter spacing) of the link.
+   * @default "normal"
+   */
+  tracking?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest';
+
+  /**
+   * Manage the visibility of the underline affordance.
    * @default "none"
    */
   underline?: 'active' | 'always' | 'focus' | 'hover' | 'none';
+
+  /**
+   * The font weight of the link.
+   * @default "regular"
+   */
+  weight?: 'light' | 'regular' | 'medium' | 'semibold' | 'bold';
 }

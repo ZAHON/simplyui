@@ -1,18 +1,21 @@
 import type { LinkProps } from './link.types';
 import { forwardRef } from 'react';
-import { Slot } from '@radix-ui/react-slot';
 import { twMerge } from 'tailwind-merge';
+import { Primitive } from '@/components/primitive';
 import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
 import { linkStyles } from './link.styles';
 
 const defaultProps: Partial<LinkProps> = {
   color: 'primary',
-  size: 'md',
+  tracking: 'normal',
+  size: '3',
   underline: 'none',
+  weight: 'regular',
 };
 
+/** This component is based on the `a` element. */
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
-  const { asChild, color, disabled, external, size, underline, className, children, ...others } =
+  const { color, disabled, external, tracking, size, underline, weight, className, children, ...others } =
     applayComponentDefaultProps(defaultProps, props);
 
   const disabledAttributes = {
@@ -25,18 +28,16 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
     rel: external ? 'noopener noreferrer' : undefined,
   };
 
-  const Component = asChild ? Slot : 'a';
-
   return (
-    <Component
+    <Primitive.a
       ref={ref}
-      className={twMerge(linkStyles({ color, size, underline }), className)}
+      className={twMerge(linkStyles({ color, tracking, size, underline, weight }), className)}
       {...disabledAttributes}
       {...externalAttributes}
       {...others}
     >
       {children}
-    </Component>
+    </Primitive.a>
   );
 });
 

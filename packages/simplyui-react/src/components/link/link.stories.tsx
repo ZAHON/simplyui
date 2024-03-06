@@ -10,13 +10,17 @@ const meta: Meta<typeof Link> = {
     disabled: false,
     external: false,
     href: '#',
-    size: 'md',
+    tracking: 'normal',
+    size: '3',
     underline: 'none',
+    weight: 'regular',
   },
   argTypes: {
     color: { control: 'select' },
+    tracking: { control: 'select' },
     size: { control: 'select' },
     underline: { control: 'select' },
+    weight: { control: 'select' },
     asChild: { control: false },
   },
 };
@@ -64,19 +68,24 @@ export const UnderlineNone: Story = {
 
 export const WithIcon: Story = {
   render: ({ size, children, ...others }) => {
-    const iconsizes = {
-      sm: 16,
-      md: 16,
-      lg: 18,
-      xl: 20,
+    const iconSizes = {
+      '1': 16,
+      '2': 20,
+      '3': 24,
+      '4': 28,
+      '5': 28,
+      '6': 32,
+      '7': 36,
+      '8': 40,
+      '9': 72,
     };
 
     return (
       <Link size={size} {...others}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          height={iconsizes[size as NonNullable<typeof size>]}
-          width={iconsizes[size as NonNullable<typeof size>]}
+          height={iconSizes[size as NonNullable<typeof size>]}
+          width={iconSizes[size as NonNullable<typeof size>]}
           aria-hidden="true"
           focusable="false"
           fill="none"

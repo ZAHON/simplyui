@@ -1,4 +1,3 @@
-import type { LinkProps } from '.';
 import { createRef } from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
@@ -6,14 +5,6 @@ import { Link } from '.';
 
 const LINK_TEST_ID = 'link-test-id';
 const LINK_CONTENT = 'link';
-
-function LinkTest(props: Partial<LinkProps>) {
-  return (
-    <Link data-testid={LINK_TEST_ID} href="#" {...props}>
-      {LINK_CONTENT}
-    </Link>
-  );
-}
 
 describe('Link', () => {
   it('should support ref', () => {
@@ -24,7 +15,7 @@ describe('Link', () => {
   });
 
   it('should be a element when asChild property not provided', () => {
-    const { container } = render(<LinkTest />);
+    const { container } = render(<Link data-testid={LINK_TEST_ID}>{LINK_CONTENT}</Link>);
 
     expect(screen.getByTestId(LINK_TEST_ID)).toBeInstanceOf(HTMLAnchorElement);
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
@@ -44,25 +35,41 @@ describe('Link', () => {
   });
 
   it('should have not data-disabled and aria-disabled="true" attributes when disabled property not provided', () => {
-    render(<LinkTest disabled={false} />);
+    render(
+      <Link disabled={false} href="#" data-testid={LINK_TEST_ID}>
+        {LINK_CONTENT}
+      </Link>
+    );
     expect(screen.getByRole('link')).not.toHaveAttribute('data-disabled');
     expect(screen.getByRole('link')).not.toHaveAttribute('aria-disabled', 'true');
   });
 
   it('should have data-disabled and aria-disabled="true" attributes when disabled property provided', () => {
-    render(<LinkTest disabled={true} />);
+    render(
+      <Link disabled={true} href="#" data-testid={LINK_TEST_ID}>
+        {LINK_CONTENT}
+      </Link>
+    );
     expect(screen.getByRole('link')).toHaveAttribute('data-disabled');
     expect(screen.getByRole('link')).toHaveAttribute('aria-disabled', 'true');
   });
 
   it('should have not target="_blank" and rel="noopener noreferrer" attributes when external property not provided', () => {
-    render(<LinkTest external={false} />);
+    render(
+      <Link external={false} href="#" data-testid={LINK_TEST_ID}>
+        {LINK_CONTENT}
+      </Link>
+    );
     expect(screen.getByRole('link')).not.toHaveAttribute('target', '_blank');
     expect(screen.getByRole('link')).not.toHaveAttribute('rel', 'noopener noreferrer');
   });
 
   it('should have target="_blank" and rel="noopener noreferrer" attributes when external property provided', () => {
-    render(<LinkTest external={true} />);
+    render(
+      <Link external={true} href="#" data-testid={LINK_TEST_ID}>
+        {LINK_CONTENT}
+      </Link>
+    );
     expect(screen.getByRole('link')).toHaveAttribute('target', '_blank');
     expect(screen.getByRole('link')).toHaveAttribute('rel', 'noopener noreferrer');
   });
@@ -70,7 +77,11 @@ describe('Link', () => {
   it('should have class name handed over by className property', () => {
     const className = 'test';
 
-    render(<LinkTest className={className} />);
+    render(
+      <Link className={className} href="#" data-testid={LINK_TEST_ID}>
+        {LINK_CONTENT}
+      </Link>
+    );
     expect(screen.getByRole('link')).toHaveClass(className);
   });
 });

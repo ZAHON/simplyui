@@ -5,6 +5,7 @@ export const linkStyles = cva(
     'inline-flex',
     'items-center',
     'gap-x-1',
+    'rounded-sm',
     'underline-offset-2',
 
     'motion-safe:transition',
@@ -17,7 +18,6 @@ export const linkStyles = cva(
 
     'data-[disabled]:opacity-60',
     'data-[disabled]:pointer-events-none',
-    // 'data-[disabled]',
   ],
   {
     variants: {
@@ -29,10 +29,23 @@ export const linkStyles = cva(
         danger: ['text-danger-11', 'decoration-danger-6'],
       },
       size: {
-        sm: ['text-xs'],
-        md: ['text-sm'],
-        lg: ['text-base'],
-        xl: ['text-lg'],
+        '1': ['text-xs'],
+        '2': ['text-sm'],
+        '3': ['text-base'],
+        '4': ['text-lg'],
+        '5': ['text-xl'],
+        '6': ['text-2xl'],
+        '7': ['text-3xl'],
+        '8': ['text-4xl'],
+        '9': ['text-6xl'],
+      },
+      tracking: {
+        tighter: ['tracking-tighter'],
+        tight: ['tracking-tight'],
+        normal: ['tracking-normal'],
+        wide: ['tracking-wide'],
+        wider: ['tracking-wider'],
+        widest: ['tracking-widest'],
       },
       underline: {
         active: ['active:underline'],
@@ -40,6 +53,13 @@ export const linkStyles = cva(
         focus: ['focus:underline'],
         hover: ['hover:underline'],
         none: [''],
+      },
+      weight: {
+        light: ['font-light'],
+        regular: ['font-normal'],
+        medium: ['font-medium'],
+        semibold: ['font-semibold'],
+        bold: ['font-bold'],
       },
     },
   }
