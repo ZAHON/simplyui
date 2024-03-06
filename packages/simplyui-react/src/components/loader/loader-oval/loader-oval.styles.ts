@@ -21,8 +21,8 @@ export const loaderOvalStyles = cva(
     'before:border-[length:calc(var(--loader-size)/7)]',
     'before:border-transparent',
     'before:border-b-current',
-    'before:motion-safe:animate-[spin_var(--loader-safe-animation-duration)_linear_infinite]',
     'before:motion-reduce:animate-[spin_var(--loader-reduce-animation-duration)_linear_infinite]',
+    'before:motion-safe:animate-[spin_var(--loader-safe-animation-duration)_linear_infinite]',
 
     'after:content-[""]',
     'after:absolute',
@@ -36,12 +36,6 @@ export const loaderOvalStyles = cva(
   ],
   {
     variants: {
-      size: {
-        sm: ['[--loader-size:1rem]'],
-        md: ['[--loader-size:1.25rem]'],
-        lg: ['[--loader-size:1.5rem]'],
-        xl: ['[--loader-size:1.75rem]'],
-      },
       color: {
         default: ['text-default-9'],
         primary: ['text-primary-9'],
@@ -49,6 +43,12 @@ export const loaderOvalStyles = cva(
         warning: ['text-warning-9'],
         danger: ['text-danger-9'],
         currentColor: ['text-current'],
+      },
+      size: {
+        '1': ['[--loader-size:1rem]'],
+        '2': ['[--loader-size:1.25rem]'],
+        '3': ['[--loader-size:1.5rem]'],
+        '4': ['[--loader-size:1.75rem]'],
       },
     },
   }

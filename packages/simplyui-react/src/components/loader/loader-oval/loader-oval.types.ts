@@ -1,8 +1,8 @@
-import type { ComponentPropsWithoutRef, RefObject, CSSProperties } from 'react';
+import type { ComponentPropsWithRef, CSSProperties } from 'react';
 
 type HTMLAttributesToOmit = 'children';
 
-export interface LoaderOvalProps extends Omit<ComponentPropsWithoutRef<'div'>, HTMLAttributesToOmit> {
+export interface LoaderOvalProps extends Omit<ComponentPropsWithRef<'div'>, HTMLAttributesToOmit> {
   /**
    * The color of the loader.
    * @default "primary"
@@ -10,7 +10,7 @@ export interface LoaderOvalProps extends Omit<ComponentPropsWithoutRef<'div'>, H
   color?: 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'currentColor';
 
   /**
-   * For accessibility, it is important to add a fallback loading text. This text will be visible to screen readers.
+   * For accessibility, it is important to add a fallback loading text. This text will be hidden from the screen in an accessible way.
    * @default "Loading, please wait..."
    */
   label?: string;
@@ -20,13 +20,11 @@ export interface LoaderOvalProps extends Omit<ComponentPropsWithoutRef<'div'>, H
    */
   loaderSize?: string;
 
-  ref?: RefObject<HTMLDivElement>;
-
   /**
    * The size of the loader.
-   * @default "md"
+   * @default "2"
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
 
   /**
    * The reduce speed of the loader animation in ms. On browsers that support `prefers-reduced-motion`, and where the user has explicitly signaled that they’d prefer reduced motion (i.e. where `prefers-reduced-motion: reduce`), this value will be used as the duration of the animation.
@@ -43,6 +41,6 @@ export interface LoaderOvalProps extends Omit<ComponentPropsWithoutRef<'div'>, H
 
 export interface LoaderOvalStyle extends CSSProperties {
   '--loader-size'?: string;
-  '--loader-safe-animation-duration'?: string;
   '--loader-reduce-animation-duration'?: string;
+  '--loader-safe-animation-duration'?: string;
 }

@@ -13,12 +13,6 @@ export const loaderDotsStyles = cva(
   ],
   {
     variants: {
-      size: {
-        sm: ['[--loader-size:1rem]'],
-        md: ['[--loader-size:1.25rem]'],
-        lg: ['[--loader-size:1.5rem]'],
-        xl: ['[--loader-size:1.75rem]'],
-      },
       color: {
         default: ['text-default-9'],
         primary: ['text-primary-9'],
@@ -27,16 +21,12 @@ export const loaderDotsStyles = cva(
         danger: ['text-danger-9'],
         currentColor: ['text-current'],
       },
+      size: {
+        '1': ['[--loader-size:1rem]'],
+        '2': ['[--loader-size:1.25rem]'],
+        '3': ['[--loader-size:1.5rem]'],
+        '4': ['[--loader-size:1.75rem]'],
+      },
     },
   }
 );
-
-export const loaderDotsDotStyles = cva([
-  'h-[calc(var(--loader-size)/3-var(--loader-size)/15)]',
-  'w-[calc(var(--loader-size)/3-var(--loader-size)/15)]',
-  'rounded-full',
-  'bg-current',
-  'motion-safe:animate-[loader-dots_var(--loader-safe-animation-duration)_linear_infinite]',
-  'motion-reduce:animate-[loader-dots_var(--loader-reduce-animation-duration)_linear_infinite]',
-  '[&:nth-child(2)]:[animation-delay:400ms]',
-]);

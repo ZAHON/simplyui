@@ -1,25 +1,15 @@
 import type { LoaderOvalProps, LoaderOvalStyle } from './loader-oval.types';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { loaderOvalStyles } from './loader-oval.styles';
 
-export function LoaderOval(props: LoaderOvalProps) {
-  const {
-    ref,
-    size,
-    loaderSize,
-    color,
-    speedSafe,
-    speedReduce,
-    label,
-    style,
-    className,
-    ...others
-  } = props;
+export const LoaderOval = forwardRef<HTMLDivElement, LoaderOvalProps>((props, ref) => {
+  const { color, label, loaderSize, size, speedReduce, speedSafe, style, className, ...others } = props;
 
   const loaderStyle: LoaderOvalStyle = {
     '--loader-size': loaderSize,
-    '--loader-safe-animation-duration': `${speedSafe}ms`,
     '--loader-reduce-animation-duration': `${speedReduce}ms`,
+    '--loader-safe-animation-duration': `${speedSafe}ms`,
     ...style,
   };
 
@@ -34,4 +24,4 @@ export function LoaderOval(props: LoaderOvalProps) {
       <span className="sr-only">{label}</span>
     </div>
   );
-}
+});

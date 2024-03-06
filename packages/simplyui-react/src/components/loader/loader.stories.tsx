@@ -5,7 +5,7 @@ const meta: Meta<typeof Loader> = {
   title: 'Feedback/Loader',
   component: Loader,
   args: {
-    size: 'md',
+    size: '2',
     color: 'primary',
     variant: 'oval',
     speedSafe: 1000,
