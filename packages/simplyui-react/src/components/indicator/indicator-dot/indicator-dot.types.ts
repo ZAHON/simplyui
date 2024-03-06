@@ -66,9 +66,9 @@ export interface IndicatorDotProps extends ComponentPropsWithRef<'div'> {
 
   /**
    * The size of the dot.
-   * @default "md"
+   * @default "3"
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 
   /**
    * If `true`, dot will have border.

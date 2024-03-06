@@ -1,21 +1,15 @@
-import type { IndicatorRootProps, IndicatorDotProps } from '.';
 import { createRef } from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Indicator } from '.';
 
+const INDICATOR_ROOT_TEST_ID = 'indicator-root-test-id';
+const INDICATOR_DOT_TEST_ID = 'indicator-dot-test-id';
+
+const INDICATOR_ROOT_CONTENT = 'indicator-root';
+
 describe('Indicator', () => {
-  describe('IndicatorRoot', () => {
-    const indicatorRootTestid = 'indicator-root';
-
-    function IndicatorRootTest(props: Partial<IndicatorRootProps>) {
-      return (
-        <Indicator data-testid={indicatorRootTestid} {...props}>
-          <Indicator.Dot />
-        </Indicator>
-      );
-    }
-
+  describe('Root', () => {
     it('should support ref', () => {
       const ref = createRef<HTMLDivElement>();
 
@@ -29,42 +23,40 @@ describe('Indicator', () => {
     });
 
     it('should be div element when asChild property not provided', () => {
-      const { container } = render(<IndicatorRootTest />);
+      const { container } = render(
+        <Indicator data-testid={INDICATOR_ROOT_TEST_ID}>{INDICATOR_ROOT_CONTENT}</Indicator>
+      );
 
-      expect(screen.getByTestId(indicatorRootTestid)).toBeInstanceOf(HTMLDivElement);
+      expect(screen.getByTestId(INDICATOR_ROOT_TEST_ID)).toBeInstanceOf(HTMLDivElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      expect(container.querySelector(`div[data-testid="${indicatorRootTestid}"]`)).toBeInTheDocument();
+      expect(container.querySelector(`div[data-testid="${INDICATOR_ROOT_TEST_ID}"]`)).toBeInTheDocument();
     });
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
-        <Indicator asChild data-testid={indicatorRootTestid}>
-          <span>
-            <Indicator.Dot />
-          </span>
+        <Indicator asChild data-testid={INDICATOR_ROOT_TEST_ID}>
+          <span>{INDICATOR_ROOT_CONTENT}</span>
         </Indicator>
       );
 
-      expect(screen.getByTestId(indicatorRootTestid)).toBeInstanceOf(HTMLSpanElement);
+      expect(screen.getByTestId(INDICATOR_ROOT_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      expect(container.querySelector(`div[data-testid="${indicatorRootTestid}"]`)).not.toBeInTheDocument();
+      expect(container.querySelector(`div[data-testid="${INDICATOR_ROOT_TEST_ID}"]`)).not.toBeInTheDocument();
     });
 
     it('should have class name handed over by className property', () => {
       const className = 'test';
 
-      render(<IndicatorRootTest className={className} />);
-      expect(screen.getByTestId(indicatorRootTestid)).toHaveClass(className);
+      render(
+        <Indicator className={className} data-testid={INDICATOR_ROOT_TEST_ID}>
+          {INDICATOR_ROOT_CONTENT}
+        </Indicator>
+      );
+      expect(screen.getByTestId(INDICATOR_ROOT_TEST_ID)).toHaveClass(className);
     });
   });
 
-  describe('IndicatorDot', () => {
-    const indicatorDotTestid = 'indicator-root';
-
-    function IndicatorDotTest(props: Partial<IndicatorDotProps>) {
-      return <Indicator.Dot data-testid={indicatorDotTestid} {...props} />;
-    }
-
+  describe('Dot', () => {
     it('should support ref', () => {
       const ref = createRef<HTMLDivElement>();
 
@@ -73,50 +65,55 @@ describe('Indicator', () => {
     });
 
     it('should be div element when asChild property not provided', () => {
-      const { container } = render(<IndicatorDotTest />);
+      const { container } = render(<Indicator.Dot data-testid={INDICATOR_DOT_TEST_ID} />);
 
-      expect(screen.getByTestId(indicatorDotTestid)).toBeInstanceOf(HTMLDivElement);
+      expect(screen.getByTestId(INDICATOR_DOT_TEST_ID)).toBeInstanceOf(HTMLDivElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      expect(container.querySelector(`div[data-testid="${indicatorDotTestid}"]`)).toBeInTheDocument();
+      expect(container.querySelector(`div[data-testid="${INDICATOR_DOT_TEST_ID}"]`)).toBeInTheDocument();
     });
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
-        <Indicator.Dot asChild data-testid={indicatorDotTestid}>
+        <Indicator.Dot asChild data-testid={INDICATOR_DOT_TEST_ID}>
           <span />
         </Indicator.Dot>
       );
 
-      expect(screen.getByTestId(indicatorDotTestid)).toBeInstanceOf(HTMLSpanElement);
+      expect(screen.getByTestId(INDICATOR_DOT_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      expect(container.querySelector(`div[data-testid="${indicatorDotTestid}"]`)).not.toBeInTheDocument();
+      expect(container.querySelector(`div[data-testid="${INDICATOR_DOT_TEST_ID}"]`)).not.toBeInTheDocument();
+    });
+
+    it('should have aria-hidden="true" attribute', () => {
+      render(<Indicator.Dot aria-hidden="true" data-testid={INDICATOR_DOT_TEST_ID} />);
+      expect(screen.getByTestId(INDICATOR_DOT_TEST_ID)).toHaveAttribute('aria-hidden', 'true');
     });
 
     it('should have not data-disabled attribute when disabled property not provided', () => {
-      render(<IndicatorDotTest disabled={false} />);
-      expect(screen.getByTestId(indicatorDotTestid)).not.toHaveAttribute('data-disabled');
+      render(<Indicator.Dot disabled={false} data-testid={INDICATOR_DOT_TEST_ID} />);
+      expect(screen.getByTestId(INDICATOR_DOT_TEST_ID)).not.toHaveAttribute('data-disabled');
     });
 
     it('should have data-disabled attribute when disabled property provided', () => {
-      render(<IndicatorDotTest disabled={true} />);
-      expect(screen.getByTestId(indicatorDotTestid)).toHaveAttribute('data-disabled');
+      render(<Indicator.Dot disabled={true} data-testid={INDICATOR_DOT_TEST_ID} />);
+      expect(screen.getByTestId(INDICATOR_DOT_TEST_ID)).toHaveAttribute('data-disabled');
     });
 
     it('should have not data-processing attribute when processing property not provided', () => {
-      render(<IndicatorDotTest processing={false} />);
-      expect(screen.getByTestId(indicatorDotTestid)).not.toHaveAttribute('data-processing');
+      render(<Indicator.Dot processing={false} data-testid={INDICATOR_DOT_TEST_ID} />);
+      expect(screen.getByTestId(INDICATOR_DOT_TEST_ID)).not.toHaveAttribute('data-processing');
     });
 
     it('should have data-processing attribute when processing property provided', () => {
-      render(<IndicatorDotTest processing={true} />);
-      expect(screen.getByTestId(indicatorDotTestid)).toHaveAttribute('data-processing');
+      render(<Indicator.Dot processing={true} data-testid={INDICATOR_DOT_TEST_ID} />);
+      expect(screen.getByTestId(INDICATOR_DOT_TEST_ID)).toHaveAttribute('data-processing');
     });
 
     it('should support custom safe duration of the processing animation provided by processingSafeDuration property', () => {
       const processingSafeDuration = 100;
 
-      render(<IndicatorDotTest processingSafeDuration={processingSafeDuration} />);
-      expect(screen.getByTestId(indicatorDotTestid)).toHaveStyle(
+      render(<Indicator.Dot processingSafeDuration={processingSafeDuration} data-testid={INDICATOR_DOT_TEST_ID} />);
+      expect(screen.getByTestId(INDICATOR_DOT_TEST_ID)).toHaveStyle(
         `--indicator-dot-processing-safe-duration: ${processingSafeDuration}ms`
       );
     });
@@ -124,8 +121,8 @@ describe('Indicator', () => {
     it('should support custom reduce duration of the processing animation provided by processingReduceDuration property', () => {
       const processingReduceDuration = 100;
 
-      render(<IndicatorDotTest processingReduceDuration={processingReduceDuration} />);
-      expect(screen.getByTestId(indicatorDotTestid)).toHaveStyle(
+      render(<Indicator.Dot processingReduceDuration={processingReduceDuration} data-testid={INDICATOR_DOT_TEST_ID} />);
+      expect(screen.getByTestId(INDICATOR_DOT_TEST_ID)).toHaveStyle(
         `--indicator-dot-processing-reduce-duration: ${processingReduceDuration}ms`
       );
     });
@@ -133,8 +130,8 @@ describe('Indicator', () => {
     it('should have class name handed over by className property', () => {
       const className = 'test';
 
-      render(<IndicatorDotTest className={className} />);
-      expect(screen.getByTestId(indicatorDotTestid)).toHaveClass(className);
+      render(<Indicator.Dot className={className} data-testid={INDICATOR_DOT_TEST_ID} />);
+      expect(screen.getByTestId(INDICATOR_DOT_TEST_ID)).toHaveClass(className);
     });
   });
 });
