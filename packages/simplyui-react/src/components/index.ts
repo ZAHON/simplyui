@@ -23,3 +23,4 @@ export * from './segmented-control';
 export * from './slider';
 export * from './switch';
 export * from './text-field';
+export * from './tooltip';
