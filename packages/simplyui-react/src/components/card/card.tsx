@@ -1,29 +1,24 @@
 import type { CardProps } from './card.types';
 import { forwardRef } from 'react';
-import { Slot } from '@radix-ui/react-slot';
 import { twMerge } from 'tailwind-merge';
+import { Primitive } from '@/components/primitive';
 import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
 import { cardStyles } from './card.styles';
 
 const defaultProps: Partial<CardProps> = {
-  background: 'solid',
   radius: 'md',
   shadow: 'md',
-  size: 'md',
+  size: '2',
 };
 
+/** Container that groups related content and actions. This component is based on the `div` element. */
 export const Card = forwardRef<HTMLDivElement, CardProps>((props, ref) => {
-  const { asChild, background, radius, shadow, size, className, children, ...others } = applayComponentDefaultProps(
-    defaultProps,
-    props
-  );
-
-  const Component = asChild ? Slot : 'div';
+  const { radius, shadow, size, className, children, ...others } = applayComponentDefaultProps(defaultProps, props);
 
   return (
-    <Component ref={ref} className={twMerge(cardStyles({ background, radius, shadow, size }), className)} {...others}>
+    <Primitive.div ref={ref} className={twMerge(cardStyles({ radius, shadow, size }), className)} {...others}>
       {children}
-    </Component>
+    </Primitive.div>
   );
 });
 

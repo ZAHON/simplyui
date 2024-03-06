@@ -8,8 +8,7 @@
     --color-foreground: 210deg 13% 13%;
     --color-surface: 0deg 0% 100% / 90%;
     --color-overlay: 0deg 0% 0% / 40%;
-    --color-panel-solid: 0deg 0% 100%;
-    --color-panel-translucent: 0deg 0% 100% / 80%;
+    --color-panel: 0deg 0% 100%;
     --color-focus: 226deg 75% 75%;
     --color-selection: 224deg 100% 50% / 18%;
 
@@ -90,8 +89,7 @@
     --color-foreground: 220deg 9% 94%;
     --color-surface: 0deg 0% 0% / 25%;
     --color-overlay: 0deg 0% 0% / 60%;
-    --color-panel-solid: 220deg 6% 10%;
-    --color-panel-translucent: 200deg 5% 11% / 70%;
+    --color-panel: 220deg 6% 10%;
     --color-focus: 226deg 45% 48%;
     --color-selection: 225deg 98% 62% / 42%;
 

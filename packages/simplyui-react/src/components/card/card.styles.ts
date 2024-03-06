@@ -1,11 +1,7 @@
 import { cva } from 'class-variance-authority';
 
-export const cardStyles = cva(['border', 'border-default-6'], {
+export const cardStyles = cva(['bg-panel', 'border', 'border-default-6'], {
   variants: {
-    background: {
-      solid: ['bg-panel-solid'],
-      translucent: ['bg-panel-translucent'],
-    },
     radius: {
       none: ['rounded-none'],
       sm: ['rounded-sm'],
@@ -22,10 +18,10 @@ export const cardStyles = cva(['border', 'border-default-6'], {
       xl: ['drop-shadow-lg'],
     },
     size: {
-      sm: ['p-3', 'text-xs'],
-      md: ['p-4', 'text-sm'],
-      lg: ['p-6', 'text-base'],
-      xl: ['p-8', 'text-lg'],
+      '1': ['p-3', 'text-xs'],
+      '2': ['p-4', 'text-sm'],
+      '3': ['p-6', 'text-base'],
+      '4': ['p-8', 'text-lg'],
     },
   },
 });

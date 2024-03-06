@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import { Card } from '.';
 
 const CARD_TEST_ID = 'card-test-id';
-const CARD_CONTENT = 'cARD';
+const CARD_CONTENT = 'card';
 
 function CardTest(props: Partial<CardProps>) {
   return (
