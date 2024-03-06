@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Label } from '.';
 
 const meta: Meta<typeof Label> = {
-  title: 'Inputs/Label',
+  title: 'Typography/Label',
   component: Label,
   args: {
     children: 'This is a label element.',
-    size: '2',
+    size: '3',
     tracking: 'normal',
     weight: 'regular',
     disabled: false,

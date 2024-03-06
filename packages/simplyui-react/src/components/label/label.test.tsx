@@ -106,7 +106,7 @@ describe('Label', () => {
       expect(container.querySelector(`span[data-testid="${LABEL_INDICATOR_TEST_ID}"]`)).not.toBeInTheDocument();
     });
 
-    it('should have aria-hidden="true"', () => {
+    it('should have aria-hidden="true" attribute', () => {
       render(
         <Label>
           <Label.Indicator>{LABEL_INDICATOR_CONTENT}</Label.Indicator>

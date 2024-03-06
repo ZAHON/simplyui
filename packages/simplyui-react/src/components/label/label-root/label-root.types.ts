@@ -25,9 +25,9 @@ export interface LabelRootProps extends ComponentPropsWithRef<'label'> {
 
   /**
    * The size of the label.
-   * @default "2"
+   * @default "3"
    */
-  size?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13';
+  size?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 
   /**
    * The tracking (letter spacing) of the label.

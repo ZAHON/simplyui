@@ -9,7 +9,7 @@ import { LabelContextProvider } from '../label-context';
 import { labelRootStyles } from './label-root.styles';
 
 const defaultProps: Partial<LabelRootProps> = {
-  size: '2',
+  size: '3',
   tracking: 'normal',
   weight: 'regular',
 };
