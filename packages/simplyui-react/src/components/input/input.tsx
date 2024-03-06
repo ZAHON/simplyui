@@ -11,6 +11,7 @@ const defaultProps: Partial<InputProps> = {
   variant: 'default',
 };
 
+/** The input element. This component is based on the `input` element. */
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const { disabled, invalid, radius, required, size, variant, className, ...others } = applayComponentDefaultProps(
     defaultProps,
