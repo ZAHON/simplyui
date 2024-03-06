@@ -26,9 +26,9 @@ export interface AlertRootProps extends ComponentPropsWithRef<'div'> {
 
   /**
    * The size of the alert.
-   * @default "md"
+   * @default "2"
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
 
   /**
    * The variant of the alert.

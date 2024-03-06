@@ -18,10 +18,10 @@ export const alertRootStyles = cva(['flex'], {
       full: ['rounded-2xl'],
     },
     size: {
-      sm: ['p-3', 'gap-x-2', 'text-xs'],
-      md: ['p-4', 'gap-x-2.5', 'text-sm'],
-      lg: ['p-6', 'gap-x-3', 'text-base'],
-      xl: ['p-8', 'gap-x-3.5', 'text-lg'],
+      '1': ['p-3', 'gap-x-2'],
+      '2': ['p-4', 'gap-x-2.5'],
+      '3': ['p-6', 'gap-x-3'],
+      '4': ['p-8', 'gap-x-3.5'],
     },
     variant: {
       filled: [''],

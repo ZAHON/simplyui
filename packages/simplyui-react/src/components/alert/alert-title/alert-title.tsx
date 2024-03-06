@@ -7,16 +7,15 @@ import { useAlertContext } from '../alert-context';
 import { alertTitleStyles } from './alert-title.styles';
 
 export const AlertTitle = forwardRef<HTMLParagraphElement, AlertTitleProps>((props, ref) => {
-  const { className, children, ...others } = props;
+  const { visuallyHidden, className, children, ...others } = props;
 
-  const { titleId } = useAlertContext();
+  const { titleId, size } = useAlertContext();
 
   return (
     <Primitive.p
       ref={ref}
       id={titleId}
-      data-alert-title=""
-      className={twMerge(alertTitleStyles(), className)}
+      className={twMerge(alertTitleStyles({ size, visuallyHidden }), className)}
       {...others}
     >
       {children}

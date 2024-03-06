@@ -8,7 +8,15 @@ export interface AlertDescriptionProps extends ComponentPropsWithRef<'p'> {
   asChild?: boolean;
 
   /**
-   * The content of the alert title.
+   * The content of the alert description.
    */
   children: ReactNode;
+
+  /**
+   * When `true`, alert description will be hidden from the screen in an accessible way.
+   *
+   * If you want to remove the alert description entirely, remove this part and pass `aria-describedby={undefined}` to `Alert` component.
+   * @default false
+   */
+  visuallyHidden?: boolean;
 }

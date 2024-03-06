@@ -7,7 +7,7 @@ const meta: Meta<typeof Alert> = {
   args: {
     color: 'danger',
     radius: 'md',
-    size: 'md',
+    size: '2',
     variant: 'light',
     children: (
       <Alert.Body>
@@ -48,10 +48,10 @@ export const WithIcon: Story = {
   },
   render: ({ size, ...others }) => {
     const iconSizes = {
-      sm: 16,
-      md: 16,
-      lg: 18,
-      xl: 20,
+      '1': 16,
+      '2': 16,
+      '3': 18,
+      '4': 20,
     };
 
     return (
@@ -78,6 +78,26 @@ export const WithIcon: Story = {
         <Alert.Body>
           <Alert.Title>Alert title</Alert.Title>
           <Alert.Description>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt corporis natus veniam quis cupiditate enim
+            architecto mollitia numquam temporibus, consectetur nam laboriosam voluptates nemo facilis? Exercitationem
+            aut praesentium quibusdam reiciendis.
+          </Alert.Description>
+        </Alert.Body>
+      </Alert>
+    );
+  },
+};
+
+export const WithVisuallyHiddenDescription: Story = {
+  args: {
+    children: <></>,
+  },
+  render: ({ ...props }) => {
+    return (
+      <Alert aria-describedby={undefined} {...props}>
+        <Alert.Body>
+          <Alert.Title>You will need admin privileges to install and access this application.</Alert.Title>
+          <Alert.Description visuallyHidden>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt corporis natus veniam quis cupiditate enim
             architecto mollitia numquam temporibus, consectetur nam laboriosam voluptates nemo facilis? Exercitationem
             aut praesentium quibusdam reiciendis.

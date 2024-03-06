@@ -12,7 +12,7 @@ export const AlertIcon = forwardRef<HTMLDivElement, AlertIconProps>((props, ref)
   const { size } = useAlertContext();
 
   return (
-    <Primitive.div ref={ref} className={twMerge(alertIconStyles({ size }), className)} {...others}>
+    <Primitive.div ref={ref} aria-hidden="true" className={twMerge(alertIconStyles({ size }), className)} {...others}>
       {children}
     </Primitive.div>
   );

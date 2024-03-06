@@ -14,7 +14,7 @@ export interface AlertContextValue {
   /**
    * The size of the alert.
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
 }
 
 export type AlertContextProviderProps = {

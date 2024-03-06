@@ -44,8 +44,8 @@ describe('Alert', () => {
       expect(container.querySelector(`div[data-testid="${ALERT_ROOT_TEST_ID}"]`)).not.toBeInTheDocument();
     });
 
-    it('should have not accessible name when not contains Alert.Title', () => {
-      render(<Alert>{ALERT_ROOT_CONTENT}</Alert>);
+    it('should have not accessible name when have aria-labelledby={undefined} attribute and not contains Alert.Title', () => {
+      render(<Alert aria-labelledby={undefined}>{ALERT_ROOT_CONTENT}</Alert>);
       expect(screen.getByRole('alert')).not.toHaveAccessibleName();
     });
 
@@ -58,8 +58,8 @@ describe('Alert', () => {
       expect(screen.getByRole('alert')).toHaveAccessibleName();
     });
 
-    it('should have not accessible description when not contains Alert.Description', () => {
-      render(<Alert>{ALERT_ROOT_CONTENT}</Alert>);
+    it('should have not accessible description have aria-describedby={undefined} attribute and not contains Alert.Description', () => {
+      render(<Alert aria-describedby={undefined}>{ALERT_ROOT_CONTENT}</Alert>);
       expect(screen.getByRole('alert')).not.toHaveAccessibleDescription();
     });
 
@@ -116,6 +116,15 @@ describe('Alert', () => {
       expect(screen.getByTestId(ALERT_ICON_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
       expect(container.querySelector(`div[data-testid="${ALERT_ICON_TEST_ID}"]`)).not.toBeInTheDocument();
+    });
+
+    it('should have aria-hidden="true" attribute', () => {
+      render(
+        <Alert>
+          <Alert.Icon>{ALERT_ICON_CONTENT}</Alert.Icon>
+        </Alert>
+      );
+      expect(screen.getByText(ALERT_ICON_CONTENT)).toHaveAttribute('aria-hidden', 'true');
     });
 
     it('should have class name handed over by className property', () => {
@@ -218,6 +227,24 @@ describe('Alert', () => {
       expect(container.querySelector(`p[data-testid="${ALERT_TITLE_TEST_ID}"]`)).not.toBeInTheDocument();
     });
 
+    it('should have not "sr-only" class name when visuallyHidden property not provided', () => {
+      render(
+        <Alert>
+          <Alert.Title visuallyHidden={false}>{ALERT_TITLE_CONTENT}</Alert.Title>
+        </Alert>
+      );
+      expect(screen.getByText(ALERT_TITLE_CONTENT)).not.toHaveClass('sr-only');
+    });
+
+    it('should have "sr-only" class name when visuallyHidden property provided', () => {
+      render(
+        <Alert>
+          <Alert.Title visuallyHidden={true}>{ALERT_TITLE_CONTENT}</Alert.Title>
+        </Alert>
+      );
+      expect(screen.getByText(ALERT_TITLE_CONTENT)).toHaveClass('sr-only');
+    });
+
     it('should have class name handed over by className property', () => {
       const className = 'test';
 
@@ -266,6 +293,24 @@ describe('Alert', () => {
       expect(screen.getByTestId(ALERT_DESCRIPTION_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
       expect(container.querySelector(`p[data-testid="${ALERT_DESCRIPTION_TEST_ID}"]`)).not.toBeInTheDocument();
+    });
+
+    it('should have not "sr-only" class name when visuallyHidden property not provided', () => {
+      render(
+        <Alert>
+          <Alert.Description visuallyHidden={false}>{ALERT_DESCRIPTION_CONTENT}</Alert.Description>
+        </Alert>
+      );
+      expect(screen.getByText(ALERT_DESCRIPTION_CONTENT)).not.toHaveClass('sr-only');
+    });
+
+    it('should have "sr-only" class name when visuallyHidden property provided', () => {
+      render(
+        <Alert>
+          <Alert.Description visuallyHidden={true}>{ALERT_DESCRIPTION_CONTENT}</Alert.Description>
+        </Alert>
+      );
+      expect(screen.getByText(ALERT_DESCRIPTION_CONTENT)).toHaveClass('sr-only');
     });
 
     it('should have class name handed over by className property', () => {

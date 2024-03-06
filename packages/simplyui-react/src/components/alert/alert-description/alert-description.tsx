@@ -7,16 +7,15 @@ import { useAlertContext } from '../alert-context';
 import { alertDescriptionStyles } from './alert-description.styles';
 
 export const AlertDescription = forwardRef<HTMLParagraphElement, AlertDescriptionProps>((props, ref) => {
-  const { className, children, ...others } = props;
+  const { visuallyHidden, className, children, ...others } = props;
 
-  const { descriptionId } = useAlertContext();
+  const { descriptionId, size } = useAlertContext();
 
   return (
     <Primitive.p
       ref={ref}
       id={descriptionId}
-      data-alert-description=""
-      className={twMerge(alertDescriptionStyles(), className)}
+      className={twMerge(alertDescriptionStyles({ size, visuallyHidden }), className)}
       {...others}
     >
       {children}
