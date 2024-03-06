@@ -19,11 +19,7 @@ export const headingStyles = cva([''], {
       '6': ['text-2xl'],
       '7': ['text-3xl'],
       '8': ['text-4xl'],
-      '9': ['text-5xl'],
-      '10': ['text-6xl'],
-      '11': ['text-7xl'],
-      '12': ['text-8xl'],
-      '13': ['text-9xl'],
+      '9': ['text-6xl'],
     },
     tracking: {
       tighter: ['tracking-tighter'],

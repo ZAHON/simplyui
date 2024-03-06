@@ -13,6 +13,7 @@ const defaultProps: Partial<HeadingProps> = {
   weight: 'bold',
 };
 
+/** This component is based on the `h1` element. */
 export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>((props, ref) => {
   const { asChild, as, color, size, tracking, weight, className, children, ...others } = applayComponentDefaultProps(
     defaultProps,
