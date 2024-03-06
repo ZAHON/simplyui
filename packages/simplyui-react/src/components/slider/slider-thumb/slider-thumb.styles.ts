@@ -2,35 +2,36 @@ import { cva } from 'class-variance-authority';
 
 export const sliderThumbStyles = cva(
   [
-    'flex',
-    'justify-center',
-    'items-center',
-    'text-black',
-    'bg-white',
+    'relative',
+    'block',
     'drop-shadow',
-    'origin-center',
 
-    'motion-safe:transition',
-    'motion-safe:duration-100',
+    'after:content-[""]',
+    'after:absolute',
+    'after:-inset-0.5',
+    'after:bg-white',
 
     'focus-visible:outline-none',
-    'focus-visible:scale-110',
+    'focus-visible:after:ring-2',
+    'focus-visible:after:ring-offset-2',
+    'focus-visible:after:ring-offset-primary-3',
+    'focus-visible:after:ring-focus',
   ],
   {
     variants: {
       radius: {
-        none: ['rounded-none'],
-        sm: ['rounded-sm'],
-        md: ['rounded'],
-        lg: ['rounded-md'],
-        xl: ['rounded-lg'],
-        full: ['rounded-full'],
+        none: ['rounded-none', 'after:rounded-none'],
+        sm: ['rounded-sm', 'after:rounded-sm'],
+        md: ['rounded', 'after:rounded'],
+        lg: ['rounded-md', 'after:rounded-md'],
+        xl: ['rounded-lg', 'after:rounded-lg'],
+        full: ['rounded-full', 'after:rounded-full'],
       },
       size: {
-        sm: ['size-4'],
-        md: ['size-5'],
-        lg: ['size-6'],
-        xl: ['size-7'],
+        '1': ['size-2'],
+        '2': ['size-4'],
+        '3': ['size-5'],
+        '4': ['size-6'],
       },
     },
   }

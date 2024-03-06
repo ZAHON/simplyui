@@ -23,10 +23,10 @@ export const sliderRootStyles = cva(
   {
     variants: {
       size: {
-        sm: ['data-[orientation=horizontal]:h-4', 'data-[orientation=vertical]:w-4'],
-        md: ['data-[orientation=horizontal]:h-5', 'data-[orientation=vertical]:w-5'],
-        lg: ['data-[orientation=horizontal]:h-6', 'data-[orientation=vertical]:w-6'],
-        xl: ['data-[orientation=horizontal]:h-7', 'data-[orientation=vertical]:w-7'],
+        '1': ['data-[orientation=horizontal]:h-4', 'data-[orientation=vertical]:w-4'],
+        '2': ['data-[orientation=horizontal]:h-5', 'data-[orientation=vertical]:w-5'],
+        '3': ['data-[orientation=horizontal]:h-6', 'data-[orientation=vertical]:w-6'],
+        '4': ['data-[orientation=horizontal]:h-7', 'data-[orientation=vertical]:w-7'],
       },
     },
   }

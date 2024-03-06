@@ -8,8 +8,12 @@ import { SliderTrack } from './slider-track';
 import { SliderRange } from './slider-range';
 import { SliderThumb } from './slider-thumb';
 
+/** Contains all the parts of a slider. It will render an `input` for each thumb when used within a `form` to ensure events propagate correctly. This component is based on the `span` element. */
 export const Slider = Object.assign(SliderRoot, {
+  /** The track that contains the `Slider.Range`. This component is based on the `span` element. */
   Track: SliderTrack,
+  /** The range part. Must live inside `Slider.Track`. This component is based on the `span` element. */
   Range: SliderRange,
+  /** A draggable thumb. You can render multiple thumbs. This component is based on the `span` element. */
   Thumb: SliderThumb,
 });

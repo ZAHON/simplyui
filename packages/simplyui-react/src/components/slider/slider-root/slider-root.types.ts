@@ -10,6 +10,26 @@ export interface SliderRootProps extends Omit<ComponentPropsWithRef<'span'>, HTM
   asChild?: boolean;
 
   /**
+   * The value of the slider when initially rendered. Use when you do not need to control the state of the slider.
+   */
+  defaultValue?: number[];
+
+  /**
+   * The controlled value of the slider. Must be used in conjunction with `onValueChange` property.
+   */
+  value?: number[];
+
+  /**
+   * Event handler called when the value changes.
+   */
+  onValueChange?: (value: number[]) => void;
+
+  /**
+   * Event handler called when the value changes at the end of an interaction. Useful when you only need to capture a final value e.g. to update a backend service.
+   */
+  onValueCommit?: (value: number[]) => void;
+
+  /**
    * The all the parts of a slider. It will render an input for each thumb when used within a form to ensure events propagate correctly.
    */
   children: ReactNode;
@@ -19,11 +39,6 @@ export interface SliderRootProps extends Omit<ComponentPropsWithRef<'span'>, HTM
    * @default "primary"
    */
   color?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
-
-  /**
-   * The value of the slider when initially rendered. Use when you do not need to control the state of the slider.
-   */
-  defaultValue?: number[];
 
   /**
    * When `true`, prevents the user from interacting with the slider.
@@ -61,16 +76,6 @@ export interface SliderRootProps extends Omit<ComponentPropsWithRef<'span'>, HTM
   name?: string;
 
   /**
-   * Event handler called when the value changes.
-   */
-  onValueChange?: (value: number[]) => void;
-
-  /**
-   * Event handler called when the value changes at the end of an interaction. Useful when you only need to capture a final value e.g. to update a backend service.
-   */
-  onValueCommit?: (value: number[]) => void;
-
-  /**
    * The orientation of the slider.
    * @default "horizontal"
    */
@@ -84,9 +89,9 @@ export interface SliderRootProps extends Omit<ComponentPropsWithRef<'span'>, HTM
 
   /**
    * The size of the slider.
-   * @default "md"
+   * @default "2"
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
 
   /**
    * The stepping interval.
@@ -95,7 +100,8 @@ export interface SliderRootProps extends Omit<ComponentPropsWithRef<'span'>, HTM
   step?: number;
 
   /**
-   * The controlled value of the slider. Must be used in conjunction with `onValueChange` property.
+   * The variant of the slider.
+   * @default "default"
    */
-  value?: number[];
+  variant?: 'default' | 'filled';
 }

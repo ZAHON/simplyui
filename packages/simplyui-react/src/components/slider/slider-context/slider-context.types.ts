@@ -19,7 +19,12 @@ export interface SliderContextValue {
   /**
    * The size of the slider.
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
+
+  /**
+   * The variant of the slider.
+   */
+  variant?: 'default' | 'filled';
 }
 
 export type SliderContextProviderProps = {

@@ -10,17 +10,18 @@ import { sliderRootStyles } from './slider-root.styles';
 const defaultProps: Partial<SliderRootProps> = {
   color: 'primary',
   radius: 'full',
-  size: 'md',
+  size: '2',
+  variant: 'default',
 };
 
 export const SliderRoot = forwardRef<HTMLSpanElement, SliderRootProps>((props, ref) => {
-  const { color, inverted, radius, size, className, children, ...others } = applayComponentDefaultProps(
+  const { color, inverted, radius, size, variant, className, children, ...others } = applayComponentDefaultProps(
     defaultProps,
     props
   );
 
   return (
-    <SliderContextProvider value={{ color, inverted, radius, size }}>
+    <SliderContextProvider value={{ color, inverted, radius, size, variant }}>
       <Root
         ref={ref}
         dir="ltr"
