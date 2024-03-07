@@ -91,6 +91,8 @@ export default {
         },
       },
       animation: {
+        'collapsible-down': 'collapsible-down 200ms ease-out',
+        'collapsible-up': 'collapsible-up 200ms ease-out',
         'modal-overlay-show': 'modal-overlay-show 100ms ease-out',
         'modal-overlay-hide': 'modal-overlay-hide 100ms ease-in',
         'modal-content-show': 'modal-content-show 100ms ease-out',
@@ -100,6 +102,14 @@ export default {
         'loader-dots': {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
           '50%': { transform: 'scale(0.6)', opacity: '0.5' },
+        },
+        'collapsible-down': {
+          '0%': { height: '0', opacity: '0' },
+          '100%': { height: 'var(--radix-collapsible-content-height)', opacity: '1' },
+        },
+        'collapsible-up': {
+          '0%': { height: 'var(--radix-collapsible-content-height)', opacity: '1' },
+          '100%': { height: '0', opacity: '0' },
         },
         'modal-overlay-show': {
           '0%': { opacity: '0' },
