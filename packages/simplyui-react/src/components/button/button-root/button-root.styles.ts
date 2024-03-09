@@ -10,7 +10,7 @@ export const buttonRootStyles = cva(
     'whitespace-nowrap',
     'select-none',
     'overflow-hidden',
-    'origin-center',
+    'cursor-default',
 
     'motion-safe:transition',
     'motion-safe:duration-100',
@@ -25,11 +25,12 @@ export const buttonRootStyles = cva(
   ],
   {
     variants: {
-      size: {
-        sm: ['h-6', 'px-2', 'text-xs'],
-        md: ['h-8', 'px-3', 'text-sm'],
-        lg: ['h-10', 'px-4', 'text-base'],
-        xl: ['h-12', 'px-6', 'text-lg'],
+      color: {
+        default: [''],
+        primary: [''],
+        success: [''],
+        warning: [''],
+        danger: [''],
       },
       radius: {
         none: ['rounded-none'],
@@ -39,15 +40,14 @@ export const buttonRootStyles = cva(
         xl: ['rounded-lg'],
         full: ['rounded-full'],
       },
+      size: {
+        '1': ['h-6', 'px-2', 'text-xs'],
+        '2': ['h-8', 'px-3', 'text-sm'],
+        '3': ['h-10', 'px-4', 'text-base'],
+        '4': ['h-12', 'px-6', 'text-lg'],
+      },
       fullWidth: {
         true: ['w-full'],
-      },
-      color: {
-        default: [''],
-        primary: [''],
-        success: [''],
-        warning: [''],
-        danger: [''],
       },
       variant: {
         filled: ['enabled:active:brightness-110'],

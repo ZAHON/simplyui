@@ -5,10 +5,10 @@ export const buttonContentStyles = cva(
   {
     variants: {
       size: {
-        sm: ['gap-x-1'],
-        md: ['gap-x-2'],
-        lg: ['gap-x-3'],
-        xl: ['gap-x-3'],
+        '1': ['gap-x-1'],
+        '2': ['gap-x-2'],
+        '3': ['gap-x-3'],
+        '4': ['gap-x-3'],
       },
     },
   }

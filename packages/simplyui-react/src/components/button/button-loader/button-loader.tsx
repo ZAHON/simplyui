@@ -1,24 +1,22 @@
 'use client';
 import type { ButtonLoaderProps } from './button-loader.types';
 import { forwardRef } from 'react';
-import { Slot } from '@radix-ui/react-slot';
 import { twMerge } from 'tailwind-merge';
+import { Primitive } from '@/components/primitive';
 import { useButtonContext } from '../button-context';
 import { buttonLoaderStyles } from './button-loader.styles';
 
 export const ButtonLoader = forwardRef<HTMLDivElement, ButtonLoaderProps>((props, ref) => {
-  const { asChild, className, children, ...others } = props;
+  const { className, children, ...others } = props;
 
   const { disabled, loading } = useButtonContext();
-
-  const Component = asChild ? Slot : 'div';
 
   if (!loading) {
     return null;
   }
 
   return (
-    <Component
+    <Primitive.div
       ref={ref}
       data-disabled={disabled ? '' : undefined}
       data-loading={loading ? '' : undefined}
@@ -26,7 +24,7 @@ export const ButtonLoader = forwardRef<HTMLDivElement, ButtonLoaderProps>((props
       {...others}
     >
       {children}
-    </Component>
+    </Primitive.div>
   );
 });
 

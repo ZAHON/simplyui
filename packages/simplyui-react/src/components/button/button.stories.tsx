@@ -6,7 +6,7 @@ const meta: Meta<typeof Button> = {
   title: 'Buttons/Button',
   component: Button,
   args: {
-    size: 'md',
+    size: '2',
     radius: 'md',
     type: 'button',
     variant: 'filled',
@@ -43,11 +43,11 @@ export const Default: Story = {};
 
 export const WithIcon: Story = {
   render: ({ size, ...others }) => {
-    const iconsizes = {
-      sm: 16,
-      md: 16,
-      lg: 18,
-      xl: 20,
+    const iconSizes = {
+      '1': 16,
+      '2': 16,
+      '3': 18,
+      '4': 20,
     };
 
     return (
@@ -55,8 +55,8 @@ export const WithIcon: Story = {
         <Button.Content>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={iconsizes[size as NonNullable<typeof size>]}
-            width={iconsizes[size as NonNullable<typeof size>]}
+            height={iconSizes[size as NonNullable<typeof size>]}
+            width={iconSizes[size as NonNullable<typeof size>]}
             aria-hidden="true"
             focusable="false"
             fill="none"
@@ -95,29 +95,5 @@ export const Loading: Story = {
 export const FullWidth: Story = {
   args: {
     fullWidth: true,
-  },
-};
-
-export const VariantFilled: Story = {
-  args: {
-    variant: 'filled',
-  },
-};
-
-export const VariantLight: Story = {
-  args: {
-    variant: 'light',
-  },
-};
-
-export const VariantOutline: Story = {
-  args: {
-    variant: 'outline',
-  },
-};
-
-export const VariantSubtle: Story = {
-  args: {
-    variant: 'subtle',
   },
 };

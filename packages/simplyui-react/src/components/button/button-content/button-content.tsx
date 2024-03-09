@@ -1,20 +1,18 @@
 'use client';
 import type { ButtonContentProps } from './button-content.types';
 import { forwardRef } from 'react';
-import { Slot } from '@radix-ui/react-slot';
 import { twMerge } from 'tailwind-merge';
+import { Primitive } from '@/components/primitive';
 import { useButtonContext } from '../button-context';
 import { buttonContentStyles } from './button-content.styles';
 
 export const ButtonContent = forwardRef<HTMLSpanElement, ButtonContentProps>((props, ref) => {
-  const { asChild, className, children, ...others } = props;
+  const { className, children, ...others } = props;
 
-  const { size, disabled, loading } = useButtonContext();
-
-  const Component = asChild ? Slot : 'span';
+  const { disabled, loading, size } = useButtonContext();
 
   return (
-    <Component
+    <Primitive.span
       ref={ref}
       data-disabled={disabled ? '' : undefined}
       data-loading={loading ? '' : undefined}
@@ -22,7 +20,7 @@ export const ButtonContent = forwardRef<HTMLSpanElement, ButtonContentProps>((pr
       {...others}
     >
       {children}
-    </Component>
+    </Primitive.span>
   );
 });
 

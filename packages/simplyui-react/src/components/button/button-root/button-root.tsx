@@ -9,14 +9,14 @@ import { buttonRootStyles } from './button-root.styles';
 
 const defaultProps: Partial<ButtonRootProps> = {
   color: 'primary',
-  size: 'md',
+  size: '2',
   radius: 'md',
   type: 'button',
   variant: 'filled',
 };
 
 export const ButtonRoot = forwardRef<HTMLButtonElement, ButtonRootProps>((props, ref) => {
-  const { size, variant, color, radius, fullWidth, disabled, loading, className, children, ...others } =
+  const { color, disabled, fullWidth, loading, radius, size, variant, className, children, ...others } =
     applayComponentDefaultProps(defaultProps, props);
 
   return (
@@ -26,7 +26,7 @@ export const ButtonRoot = forwardRef<HTMLButtonElement, ButtonRootProps>((props,
         disabled={disabled || loading}
         data-disabled={disabled ? '' : undefined}
         data-loading={loading ? '' : undefined}
-        className={twMerge(buttonRootStyles({ size, variant, color, radius, fullWidth }), className)}
+        className={twMerge(buttonRootStyles({ color, radius, size, variant, fullWidth }), className)}
         {...others}
       >
         {children}

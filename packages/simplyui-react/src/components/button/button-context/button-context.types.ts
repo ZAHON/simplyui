@@ -2,11 +2,6 @@ import type { ReactNode } from 'react';
 
 export interface ButtonContextValue {
   /**
-   * The size of the button.
-   */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-
-  /**
    * The disabled state of the button.
    */
   disabled?: boolean;
@@ -15,6 +10,11 @@ export interface ButtonContextValue {
    * The loading state of the button.
    */
   loading?: boolean;
+
+  /**
+   * The size of the button.
+   */
+  size?: '1' | '2' | '3' | '4';
 }
 
 export type ButtonContextProviderProps = {
