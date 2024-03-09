@@ -19,7 +19,7 @@ export const inputStyles = cva(
     'data-[disabled]:opacity-60',
     'data-[disabled]:cursor-not-allowed',
 
-    'data-[invalid]:text-danger-11',
+    'data-[invalid]:text-danger-10',
     'data-[invalid]:placeholder:text-danger-11',
     'data-[invalid]:border-danger-7',
     'data-[invalid]:outline-danger-8',
