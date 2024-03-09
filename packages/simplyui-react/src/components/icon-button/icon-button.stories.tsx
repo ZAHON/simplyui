@@ -6,7 +6,7 @@ const meta: Meta<typeof IconButton> = {
   title: 'Buttons/IconButton',
   component: IconButton,
   args: {
-    size: 'md',
+    size: '2',
     radius: 'md',
     type: 'button',
     variant: 'subtle',
@@ -24,11 +24,11 @@ const meta: Meta<typeof IconButton> = {
     asChild: { control: false },
   },
   render: ({ size, ...others }) => {
-    const iconsizes = {
-      sm: 15,
-      md: 18,
-      lg: 22,
-      xl: 26,
+    const iconSizes = {
+      '1': 15,
+      '2': 18,
+      '3': 22,
+      '4': 26,
     };
 
     return (
@@ -36,8 +36,8 @@ const meta: Meta<typeof IconButton> = {
         <IconButton.Content>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={iconsizes[size as NonNullable<typeof size>]}
-            width={iconsizes[size as NonNullable<typeof size>]}
+            height={iconSizes[size as NonNullable<typeof size>]}
+            width={iconSizes[size as NonNullable<typeof size>]}
             aria-hidden="true"
             focusable="false"
             fill="none"
@@ -74,29 +74,5 @@ export const Disabled: Story = {
 export const Loading: Story = {
   args: {
     loading: true,
-  },
-};
-
-export const VariantFilled: Story = {
-  args: {
-    variant: 'filled',
-  },
-};
-
-export const VariantLight: Story = {
-  args: {
-    variant: 'light',
-  },
-};
-
-export const VariantOutline: Story = {
-  args: {
-    variant: 'outline',
-  },
-};
-
-export const VariantSubtle: Story = {
-  args: {
-    variant: 'subtle',
   },
 };

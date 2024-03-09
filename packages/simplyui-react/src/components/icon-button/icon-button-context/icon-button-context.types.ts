@@ -2,11 +2,6 @@ import type { ReactNode } from 'react';
 
 export interface IconButtonContextValue {
   /**
-   * The size of the icon button.
-   */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-
-  /**
    * The disabled state of the icon button.
    */
   disabled?: boolean;
@@ -15,6 +10,11 @@ export interface IconButtonContextValue {
    * The loading state of the icon button.
    */
   loading?: boolean;
+
+  /**
+   * The size of the icon button.
+   */
+  size?: '1' | '2' | '3' | '4';
 }
 
 export type IconButtonContextProviderProps = {

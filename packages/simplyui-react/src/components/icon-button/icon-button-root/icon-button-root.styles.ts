@@ -8,7 +8,7 @@ export const iconButtonRootStyles = cva(
     'items-center',
     'select-none',
     'overflow-hidden',
-    'origin-center',
+    'cursor-default',
 
     'motion-safe:transition',
     'motion-safe:duration-100',
@@ -23,11 +23,12 @@ export const iconButtonRootStyles = cva(
   ],
   {
     variants: {
-      size: {
-        sm: ['size-6'],
-        md: ['size-8'],
-        lg: ['size-10'],
-        xl: ['size-12'],
+      color: {
+        default: [''],
+        primary: [''],
+        success: [''],
+        warning: [''],
+        danger: [''],
       },
       radius: {
         none: ['rounded-none'],
@@ -37,12 +38,11 @@ export const iconButtonRootStyles = cva(
         xl: ['rounded-lg'],
         full: ['rounded-full'],
       },
-      color: {
-        default: [''],
-        primary: [''],
-        success: [''],
-        warning: [''],
-        danger: [''],
+      size: {
+        '1': ['size-6'],
+        '2': ['size-8'],
+        '3': ['size-10'],
+        '4': ['size-12'],
       },
       variant: {
         filled: ['enabled:active:brightness-110'],

@@ -5,5 +5,6 @@ export const iconButtonContentStyles = cva([
   'justify-center',
   'items-center',
   'pointer-events-none',
+
   'data-[loading]:opacity-0',
 ]);
