@@ -44,7 +44,7 @@ export const TextFieldRoot = forwardRef<HTMLDivElement, TextFieldRootProps>((pro
   }
 
   return (
-    <TextFieldContextProvider value={{ disabled, invalid, required }}>
+    <TextFieldContextProvider value={{ disabled, invalid, required, radius }}>
       <Primitive.div
         ref={ref}
         data-disabled={disabled ? '' : undefined}

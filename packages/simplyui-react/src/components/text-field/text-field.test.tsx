@@ -6,10 +6,12 @@ import { TextField } from '.';
 
 const TEXT_FIELD_ROOT_TEST_ID = 'text-field-root-test-id';
 const TEXT_FIELD_SLOT_TEST_ID = 'text-field-slot-test-id';
+const TEXT_FIELD_BUTTON_TEST_ID = 'text-field-button-test-id';
 const TEXT_FIELD_INPUT_TEST_ID = 'text-field-input-test-id';
 
 const TEXT_FIELD_ROOT_CONTENT = 'text-field-root';
 const TEXT_FIELD_SLOT_CONTENT = 'text-field-slot';
+const TEXT_FIELD_BUTTON_CONTENT = 'text-field-button';
 
 describe('TextField', () => {
   describe('Root', () => {
@@ -75,7 +77,7 @@ describe('TextField', () => {
       const ref = createRef<HTMLDivElement>();
 
       render(
-        <TextField ref={ref}>
+        <TextField>
           <TextField.Slot ref={ref}>{TEXT_FIELD_SLOT_CONTENT}</TextField.Slot>
         </TextField>
       );
@@ -153,6 +155,92 @@ describe('TextField', () => {
         </TextField>
       );
       expect(screen.getByText(TEXT_FIELD_SLOT_CONTENT)).toHaveClass(className);
+    });
+  });
+
+  describe('Button', () => {
+    it('should support ref', () => {
+      const ref = createRef<HTMLButtonElement>();
+
+      render(
+        <TextField>
+          <TextField.Button ref={ref}>{TEXT_FIELD_BUTTON_CONTENT}</TextField.Button>
+        </TextField>
+      );
+      expect(ref.current).toBeInstanceOf(HTMLButtonElement);
+    });
+
+    it('should be button element when asChild property not provided', () => {
+      const { container } = render(
+        <TextField>
+          <TextField.Button data-testid={TEXT_FIELD_BUTTON_TEST_ID}>{TEXT_FIELD_BUTTON_CONTENT}</TextField.Button>
+        </TextField>
+      );
+
+      expect(screen.getByTestId(TEXT_FIELD_BUTTON_TEST_ID)).toBeInstanceOf(HTMLButtonElement);
+      // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+      expect(container.querySelector(`button[data-testid="${TEXT_FIELD_BUTTON_TEST_ID}"]`)).toBeInTheDocument();
+    });
+
+    it('should be Slot element when asChild property provided', () => {
+      const { container } = render(
+        <TextField>
+          <TextField.Button asChild data-testid={TEXT_FIELD_BUTTON_TEST_ID}>
+            <span>{TEXT_FIELD_BUTTON_CONTENT}</span>
+          </TextField.Button>
+        </TextField>
+      );
+
+      expect(screen.getByTestId(TEXT_FIELD_BUTTON_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
+      // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+      expect(container.querySelector(`button[data-testid="${TEXT_FIELD_BUTTON_TEST_ID}"]`)).not.toBeInTheDocument();
+    });
+
+    it('should have not data-disabled attribute when disabled property not provided on Root element', () => {
+      render(
+        <TextField disabled={false}>
+          <TextField.Button>{TEXT_FIELD_BUTTON_CONTENT}</TextField.Button>
+        </TextField>
+      );
+      expect(screen.getByText(TEXT_FIELD_BUTTON_CONTENT)).not.toHaveAttribute('data-disabled');
+    });
+
+    it('should have data-disabled attribute when disabled property provided on Root element', () => {
+      render(
+        <TextField disabled={true}>
+          <TextField.Button>{TEXT_FIELD_BUTTON_CONTENT}</TextField.Button>
+        </TextField>
+      );
+      expect(screen.getByText(TEXT_FIELD_BUTTON_CONTENT)).toHaveAttribute('data-disabled');
+    });
+
+    it('should have not data-invalid attribute when invalid property not provided on Root element', () => {
+      render(
+        <TextField invalid={false}>
+          <TextField.Button>{TEXT_FIELD_BUTTON_CONTENT}</TextField.Button>
+        </TextField>
+      );
+      expect(screen.getByText(TEXT_FIELD_BUTTON_CONTENT)).not.toHaveAttribute('data-invalid');
+    });
+
+    it('should have data-invalid attribute when invalid property provided on Root element', () => {
+      render(
+        <TextField invalid={true}>
+          <TextField.Button>{TEXT_FIELD_BUTTON_CONTENT}</TextField.Button>
+        </TextField>
+      );
+      expect(screen.getByText(TEXT_FIELD_BUTTON_CONTENT)).toHaveAttribute('data-invalid');
+    });
+
+    it('should have class name handed over by className property', () => {
+      const className = 'test';
+
+      render(
+        <TextField>
+          <TextField.Button className={className}>{TEXT_FIELD_BUTTON_CONTENT}</TextField.Button>
+        </TextField>
+      );
+      expect(screen.getByText(TEXT_FIELD_BUTTON_CONTENT)).toHaveClass(className);
     });
   });
 

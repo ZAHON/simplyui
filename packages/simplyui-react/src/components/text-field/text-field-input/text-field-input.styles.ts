@@ -15,5 +15,5 @@ export const textFieldInputStyles = cva([
   'data-[disabled]:cursor-not-allowed',
 
   'data-[invalid]:text-danger-11',
-  'data-[invalid]:placeholder:text-danger-11',
+  'data-[invalid]:placeholder:text-danger-10',
 ]);

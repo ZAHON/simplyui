@@ -15,6 +15,11 @@ export interface TextFieldContextValue {
    * The required state of the text field.
    */
   required?: boolean;
+
+  /**
+   * The border radius value of the text field.
+   */
+  radius?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
 }
 
 export type TextFieldContextProviderProps = {
