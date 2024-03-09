@@ -54,6 +54,7 @@ export const buttonRootStyles = cva(
         light: [''],
         outline: ['bg-transparent', 'border'],
         subtle: ['bg-transparent'],
+        'light-outline': ['border'],
       },
     },
     compoundVariants: [
@@ -89,6 +90,18 @@ export const buttonRootStyles = cva(
         variant: 'subtle',
         className: ['text-default-11', 'enabled:hover:bg-default-3', 'enabled:active:bg-default-4'],
       },
+      {
+        color: 'default',
+        variant: 'light-outline',
+        className: [
+          'text-default-11',
+          'border-default-7',
+          'bg-default-3',
+          'enabled:hover:border-default-8',
+          'enabled:hover:bg-default-4',
+          'enabled:active:bg-default-5',
+        ],
+      },
 
       // color primary
       {
@@ -121,6 +134,18 @@ export const buttonRootStyles = cva(
         color: 'primary',
         variant: 'subtle',
         className: ['text-primary-11', 'enabled:hover:bg-primary-3', 'enabled:active:bg-primary-4'],
+      },
+      {
+        color: 'primary',
+        variant: 'light-outline',
+        className: [
+          'text-primary-11',
+          'border-primary-7',
+          'bg-primary-3',
+          'enabled:hover:border-primary-8',
+          'enabled:hover:bg-primary-4',
+          'enabled:active:bg-primary-5',
+        ],
       },
 
       // color success
@@ -155,6 +180,18 @@ export const buttonRootStyles = cva(
         variant: 'subtle',
         className: ['text-success-11', 'enabled:hover:bg-success-3', 'enabled:active:bg-success-4'],
       },
+      {
+        color: 'success',
+        variant: 'light-outline',
+        className: [
+          'text-success-11',
+          'border-success-7',
+          'bg-success-3',
+          'enabled:hover:border-success-8',
+          'enabled:hover:bg-success-4',
+          'enabled:active:bg-success-5',
+        ],
+      },
 
       // color warning
       {
@@ -188,6 +225,18 @@ export const buttonRootStyles = cva(
         variant: 'subtle',
         className: ['text-warning-11', 'enabled:hover:bg-warning-3', 'enabled:active:bg-warning-4'],
       },
+      {
+        color: 'warning',
+        variant: 'light-outline',
+        className: [
+          'text-warning-11',
+          'border-warning-7',
+          'bg-warning-3',
+          'enabled:hover:border-warning-8',
+          'enabled:hover:bg-warning-4',
+          'enabled:active:bg-warning-5',
+        ],
+      },
 
       // color danger
       {
@@ -220,6 +269,18 @@ export const buttonRootStyles = cva(
         color: 'danger',
         variant: 'subtle',
         className: ['text-danger-11', 'enabled:hover:bg-danger-3', 'enabled:active:bg-danger-4'],
+      },
+      {
+        color: 'danger',
+        variant: 'light-outline',
+        className: [
+          'text-danger-11',
+          'border-danger-7',
+          'bg-danger-3',
+          'enabled:hover:border-danger-8',
+          'enabled:hover:bg-danger-4',
+          'enabled:active:bg-danger-5',
+        ],
       },
     ],
   }

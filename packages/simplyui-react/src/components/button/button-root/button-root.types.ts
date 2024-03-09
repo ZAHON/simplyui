@@ -58,5 +58,5 @@ export interface ButtonRootProps extends ComponentPropsWithRef<'button'> {
    * The variant of the button.
    * @default "filled"
    */
-  variant?: 'filled' | 'light' | 'outline' | 'subtle';
+  variant?: 'filled' | 'light' | 'outline' | 'subtle' | 'light-outline';
 }
