@@ -52,5 +52,5 @@ export interface IconButtonRootProps extends ComponentPropsWithRef<'button'> {
    * The variant of the icon button.
    * @default "subtle"
    */
-  variant?: 'filled' | 'light' | 'outline' | 'subtle';
+  variant?: 'filled' | 'light' | 'outline' | 'subtle' | 'light-outline';
 }
