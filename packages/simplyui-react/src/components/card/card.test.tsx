@@ -1,4 +1,3 @@
-import type { CardProps } from '.';
 import { createRef } from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
@@ -6,14 +5,6 @@ import { Card } from '.';
 
 const CARD_TEST_ID = 'card-test-id';
 const CARD_CONTENT = 'card';
-
-function CardTest(props: Partial<CardProps>) {
-  return (
-    <Card data-testid={CARD_TEST_ID} {...props}>
-      {CARD_CONTENT}
-    </Card>
-  );
-}
 
 describe('Card', () => {
   it('should support ref', () => {
@@ -24,7 +15,7 @@ describe('Card', () => {
   });
 
   it('should be div element when asChild property not provided', () => {
-    const { container } = render(<CardTest />);
+    const { container } = render(<Card data-testid={CARD_TEST_ID}>{CARD_CONTENT}</Card>);
 
     expect(screen.getByTestId(CARD_TEST_ID)).toBeInstanceOf(HTMLDivElement);
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
@@ -46,7 +37,11 @@ describe('Card', () => {
   it('should have class name handed over by className property', () => {
     const className = 'test';
 
-    render(<CardTest className={className} />);
+    render(
+      <Card className={className} data-testid={CARD_TEST_ID}>
+        {CARD_CONTENT}
+      </Card>
+    );
     expect(screen.getByText(CARD_CONTENT)).toHaveClass(className);
   });
 });
