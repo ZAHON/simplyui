@@ -4,19 +4,33 @@ import type { MouseEvent } from 'react';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useUncontrolled } from '@/hooks/use-uncontrolled';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
 import { Primitive } from '@/components/primitive';
+import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
 import { BurgerContextProvider } from '../burger-context';
 import { burgerRootStyles } from './burger-root.styles';
 
 const defaultProps: Partial<BurgerRootProps> = {
+  color: 'default',
   radius: 'md',
-  size: 'md',
+  size: '2',
+  variant: 'subtle',
 };
 
 export const BurgerRoot = forwardRef<HTMLButtonElement, BurgerRootProps>((props, ref) => {
-  const { defaultOpen, open, onOpenChange, disabled, radius, size, className, onClick, children, ...others } =
-    applayComponentDefaultProps(defaultProps, props);
+  const {
+    defaultOpen,
+    open,
+    onOpenChange,
+    color,
+    disabled,
+    radius,
+    size,
+    variant,
+    className,
+    onClick,
+    children,
+    ...others
+  } = applayComponentDefaultProps(defaultProps, props);
 
   const [_open, handleOpenChange] = useUncontrolled({
     value: open,
@@ -40,7 +54,7 @@ export const BurgerRoot = forwardRef<HTMLButtonElement, BurgerRootProps>((props,
         data-disabled={disabled ? '' : undefined}
         data-state={_open ? 'open' : 'closed'}
         onClick={handleClick}
-        className={twMerge(burgerRootStyles({ radius, size }), className)}
+        className={twMerge(burgerRootStyles({ color, radius, size, variant }), className)}
         {...others}
       >
         {children}

@@ -15,8 +15,9 @@ export const burgerIconStyles = cva([
 
   'before:content-[""]',
   'before:block',
+  'before:rounded-full',
   'before:h-px',
-  'before:w-3/4',
+  'before:w-4/6',
   'before:-translate-y-1',
   'before:rotate-0',
   'before:bg-current',
@@ -25,8 +26,9 @@ export const burgerIconStyles = cva([
 
   'after:content-[""]',
   'after:block',
+  'after:rounded-full',
   'after:h-px',
-  'after:w-3/4',
+  'after:w-4/6',
   'after:translate-y-1',
   'after:rotate-0',
   'after:bg-current',

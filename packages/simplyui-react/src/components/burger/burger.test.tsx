@@ -5,8 +5,9 @@ import userEvent from '@testing-library/user-event';
 import { Burger } from '.';
 
 const BURGER_ROOT_TEST_ID = 'burger-root-test-id';
-const BURGER_ROOT_CONTENT = 'burger-root-content';
 const BURGER_ICON_TEST_ID = 'burger-icon-test-id';
+
+const BURGER_ROOT_CONTENT = 'burger-root-content';
 
 describe('Burger', () => {
   describe('Root', () => {
@@ -147,6 +148,16 @@ describe('Burger', () => {
       expect(screen.getByTestId(BURGER_ICON_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
       expect(container.querySelector(`div[data-testid="${BURGER_ICON_TEST_ID}"]`)).not.toBeInTheDocument();
+    });
+
+    it('should have not aria-hidden="true" attribute', () => {
+      render(
+        <Burger>
+          <Burger.Icon data-testid={BURGER_ICON_TEST_ID} />
+        </Burger>
+      );
+
+      expect(screen.getByTestId(BURGER_ICON_TEST_ID)).toHaveAttribute('aria-hidden', 'true');
     });
 
     it('should have not data-disabled attribute when disabled property not provided on Root element', () => {

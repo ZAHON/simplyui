@@ -8,17 +8,14 @@ export interface BurgerRootProps extends ComponentPropsWithRef<'button'> {
   asChild?: boolean;
 
   /**
-   * The content of the burger.
-   */
-  children: ReactNode;
-
-  /**
    * The open state of the burger when it is initially rendered. Use when you do not need to control its open state.
+   * @default false
    */
   defaultOpen?: boolean;
 
   /**
    * The controlled open state of the burger. Must be used in conjunction with `onOpenChange` property.
+   * @default false
    */
   open?: boolean;
 
@@ -26,6 +23,17 @@ export interface BurgerRootProps extends ComponentPropsWithRef<'button'> {
    * Event handler called when the open state of the burger changes.
    */
   onOpenChange?: (open: boolean) => void;
+
+  /**
+   * The content of the burger - `Burger.Icon`
+   */
+  children: ReactNode;
+
+  /**
+   * The color of the burger.
+   * @default "default"
+   */
+  color?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
 
   /**
    * When `true`, prevents the user from interacting with the burger.
@@ -41,7 +49,13 @@ export interface BurgerRootProps extends ComponentPropsWithRef<'button'> {
 
   /**
    * The size of the burger.
-   * @default "md"
+   * @default "2"
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
+
+  /**
+   * The variant of the burger.
+   * @default "subtle"
+   */
+  variant?: 'filled' | 'light' | 'outline' | 'subtle';
 }
