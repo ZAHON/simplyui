@@ -41,5 +41,5 @@ export interface CloseButtonRootProps extends ComponentPropsWithRef<'button'> {
    * The variant of the close button.
    * @default "subtle"
    */
-  variant?: 'filled' | 'light' | 'outline' | 'subtle';
+  variant?: 'filled' | 'light' | 'outline' | 'subtle' | 'light-outline';
 }
