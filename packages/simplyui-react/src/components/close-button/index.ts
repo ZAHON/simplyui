@@ -1,9 +1,6 @@
 export type { CloseButtonRootProps } from './close-button-root';
-export type { CloseButtonIconProps } from './close-button-icon';
 
 import { CloseButtonRoot } from './close-button-root';
-import { CloseButtonIcon } from './close-button-icon';
 
-export const CloseButton = Object.assign(CloseButtonRoot, {
-  Icon: CloseButtonIcon,
-});
+/** This component renders a button with `X` icon inside. This component is based on the `button` element. */
+export const CloseButton = Object.assign(CloseButtonRoot, {});

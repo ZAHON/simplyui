@@ -1,20 +1,15 @@
-'use client';
 import type { CloseButtonIconProps } from './close-button-icon.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { useCloseButtonContext } from '../close-button-context';
 import { closeButtonIconStyles } from './close-button-icon.styles';
 
 export const CloseButtonIcon = forwardRef<SVGSVGElement, CloseButtonIconProps>((props, ref) => {
-  const { className, ...others } = props;
-
-  const { size, disabled } = useCloseButtonContext();
+  const { size, className, ...others } = props;
 
   return (
     <svg
       ref={ref}
       xmlns="http://www.w3.org/2000/svg"
-      data-disabled={disabled ? '' : undefined}
       aria-hidden="true"
       focusable="false"
       fill="none"

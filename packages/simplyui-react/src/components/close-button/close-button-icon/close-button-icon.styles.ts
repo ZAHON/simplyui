@@ -5,10 +5,10 @@ export const closeButtonIconStyles = cva(
   {
     variants: {
       size: {
-        sm: ['size-[0.9375rem]'],
-        md: ['size-[1.125rem]'],
-        lg: ['size-[1.375rem]'],
-        xl: ['size-[1.625rem]'],
+        '1': ['size-[0.9375rem]'],
+        '2': ['size-[1.125rem]'],
+        '3': ['size-[1.375rem]'],
+        '4': ['size-[1.625rem]'],
       },
     },
   }

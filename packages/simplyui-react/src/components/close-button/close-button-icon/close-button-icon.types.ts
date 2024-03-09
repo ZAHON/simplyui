@@ -1,3 +1,8 @@
 import type { ComponentPropsWithRef } from 'react';
 
-export type CloseButtonIconProps = ComponentPropsWithRef<'svg'>;
+export interface CloseButtonIconProps extends ComponentPropsWithRef<'svg'> {
+  /**
+   * The size of the icon.
+   */
+  size?: '1' | '2' | '3' | '4';
+}

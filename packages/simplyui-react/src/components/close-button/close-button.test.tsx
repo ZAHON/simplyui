@@ -4,8 +4,6 @@ import { render, screen } from '@testing-library/react';
 import { CloseButton } from '.';
 
 const CLOSE_BUTTON_ROOT_TEST_ID = 'close-button-root-test-id';
-const CLOSE_BUTTON_ICON_TEST_ID = 'close-button-icon-test-id';
-
 const CLOSE_BUTTON_ROOT_CONTENT = 'button-icon-test-id';
 
 describe('CloseButton', () => {
@@ -54,48 +52,6 @@ describe('CloseButton', () => {
 
       render(<CloseButton className={className}>{CLOSE_BUTTON_ROOT_CONTENT}</CloseButton>);
       expect(screen.getByRole('button')).toHaveClass(className);
-    });
-  });
-
-  describe('Icon', () => {
-    it('should support ref', () => {
-      const ref = createRef<SVGSVGElement>();
-
-      render(
-        <CloseButton>
-          <CloseButton.Icon ref={ref} data-testid={CLOSE_BUTTON_ICON_TEST_ID} />
-        </CloseButton>
-      );
-      expect(ref.current).toBeInstanceOf(SVGSVGElement);
-    });
-
-    it('should have not data-disabled attribute when disabled property not provided on Root element', () => {
-      render(
-        <CloseButton disabled={false}>
-          <CloseButton.Icon data-testid={CLOSE_BUTTON_ICON_TEST_ID} />
-        </CloseButton>
-      );
-      expect(screen.getByTestId(CLOSE_BUTTON_ICON_TEST_ID)).not.toHaveAttribute('data-disabled');
-    });
-
-    it('should have data-disabled attribute when disabled property provided on Root element', () => {
-      render(
-        <CloseButton disabled={true}>
-          <CloseButton.Icon data-testid={CLOSE_BUTTON_ICON_TEST_ID} />
-        </CloseButton>
-      );
-      expect(screen.getByTestId(CLOSE_BUTTON_ICON_TEST_ID)).toHaveAttribute('data-disabled');
-    });
-
-    it('should have class name handed over by className property', () => {
-      const className = 'test';
-
-      render(
-        <CloseButton disabled={true}>
-          <CloseButton.Icon className={className} data-testid={CLOSE_BUTTON_ICON_TEST_ID} />
-        </CloseButton>
-      );
-      expect(screen.getByTestId(CLOSE_BUTTON_ICON_TEST_ID)).toHaveClass(className);
     });
   });
 });

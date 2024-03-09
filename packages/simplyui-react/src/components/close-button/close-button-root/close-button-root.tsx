@@ -1,15 +1,14 @@
-'use client';
 import type { CloseButtonRootProps } from './close-button-root.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
 import { Primitive } from '@/components/primitive';
-import { CloseButtonContextProvider } from '../close-button-context';
+import { CloseButtonIcon } from '../close-button-icon';
 import { closeButtonRootStyles } from './close-button-root.styles';
 
 const defaultProps: Partial<CloseButtonRootProps> = {
   color: 'default',
-  size: 'md',
+  size: '2',
   radius: 'md',
   type: 'button',
   variant: 'subtle',
@@ -22,17 +21,15 @@ export const CloseButtonRoot = forwardRef<HTMLButtonElement, CloseButtonRootProp
   );
 
   return (
-    <CloseButtonContextProvider value={{ size, disabled }}>
-      <Primitive.button
-        ref={ref}
-        disabled={disabled}
-        data-disabled={disabled ? '' : undefined}
-        className={twMerge(closeButtonRootStyles({ size, variant, color, radius }), className)}
-        {...others}
-      >
-        {children}
-      </Primitive.button>
-    </CloseButtonContextProvider>
+    <Primitive.button
+      ref={ref}
+      disabled={disabled}
+      data-disabled={disabled ? '' : undefined}
+      className={twMerge(closeButtonRootStyles({ color, radius, size, variant }), className)}
+      {...others}
+    >
+      {children ? children : <CloseButtonIcon size={size} />}
+    </Primitive.button>
   );
 });
 

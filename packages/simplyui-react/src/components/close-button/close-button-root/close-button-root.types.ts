@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef, ReactNode } from 'react';
+import type { ComponentPropsWithRef } from 'react';
 
 export interface CloseButtonRootProps extends ComponentPropsWithRef<'button'> {
   /**
@@ -6,11 +6,6 @@ export interface CloseButtonRootProps extends ComponentPropsWithRef<'button'> {
    * @default false
    */
   asChild?: boolean;
-
-  /**
-   * The content of the close button.
-   */
-  children: ReactNode;
 
   /**
    * The color of the close button.
@@ -32,9 +27,9 @@ export interface CloseButtonRootProps extends ComponentPropsWithRef<'button'> {
 
   /**
    * The size of the close button.
-   * @default "md"
+   * @default "2"
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
 
   /**
    * The type of the close button.
