@@ -1,25 +1,25 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react';
 
-export interface SegmentedControlItemProps extends ComponentPropsWithRef<'div'> {
+export interface SegmentedControlItemProps extends ComponentPropsWithRef<'button'> {
   /**
-   * The content of the item.
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   * @default false
+   */
+  asChild?: boolean;
+
+  /**
+   * The content of the segmented control.
    */
   children: ReactNode;
-
-  /**
-   * When `true`, prevents the user from interacting with the segmented control item.
-   * @default false
-   */
-  disabled?: boolean;
-
-  /**
-   * When `true`, indicates that the user must check the segmented control item before the owning form can be submitted.
-   * @default false
-   */
-  required?: boolean;
 
   /**
    * The value given as data when submitted with a name.
    */
   value: string;
+
+  /**
+   * When true, prevents the user from interacting with the segmented control item.
+   * @default false
+   */
+  disabled?: boolean;
 }

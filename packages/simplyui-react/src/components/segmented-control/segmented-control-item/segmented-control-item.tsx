@@ -1,56 +1,20 @@
 'use client';
 import type { SegmentedControlItemProps } from './segmented-control-item.types';
-import type { ChangeEvent } from 'react';
-import type { SegmentedControlItemContextValue } from '../segmented-control-item-context';
-import { forwardRef, useId } from 'react';
+import { forwardRef } from 'react';
+import { Item } from '@radix-ui/react-radio-group';
 import { twMerge } from 'tailwind-merge';
 import { useSegmentedControlContext } from '../segmented-control-context';
-import { SegmentedControlItemContextProvider } from '../segmented-control-item-context';
 import { segmentedControlItemStyles } from './segmented-control-item.styles';
 
-export const SegmentedControlItem = forwardRef<HTMLDivElement, SegmentedControlItemProps>((props, ref) => {
-  const { disabled, required, value, className, children, ...others } = props;
+export const SegmentedControlItem = forwardRef<HTMLButtonElement, SegmentedControlItemProps>((props, ref) => {
+  const { className, children, ...others } = props;
 
-  const id = useId();
-  const context = useSegmentedControlContext();
-
-  const itemId = `segmented-control-item-${id}`;
-  const isDisabled = context.disabled || disabled;
-  const isChecked = value === context.value;
-
-  function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    context.handleValueChange(e.target.value);
-  }
-
-  const segmentedControlItemContextValue: SegmentedControlItemContextValue = {
-    checked: isChecked,
-    disabled: isDisabled,
-    id: itemId,
-  };
+  const { color, radius, size } = useSegmentedControlContext();
 
   return (
-    <SegmentedControlItemContextProvider value={segmentedControlItemContextValue}>
-      <div
-        ref={ref}
-        data-disabled={isDisabled ? '' : undefined}
-        data-state={isChecked ? 'checked' : 'unchecked'}
-        className={twMerge(segmentedControlItemStyles(), className)}
-        {...others}
-      >
-        <input
-          type="radio"
-          id={itemId}
-          name={context.name}
-          value={value}
-          checked={isChecked}
-          disabled={isDisabled}
-          aria-required={required ? true : undefined}
-          onChange={handleChange}
-          className="peer sr-only"
-        />
-        {children}
-      </div>
-    </SegmentedControlItemContextProvider>
+    <Item ref={ref} className={twMerge(segmentedControlItemStyles({ color, radius, size }), className)} {...others}>
+      {children}
+    </Item>
   );
 });
 

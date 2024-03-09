@@ -4,16 +4,14 @@ import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Primitive } from '@/components/primitive';
 import { useSegmentedControlContext } from '../segmented-control-context';
-import { useSegmentedControlContentContext } from '../segmented-control-content-context';
 import { segmentedControlIndicatorStyles } from './segmented-control-indicator.styles';
 
 export const SegmentedControlIndicator = forwardRef<HTMLDivElement, SegmentedControlIndicatorProps>((props, ref) => {
   const { className, children, ...others } = props;
 
-  const { color, disabled, radius } = useSegmentedControlContext();
-  const { haveChackedItem } = useSegmentedControlContentContext();
+  const { color, disabled, radius, value } = useSegmentedControlContext();
 
-  if (!haveChackedItem) {
+  if (!value) {
     return null;
   }
 
@@ -21,7 +19,6 @@ export const SegmentedControlIndicator = forwardRef<HTMLDivElement, SegmentedCon
     <Primitive.div
       ref={ref}
       aria-hidden="true"
-      role="presentation"
       data-disabled={disabled ? '' : undefined}
       className={twMerge(segmentedControlIndicatorStyles({ color, radius }), className)}
       {...others}

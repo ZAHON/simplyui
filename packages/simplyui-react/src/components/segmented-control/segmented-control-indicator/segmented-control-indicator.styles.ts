@@ -4,20 +4,20 @@ export const segmentedControlIndicatorStyles = cva(
   [
     'absolute',
     'top-0',
+    'left-0',
     'h-full',
-    'left-[calc(calc(100%/var(--segmented-control-items-count))*var(--segmented-control-checked-item-index))]',
+    'pointer-events-none',
     'w-[calc(100%/var(--segmented-control-items-count))]',
 
-    'drop-shadow-sm',
-    'dark:drop-shadow-none',
+    'translate-x-[calc(100%*var(--segmented-control-checked-item-index))]',
 
-    'motion-safe:transition-[left,background-color]',
+    'motion-safe:transition',
     'motion-safe:duration-200',
   ],
   {
     variants: {
       color: {
-        default: ['bg-white', 'dark:bg-default-5'],
+        default: ['bg-white', 'dark:bg-default-5', 'drop-shadow'],
         primary: ['bg-primary-9'],
         success: ['bg-success-9'],
         warning: ['bg-warning-9'],

@@ -12,16 +12,6 @@ export interface SegmentedControlContextValue {
   disabled?: boolean;
 
   /**
-   * The handler that allow change segmented control value.
-   */
-  handleValueChange: (value: string, ...payload: any[]) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
-
-  /**
-   * The name of the group.
-   */
-  name: string;
-
-  /**
    * The border radius value of the segmented control.
    */
   radius?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
@@ -29,7 +19,7 @@ export interface SegmentedControlContextValue {
   /**
    * The size of the segmented control.
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
 
   /**
    * The value of the segmented control.

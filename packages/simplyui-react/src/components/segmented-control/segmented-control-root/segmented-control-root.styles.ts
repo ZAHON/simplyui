@@ -2,7 +2,6 @@ import { cva } from 'class-variance-authority';
 
 export const segmentedControlRootStyles = cva(
   [
-    'relative',
     'w-full',
     'p-0.5',
     'bg-default-3',
@@ -11,6 +10,7 @@ export const segmentedControlRootStyles = cva(
     'motion-safe:duration-100',
 
     'data-[disabled]:cursor-not-allowed',
+    'data-[disabled]:opacity-60',
   ],
   {
     variants: {
@@ -23,10 +23,10 @@ export const segmentedControlRootStyles = cva(
         full: ['rounded-full'],
       },
       size: {
-        sm: ['h-6'],
-        md: ['h-8'],
-        lg: ['h-10'],
-        xl: ['h-12'],
+        '1': ['h-6'],
+        '2': ['h-8'],
+        '3': ['h-10'],
+        '4': ['h-12'],
       },
     },
   }

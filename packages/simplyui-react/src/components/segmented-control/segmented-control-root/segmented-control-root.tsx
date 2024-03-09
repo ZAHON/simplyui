@@ -1,69 +1,48 @@
 'use client';
 import type { SegmentedControlRootProps } from './segmented-control-root.types';
-import type { SegmentedControlContextValue } from '../segmented-control-context';
-import { forwardRef, useId } from 'react';
+import { forwardRef } from 'react';
+import { Root } from '@radix-ui/react-radio-group';
 import { twMerge } from 'tailwind-merge';
 import { useUncontrolled } from '@/hooks/use-uncontrolled';
 import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
-import { Primitive } from '@/components/primitive';
 import { SegmentedControlContextProvider } from '../segmented-control-context';
 import { segmentedControlRootStyles } from './segmented-control-root.styles';
 
 const defaultProps: Partial<SegmentedControlRootProps> = {
   color: 'default',
   radius: 'md',
-  size: 'md',
+  size: '2',
 };
 
 export const SegmentedControlRoot = forwardRef<HTMLDivElement, SegmentedControlRootProps>((props, ref) => {
-  const {
-    color,
-    defaultValue,
-    disabled,
-    name,
-    onValueChange,
-    radius,
-    required,
-    size,
-    value,
-    className,
-    children,
-    ...others
-  } = applayComponentDefaultProps(defaultProps, props);
+  const { defaultValue, value, onValueChange, color, disabled, radius, size, className, children, ...others } =
+    applayComponentDefaultProps(defaultProps, props);
 
-  const id = useId();
-
-  const [_value, handleValueChange] = useUncontrolled({
-    value: value,
+  const [_value, setValue] = useUncontrolled({
     defaultValue: defaultValue,
+    value: value,
     finalValue: '',
     onChange: onValueChange,
   });
 
-  const groupName = name ? name : `segmented-control-${id}`;
-
-  const segmentedControlContextValue: SegmentedControlContextValue = {
-    color,
-    disabled,
-    handleValueChange,
-    name: groupName,
-    radius,
-    size,
-    value: _value,
-  };
+  function handleValueChange(value: string) {
+    if (!disabled) setValue(value);
+  }
 
   return (
-    <SegmentedControlContextProvider value={segmentedControlContextValue}>
-      <Primitive.div
+    <SegmentedControlContextProvider value={{ color, disabled, radius, size, value: _value }}>
+      <Root
         ref={ref}
-        role="radiogroup"
-        data-disabled={disabled ? '' : undefined}
-        aria-required={required ? true : undefined}
+        dir="ltr"
+        orientation="horizontal"
+        value={_value}
+        disabled={disabled}
+        onValueChange={handleValueChange}
         className={twMerge(segmentedControlRootStyles({ radius, size }), className)}
         {...others}
       >
         {children}
-      </Primitive.div>
+      </Root>
     </SegmentedControlContextProvider>
   );
 });

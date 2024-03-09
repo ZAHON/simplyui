@@ -4,7 +4,6 @@ import { forwardRef, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Primitive } from '@/components/primitive';
 import { getValidChildren } from '@/utils/get-valid-children';
-import { SegmentedControlContentContextProvider } from '../segmented-control-content-context';
 import { useSegmentedControlContext } from '../segmented-control-context';
 import { segmentedControlContentStyles } from './segmented-control-content.styles';
 
@@ -34,20 +33,16 @@ export const SegmentedControlContent = forwardRef<HTMLDivElement, SegmentedContr
     ...style,
   };
 
-  const haveChackedItem = checkedItemIndex !== -1;
-
   return (
-    <SegmentedControlContentContextProvider value={{ haveChackedItem }}>
-      <Primitive.div
-        ref={ref}
-        data-disabled={disabled ? '' : undefined}
-        style={segmentedControlContentStyle}
-        className={twMerge(segmentedControlContentStyles(), className)}
-        {...others}
-      >
-        {children}
-      </Primitive.div>
-    </SegmentedControlContentContextProvider>
+    <Primitive.div
+      ref={ref}
+      data-disabled={disabled ? '' : undefined}
+      style={segmentedControlContentStyle}
+      className={twMerge(segmentedControlContentStyles(), className)}
+      {...others}
+    >
+      {children}
+    </Primitive.div>
   );
 });
 
