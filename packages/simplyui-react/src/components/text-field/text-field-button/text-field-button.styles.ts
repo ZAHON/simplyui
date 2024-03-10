@@ -2,7 +2,7 @@ import { cva } from 'class-variance-authority';
 
 export const textFieldButtonStyles = cva(
   [
-    'size-3/4',
+    'size-full',
     'inline-flex',
     'justify-center',
     'items-center',
@@ -35,10 +35,10 @@ export const textFieldButtonStyles = cva(
       radius: {
         none: ['rounded-none'],
         sm: ['rounded-sm'],
-        md: ['rounded'],
-        lg: ['rounded-md'],
-        xl: ['rounded-lg'],
-        full: ['rounded-full'],
+        md: ['rounded-[calc(0.25rem-0.09375rem)]'],
+        lg: ['rounded-[calc(0.375rem-0.1875rem)]'],
+        xl: ['rounded-[calc(0.5rem-0.1875rem)]'],
+        full: ['rounded-[calc(9999px-0.1875rem)]'],
       },
     },
   }

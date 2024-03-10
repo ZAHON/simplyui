@@ -10,6 +10,8 @@ export const textFieldSlotStyles = cva([
   'shrink-0',
   'text-default-11',
 
+  'has-[button]:p-[0.1875rem]',
+
   'motion-safe:transition',
   'motion-safe:duration-100',
 
