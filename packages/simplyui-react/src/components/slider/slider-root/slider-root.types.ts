@@ -47,12 +47,6 @@ export interface SliderRootProps extends Omit<ComponentPropsWithRef<'span'>, HTM
   disabled?: boolean;
 
   /**
-   * Whether the slider is visually inverted.
-   * @default false
-   */
-  inverted?: boolean;
-
-  /**
    * The maximum value for the range.
    * @default 100
    */
@@ -76,12 +70,6 @@ export interface SliderRootProps extends Omit<ComponentPropsWithRef<'span'>, HTM
   name?: string;
 
   /**
-   * The orientation of the slider.
-   * @default "horizontal"
-   */
-  orientation?: 'horizontal' | 'vertical';
-
-  /**
    * The border radius value of the slider.
    * @default "full"
    */
@@ -98,10 +86,4 @@ export interface SliderRootProps extends Omit<ComponentPropsWithRef<'span'>, HTM
    * @default 1
    */
   step?: number;
-
-  /**
-   * The variant of the slider.
-   * @default "default"
-   */
-  variant?: 'default' | 'filled';
 }

@@ -2,14 +2,14 @@ import type { ReactNode } from 'react';
 
 export interface SliderContextValue {
   /**
+   * The disabled state of the slider.
+   */
+  disabled?: boolean;
+
+  /**
    * The color of the slider.
    */
   color?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
-
-  /**
-   * The inverted state of the slider.
-   */
-  inverted?: boolean;
 
   /**
    * The border radius value of the slider.
@@ -20,11 +20,6 @@ export interface SliderContextValue {
    * The size of the slider.
    */
   size?: '1' | '2' | '3' | '4';
-
-  /**
-   * The variant of the slider.
-   */
-  variant?: 'default' | 'filled';
 }
 
 export type SliderContextProviderProps = {

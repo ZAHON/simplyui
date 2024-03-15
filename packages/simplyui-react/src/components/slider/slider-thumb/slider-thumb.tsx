@@ -9,10 +9,10 @@ import { sliderThumbStyles } from './slider-thumb.styles';
 export const SliderThumb = forwardRef<HTMLSpanElement, SliderThumbProps>((props, ref) => {
   const { className, children, ...others } = props;
 
-  const { radius, size } = useSliderContext();
+  const { color, radius, size } = useSliderContext();
 
   return (
-    <Thumb ref={ref} className={twMerge(sliderThumbStyles({ radius, size }), className)} {...others}>
+    <Thumb ref={ref} className={twMerge(sliderThumbStyles({ color, radius, size }), className)} {...others}>
       {children}
     </Thumb>
   );

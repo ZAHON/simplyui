@@ -9,10 +9,10 @@ import { sliderTrackStyles } from './slider-track.styles';
 export const SliderTrack = forwardRef<HTMLSpanElement, SliderTrackProps>((props, ref) => {
   const { className, children, ...others } = props;
 
-  const { radius, size, variant } = useSliderContext();
+  const { radius, size } = useSliderContext();
 
   return (
-    <Track ref={ref} className={twMerge(sliderTrackStyles({ radius, size, variant }), className)} {...others}>
+    <Track ref={ref} className={twMerge(sliderTrackStyles({ radius, size }), className)} {...others}>
       {children}
     </Track>
   );

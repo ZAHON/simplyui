@@ -5,15 +5,12 @@ const meta: Meta<typeof Slider> = {
   title: 'Inputs/Slider',
   component: Slider,
   args: {
-    variant: 'default',
     color: 'primary',
     disabled: false,
-    inverted: false,
     max: 100,
     min: 0,
     minStepsBetweenThumbs: 0,
     name: '',
-    orientation: 'horizontal',
     radius: 'full',
     size: '2',
     step: 1,
@@ -28,25 +25,16 @@ const meta: Meta<typeof Slider> = {
     ),
   },
   argTypes: {
-    variant: { control: 'select' },
     color: { control: 'select' },
     asChild: { control: false },
     children: { control: false },
     defaultValue: { control: false },
     onValueChange: { control: false },
     onValueCommit: { control: false },
-    orientation: { control: 'select' },
     radius: { control: 'select' },
     size: { control: 'select' },
     value: { control: false },
   },
-  decorators: [
-    (Story) => (
-      <div style={{ height: '20rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 export default meta;
@@ -60,9 +48,27 @@ export const Disabled: Story = {
   },
 };
 
-export const OrientationVertical: Story = {
+export const WithMarkers: Story = {
   args: {
-    orientation: 'vertical',
+    children: (
+      <>
+        <Slider.Track>
+          <Slider.Range />
+          <Slider.Marker value={0}>0</Slider.Marker>
+          <Slider.Marker value={10}>10</Slider.Marker>
+          <Slider.Marker value={20}>20</Slider.Marker>
+          <Slider.Marker value={30}>30</Slider.Marker>
+          <Slider.Marker value={40}>40</Slider.Marker>
+          <Slider.Marker value={50}>50</Slider.Marker>
+          <Slider.Marker value={60}>60</Slider.Marker>
+          <Slider.Marker value={70}>70</Slider.Marker>
+          <Slider.Marker value={80}>80</Slider.Marker>
+          <Slider.Marker value={90}>90</Slider.Marker>
+          <Slider.Marker value={100}>100</Slider.Marker>
+        </Slider.Track>
+        <Slider.Thumb aria-label="Thumb 1" />
+      </>
+    ),
   },
 };
 
