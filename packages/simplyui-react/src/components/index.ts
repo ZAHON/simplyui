@@ -21,6 +21,7 @@ export * from './native-select';
 export * from './popover';
 export * from './scroll-area';
 export * from './segmented-control';
+export * from './select';
 export * from './separator';
 export * from './slider';
 export * from './switch';
