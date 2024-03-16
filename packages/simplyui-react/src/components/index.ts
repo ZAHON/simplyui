@@ -26,5 +26,6 @@ export * from './select';
 export * from './separator';
 export * from './slider';
 export * from './switch';
+export * from './text';
 export * from './text-field';
 export * from './tooltip';
