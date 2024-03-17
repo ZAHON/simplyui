@@ -26,5 +26,5 @@ export interface AvatarGroupProps extends ComponentPropsWithRef<'div'> {
    * The value of the spacing between avatars in group.
    * @default "3"
    */
-  spacing?: '1' | '2' | '3' | '4';
+  spacing?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 }
