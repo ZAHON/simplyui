@@ -4,7 +4,7 @@ export interface ModalContentContextValue {
   /**
    * The size of the modal content.
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
 }
 
 export interface ModalContentContextProviderProps {

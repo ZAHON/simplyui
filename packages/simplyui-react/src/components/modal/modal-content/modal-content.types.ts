@@ -44,20 +44,26 @@ export interface ModalContentProps extends ComponentPropsWithRef<'div'> {
   onInteractOutside?: DialogContentProps['onInteractOutside'];
 
   /**
-   * The border radius value of the content.
+   * The border radius value of the modal content.
    * @default "md"
    */
   radius?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
 
   /**
-   * The shadow of the content.
+   * The shadow of the modal content.
    * @default "md"
    */
   shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
 
   /**
-   * The size of the content.
+   * The size of the modal content.
    * @default "md"
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
+
+  /**
+   * If `true`, modal content will take the entire screen.
+   * @default false
+   */
+  fullScreen?: boolean;
 }

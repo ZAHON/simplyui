@@ -8,7 +8,7 @@ export interface ModalTriggerProps extends ComponentPropsWithRef<'button'> {
   asChild?: boolean;
 
   /**
-   * The button that opens the modal.
+   * The content of the button that opens the modal.
    */
   children: ReactNode;
 }

@@ -1,12 +1,12 @@
 import { cva } from 'class-variance-authority';
 
-export const modalDescriptionStyles = cva([''], {
+export const modalDescriptionStyles = cva(['text-foreground'], {
   variants: {
     size: {
-      sm: ['text-sm'],
-      md: ['text-base'],
-      lg: ['text-lg'],
-      xl: ['text-xl'],
+      '1': ['text-sm'],
+      '2': ['text-sm'],
+      '3': ['text-sm'],
+      '4': ['text-base'],
     },
     visuallyHidden: {
       true: ['sr-only'],

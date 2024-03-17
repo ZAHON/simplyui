@@ -1,6 +1,6 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react';
 
-export interface ModalBodyProps extends ComponentPropsWithRef<'div'> {
+export interface ModalCloseButtonProps extends ComponentPropsWithRef<'button'> {
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    * @default false
@@ -8,7 +8,7 @@ export interface ModalBodyProps extends ComponentPropsWithRef<'div'> {
   asChild?: boolean;
 
   /**
-   * The content of the modal body.
+   * The content of the button that closes the modal.
    */
   children: ReactNode;
 }

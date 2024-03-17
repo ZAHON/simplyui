@@ -14,6 +14,8 @@ export interface ModalTitleProps extends ComponentPropsWithRef<'h2'> {
 
   /**
    * When `true`, modal title will be hidden from the screen in an accessible way.
+   *
+   * If you want to remove the modal title entirely, remove this part and pass `aria-labelledby={undefined}` to `Modal.Content` component.
    * @default false
    */
   visuallyHidden?: boolean;

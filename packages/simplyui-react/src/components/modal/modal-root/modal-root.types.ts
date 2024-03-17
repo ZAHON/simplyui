@@ -18,6 +18,7 @@ export interface ModalRootProps {
 
   /**
    * The modality of the modal. When set to `true`, interaction with outside elements will be disabled and only modal content will be visible to screen readers.
+   * @default true
    */
   modal?: boolean;
 }
