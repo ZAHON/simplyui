@@ -1,6 +1,6 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react';
 
-export interface PopoverTriggerProps extends ComponentPropsWithRef<'button'> {
+export interface PopoverCloseProps extends ComponentPropsWithRef<'button'> {
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    * @default false
@@ -8,7 +8,7 @@ export interface PopoverTriggerProps extends ComponentPropsWithRef<'button'> {
   asChild?: boolean;
 
   /**
-   * The content of the button that toggles the popover. By default, the `Popover.Content` will position itself against the trigger.
+   * The content of the button that closes an open popover.
    */
   children: ReactNode;
 }

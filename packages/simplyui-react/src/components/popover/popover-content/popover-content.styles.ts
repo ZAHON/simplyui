@@ -2,11 +2,12 @@ import { cva } from 'class-variance-authority';
 
 export const popoverContentStyles = cva(
   [
-    'w-auto',
+    'relative',
+    'z-40',
     'max-h-[var(--radix-popover-content-available-height)]',
     'border',
     'border-default-6',
-    'bg-panel-solid',
+    'bg-panel',
     'outline-none',
 
     'motion-safe:data-[state=open]:animate-in',
@@ -47,10 +48,10 @@ export const popoverContentStyles = cva(
         xl: ['drop-shadow-lg'],
       },
       size: {
-        sm: ['p-3', 'text-xs'],
-        md: ['p-4', 'text-sm'],
-        lg: ['p-6', 'text-base'],
-        xl: ['p-8', 'text-lg'],
+        '1': ['p-3', 'text-xs'],
+        '2': ['p-4', 'text-sm'],
+        '3': ['p-6', 'text-base'],
+        '4': ['p-8', 'text-lg'],
       },
       width: {
         auto: ['w-auto'],

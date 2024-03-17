@@ -7,9 +7,10 @@ import { applayComponentDefaultProps } from '@/utils/applay-component-default-pr
 import { popoverContentStyles } from './popover-content.styles';
 
 const defaultProps: Partial<PopoverContentProps> = {
+  collisionPadding: 10,
   radius: 'md',
   shadow: 'md',
-  size: 'md',
+  size: '2',
   sideOffset: 8,
   width: 'auto',
 };
