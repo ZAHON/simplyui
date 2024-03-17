@@ -17,6 +17,11 @@ export interface ModalRootProps {
   open?: boolean;
 
   /**
+   * Event handler called when the open state of the modal changes.
+   */
+  onOpenChange?: (open: boolean) => void;
+
+  /**
    * The modality of the modal. When set to `true`, interaction with outside elements will be disabled and only modal content will be visible to screen readers.
    * @default true
    */
