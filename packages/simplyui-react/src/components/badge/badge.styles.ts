@@ -1,16 +1,7 @@
 import { cva } from 'class-variance-authority';
 
 export const badgeStyles = cva(
-  [
-    'inline-flex',
-    'justify-center',
-    'items-center',
-    'shrink-0',
-    'whitespace-nowrap',
-    'select-none',
-    'cursor-default',
-    'font-medium',
-  ],
+  ['inline-flex', 'justify-center', 'items-center', 'shrink-0', 'whitespace-nowrap', 'font-medium'],
   {
     variants: {
       color: {
@@ -29,10 +20,10 @@ export const badgeStyles = cva(
         full: ['rounded-full'],
       },
       size: {
-        '1': ['py-0.5', 'px-2', 'gap-x-1', 'text-xs'],
-        '2': ['py-1', 'px-3', 'gap-x-1.5', 'text-sm'],
-        '3': ['py-1.5', 'px-4', 'gap-x-2', 'text-base'],
-        '4': ['py-2', 'px-5', 'gap-x-2.5', 'text-lg'],
+        '1': ['h-5', 'py-0.5', 'px-1.5', 'gap-x-1.5', 'text-xs'],
+        '2': ['h-6', 'py-1', 'px-2', 'gap-x-1.5', 'text-sm'],
+        '3': ['h-7', 'py-1', 'px-2.5', 'gap-x-2', 'text-base'],
+        '4': ['h-8', 'py-1', 'px-3', 'gap-x-2', 'text-lg'],
       },
       variant: {
         filled: [''],
