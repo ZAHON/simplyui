@@ -10,7 +10,7 @@ export const scrollAreaThumbStyles = cva(
     'motion-safe:duration-100',
 
     'hover:bg-default-9',
-    'active:brightness-110',
+    'active:bg-default-10',
   ],
   {
     variants: {

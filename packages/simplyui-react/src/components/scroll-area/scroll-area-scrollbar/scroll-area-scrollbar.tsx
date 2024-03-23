@@ -7,13 +7,14 @@ import { applayComponentDefaultProps } from '@/utils/applay-component-default-pr
 import { scrollAreaScrollbarStyles } from './scroll-area-scrollbar.styles';
 
 const defaultProps: Partial<ScrollAreaScrollbarProps> = {
-  size: 'md',
+  radius: 'none',
+  size: '2',
   withBackground: true,
   withPadding: true,
 };
 
 export const ScrollAreaScrollbar = forwardRef<HTMLDivElement, ScrollAreaScrollbarProps>((props, ref) => {
-  const { size, withBackground, withPadding, className, children, ...others } = applayComponentDefaultProps(
+  const { radius, size, withBackground, withPadding, className, children, ...others } = applayComponentDefaultProps(
     defaultProps,
     props
   );
@@ -21,7 +22,7 @@ export const ScrollAreaScrollbar = forwardRef<HTMLDivElement, ScrollAreaScrollba
   return (
     <Scrollbar
       ref={ref}
-      className={twMerge(scrollAreaScrollbarStyles({ size, withBackground, withPadding }), className)}
+      className={twMerge(scrollAreaScrollbarStyles({ radius, size, withBackground, withPadding }), className)}
       {...others}
     >
       {children}

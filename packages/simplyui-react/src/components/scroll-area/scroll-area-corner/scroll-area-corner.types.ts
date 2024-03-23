@@ -6,9 +6,4 @@ export interface ScrollAreaCornerProps extends ComponentPropsWithRef<'div'> {
    * @default false
    */
   asChild?: boolean;
-
-  /**
-   * If `true`, corner will have background.
-   */
-  withBackground?: boolean;
 }

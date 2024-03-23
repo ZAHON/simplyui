@@ -23,12 +23,19 @@ export interface ScrollAreaScrollbarProps extends ComponentPropsWithRef<'div'> {
   orientation: 'horizontal' | 'vertical';
 
   /**
+   * The border radius value of the scrollbar.
+   * @default "none"
+   */
+  radius?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
+
+  /**
    * The size of the scrollbar.
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
 
   /**
    * If `true`, scrollbar will have background.
+   * @default true
    */
   withBackground?: boolean;
 
