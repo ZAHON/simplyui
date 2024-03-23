@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
 import { Label } from '@/components/label';
+import { ScrollArea } from '@/components/scroll-area';
+import { NativeScrollArea } from '@/components/native-scroll-area';
 import { Select } from '.';
 
 const meta: Meta<typeof Select> = {
@@ -115,49 +116,47 @@ export const Default: Story = {};
 
 export const WithLabel: Story = {
   render: ({ size, disabled, ...others }) => {
-    const [open, setOpen] = useState(false);
-
     return (
       <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
-        <Label onClick={() => setOpen(true)} htmlFor="test" size={size} disabled={disabled}>
+        <Label htmlFor="test" size={size} disabled={disabled}>
           Pick one
         </Label>
-        <Select open={open} onOpenChange={setOpen} size={size} disabled={disabled} {...others}>
-          <Select.Trigger id="test" onClick={() => setOpen(true)}>
+        <Select size={size} disabled={disabled} {...others}>
+          <Select.Trigger id="test">
             <Select.Value />
             <Select.Icon />
           </Select.Trigger>
           <Select.Portal>
-            <Select.Content onEscapeKeyDown={() => setOpen(false)} onPointerDownOutside={() => setOpen(false)}>
+            <Select.Content>
               <Select.ScrollUpButton />
               <Select.Viewport>
                 <Select.Group>
                   <Select.Label>Front-end frameworks</Select.Label>
-                  <Select.Item value="vue" onClick={() => setOpen(false)}>
+                  <Select.Item value="vue">
                     <Select.ItemText>Vue</Select.ItemText>
                     <Select.ItemIndicator />
                   </Select.Item>
-                  <Select.Item value="react" onClick={() => setOpen(false)}>
+                  <Select.Item value="react">
                     <Select.ItemText>React</Select.ItemText>
                     <Select.ItemIndicator />
                   </Select.Item>
-                  <Select.Item value="angular" onClick={() => setOpen(false)}>
+                  <Select.Item value="angular">
                     <Select.ItemText>Angular</Select.ItemText>
                     <Select.ItemIndicator />
                   </Select.Item>
-                  <Select.Item value="svelte" onClick={() => setOpen(false)}>
+                  <Select.Item value="svelte">
                     <Select.ItemText>Svelte</Select.ItemText>
                     <Select.ItemIndicator />
                   </Select.Item>
-                  <Select.Item value="backbone" onClick={() => setOpen(false)}>
+                  <Select.Item value="backbone">
                     <Select.ItemText>Backbone</Select.ItemText>
                     <Select.ItemIndicator />
                   </Select.Item>
-                  <Select.Item value="ember" onClick={() => setOpen(false)}>
+                  <Select.Item value="ember">
                     <Select.ItemText>Ember</Select.ItemText>
                     <Select.ItemIndicator />
                   </Select.Item>
-                  <Select.Item value="polymer" onClick={() => setOpen(false)}>
+                  <Select.Item value="polymer">
                     <Select.ItemText>Polymer</Select.ItemText>
                     <Select.ItemIndicator />
                   </Select.Item>
@@ -165,23 +164,23 @@ export const WithLabel: Story = {
                 <Select.Separator />
                 <Select.Group>
                   <Select.Label>Back-end frameworks</Select.Label>
-                  <Select.Item value="next" onClick={() => setOpen(false)}>
+                  <Select.Item value="next">
                     <Select.ItemText>Next</Select.ItemText>
                     <Select.ItemIndicator />
                   </Select.Item>
-                  <Select.Item value="express" onClick={() => setOpen(false)}>
+                  <Select.Item value="express">
                     <Select.ItemText>Express</Select.ItemText>
                     <Select.ItemIndicator />
                   </Select.Item>
-                  <Select.Item value="gatsby" onClick={() => setOpen(false)}>
+                  <Select.Item value="gatsby">
                     <Select.ItemText>Gatsby</Select.ItemText>
                     <Select.ItemIndicator />
                   </Select.Item>
-                  <Select.Item value="meteor" onClick={() => setOpen(false)}>
+                  <Select.Item value="meteor">
                     <Select.ItemText>Meteor</Select.ItemText>
                     <Select.ItemIndicator />
                   </Select.Item>
-                  <Select.Item value="nuxt" onClick={() => setOpen(false)}>
+                  <Select.Item value="nuxt">
                     <Select.ItemText>Nuxt</Select.ItemText>
                     <Select.ItemIndicator />
                   </Select.Item>
@@ -281,5 +280,162 @@ export const WithDisabledItems: Story = {
 export const Invalid: Story = {
   args: {
     invalid: true,
+  },
+};
+
+export const WithScrollArea: Story = {
+  args: {
+    children: (
+      <>
+        <Select.Trigger>
+          <Select.Value placeholder="Pick one" />
+          <Select.Icon />
+        </Select.Trigger>
+        <Select.Portal>
+          <Select.Content style={{ height: '10rem' }}>
+            <ScrollArea type="always">
+              <Select.Viewport asChild style={{ paddingRight: '1rem' }}>
+                <ScrollArea.Viewport>
+                  <Select.Group>
+                    <Select.Label>Front-end frameworks</Select.Label>
+                    <Select.Item value="vue">
+                      <Select.ItemText>Vue</Select.ItemText>
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                    <Select.Item value="react">
+                      <Select.ItemText>React</Select.ItemText>
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                    <Select.Item value="angular">
+                      <Select.ItemText>Angular</Select.ItemText>
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                    <Select.Item value="svelte">
+                      <Select.ItemText>Svelte</Select.ItemText>
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                    <Select.Item value="backbone">
+                      <Select.ItemText>Backbone</Select.ItemText>
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                    <Select.Item value="ember">
+                      <Select.ItemText>Ember</Select.ItemText>
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                    <Select.Item value="polymer">
+                      <Select.ItemText>Polymer</Select.ItemText>
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                  </Select.Group>
+                  <Select.Separator />
+                  <Select.Group>
+                    <Select.Label>Back-end frameworks</Select.Label>
+                    <Select.Item value="next">
+                      <Select.ItemText>Next</Select.ItemText>
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                    <Select.Item value="express">
+                      <Select.ItemText>Express</Select.ItemText>
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                    <Select.Item value="gatsby">
+                      <Select.ItemText>Gatsby</Select.ItemText>
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                    <Select.Item value="meteor">
+                      <Select.ItemText>Meteor</Select.ItemText>
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                    <Select.Item value="nuxt">
+                      <Select.ItemText>Nuxt</Select.ItemText>
+                      <Select.ItemIndicator />
+                    </Select.Item>
+                  </Select.Group>
+                </ScrollArea.Viewport>
+              </Select.Viewport>
+              <ScrollArea.Scrollbar orientation="vertical">
+                <ScrollArea.Thumb />
+              </ScrollArea.Scrollbar>
+            </ScrollArea>
+          </Select.Content>
+        </Select.Portal>
+      </>
+    ),
+  },
+};
+
+export const WithNativeScrollArea: Story = {
+  args: {
+    children: (
+      <>
+        <Select.Trigger>
+          <Select.Value placeholder="Pick one" />
+          <Select.Icon />
+        </Select.Trigger>
+        <Select.Portal>
+          <Select.Content>
+            <NativeScrollArea scrollbars="vertical" scrollbarBackground={false}>
+              <Select.Viewport>
+                <Select.Group>
+                  <Select.Label>Front-end frameworks</Select.Label>
+                  <Select.Item value="vue">
+                    <Select.ItemText>Vue</Select.ItemText>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                  <Select.Item value="react">
+                    <Select.ItemText>React</Select.ItemText>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                  <Select.Item value="angular">
+                    <Select.ItemText>Angular</Select.ItemText>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                  <Select.Item value="svelte">
+                    <Select.ItemText>Svelte</Select.ItemText>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                  <Select.Item value="backbone">
+                    <Select.ItemText>Backbone</Select.ItemText>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                  <Select.Item value="ember">
+                    <Select.ItemText>Ember</Select.ItemText>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                  <Select.Item value="polymer">
+                    <Select.ItemText>Polymer</Select.ItemText>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                </Select.Group>
+                <Select.Separator />
+                <Select.Group>
+                  <Select.Label>Back-end frameworks</Select.Label>
+                  <Select.Item value="next">
+                    <Select.ItemText>Next</Select.ItemText>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                  <Select.Item value="express">
+                    <Select.ItemText>Express</Select.ItemText>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                  <Select.Item value="gatsby">
+                    <Select.ItemText>Gatsby</Select.ItemText>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                  <Select.Item value="meteor">
+                    <Select.ItemText>Meteor</Select.ItemText>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                  <Select.Item value="nuxt">
+                    <Select.ItemText>Nuxt</Select.ItemText>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                </Select.Group>
+              </Select.Viewport>
+            </NativeScrollArea>
+          </Select.Content>
+        </Select.Portal>
+      </>
+    ),
   },
 };
