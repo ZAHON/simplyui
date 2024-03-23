@@ -36,15 +36,15 @@ export const modalContentStyles = cva(
         xl: ['drop-shadow-lg'],
       },
       size: {
-        '1': ['py-3', 'max-w-sm'],
-        '2': ['py-4', 'max-w-md'],
-        '3': ['py-6', 'max-w-lg'],
-        '4': ['py-8', 'max-w-xl'],
+        '1': ['py-3', 'gap-y-3', 'max-w-sm'],
+        '2': ['py-4', 'gap-y-4', 'max-w-md'],
+        '3': ['py-6', 'gap-y-4', 'max-w-lg'],
+        '4': ['py-8', 'gap-y-6', 'max-w-xl'],
       },
       fullScreen: {
         true: ['inset-0', 'max-w-none', 'rounded-none', 'border-none', 'drop-shadow-none'],
         false: [
-          'max-h-[85vh]',
+          'max-h-[90vh]',
           'w-[90vw]',
           'top-1/2',
           'left-1/2',

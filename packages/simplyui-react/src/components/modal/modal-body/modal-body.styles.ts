@@ -12,10 +12,10 @@ export const modalBodyStyles = cva(
   {
     variants: {
       size: {
-        '1': ['px-3', 'my-3'],
-        '2': ['px-4', 'my-4'],
-        '3': ['px-6', 'my-4'],
-        '4': ['px-8', 'my-6'],
+        '1': ['px-3'],
+        '2': ['px-4'],
+        '3': ['px-6'],
+        '4': ['px-8'],
       },
     },
   }
