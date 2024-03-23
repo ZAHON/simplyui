@@ -18,6 +18,7 @@ export * from './link';
 export * from './loader';
 export * from './menu';
 export * from './modal';
+export * from './native-scroll-area';
 export * from './native-select';
 export * from './popover';
 export * from './scroll-area';
