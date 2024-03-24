@@ -10,9 +10,14 @@ import { ScrollAreaScrollbar } from './scroll-area-scrollbar';
 import { ScrollAreaThumb } from './scroll-area-thumb';
 import { ScrollAreaCorner } from './scroll-area-corner';
 
+/** Contains all the parts of a scroll area. This component is based on the `div` element. */
 export const ScrollArea = Object.assign(ScrollAreaRoot, {
+  /** The viewport area of the scroll area. This component is based on the `div` element. */
   Viewport: ScrollAreaViewport,
+  /** The scrollbar part. This component is based on the `div` element. */
   Scrollbar: ScrollAreaScrollbar,
+  /** The thumb to be used in `ScrollArea.Scrollbar`. This component is based on the `div` element. */
   Thumb: ScrollAreaThumb,
+  /** The corner where both vertical and horizontal scrollbars meet. This component is based on the `div` element. */
   Corner: ScrollAreaCorner,
 });
