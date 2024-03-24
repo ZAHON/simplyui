@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Slider } from '.';
+import * as Slider from '.';
 
-const meta: Meta<typeof Slider> = {
+const meta: Meta<typeof Slider.Root> = {
   title: 'Inputs/Slider',
-  component: Slider,
+  component: Slider.Root,
   args: {
     color: 'primary',
     disabled: false,
@@ -25,20 +25,20 @@ const meta: Meta<typeof Slider> = {
     ),
   },
   argTypes: {
-    color: { control: 'select' },
+    color: { options: ['default', 'primary', 'success', 'warning', 'danger'], control: 'select' },
     asChild: { control: false },
     children: { control: false },
     defaultValue: { control: false },
     onValueChange: { control: false },
     onValueCommit: { control: false },
-    radius: { control: 'select' },
-    size: { control: 'select' },
+    radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
+    size: { options: ['1', '2', '3', '4'], control: 'select' },
     value: { control: false },
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof Slider>;
+type Story = StoryObj<typeof Slider.Root>;
 
 export const Default: Story = {};
 
@@ -50,6 +50,7 @@ export const Disabled: Story = {
 
 export const WithMarkers: Story = {
   args: {
+    step: 10,
     children: (
       <>
         <Slider.Track>

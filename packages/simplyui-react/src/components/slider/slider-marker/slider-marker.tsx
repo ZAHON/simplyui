@@ -38,4 +38,4 @@ export const SliderMarker = forwardRef<HTMLSpanElement, SliderMarkerProps>((prop
   );
 });
 
-SliderMarker.displayName = 'SliderMarker';
+SliderMarker.displayName = 'Slider.Marker';

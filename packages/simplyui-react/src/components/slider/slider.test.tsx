@@ -1,7 +1,7 @@
 import { createRef } from 'react';
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { Slider } from '.';
+import * as Slider from '.';
 
 const SLIDER_MARKER_TEST_ID = 'slider-marker-test-id';
 
@@ -16,14 +16,14 @@ describe('Slider', () => {
     it('should support ref', () => {
       const ref = createRef<HTMLSpanElement>();
 
-      render(<Slider ref={ref}>{SLIDER_ROOT_CONTENT}</Slider>);
+      render(<Slider.Root ref={ref}>{SLIDER_ROOT_CONTENT}</Slider.Root>);
       expect(ref.current).toBeInstanceOf(HTMLSpanElement);
     });
 
     it('should have class name handed over by className property', () => {
       const className = 'test';
 
-      render(<Slider className={className}>{SLIDER_ROOT_CONTENT}</Slider>);
+      render(<Slider.Root className={className}>{SLIDER_ROOT_CONTENT}</Slider.Root>);
       expect(screen.getByText(SLIDER_ROOT_CONTENT)).toHaveClass(className);
     });
   });
@@ -33,9 +33,9 @@ describe('Slider', () => {
       const ref = createRef<HTMLSpanElement>();
 
       render(
-        <Slider>
+        <Slider.Root>
           <Slider.Track ref={ref}>{SLIDER_TRACK_CONTENT}</Slider.Track>
-        </Slider>
+        </Slider.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLSpanElement);
     });
@@ -44,9 +44,9 @@ describe('Slider', () => {
       const className = 'test';
 
       render(
-        <Slider>
+        <Slider.Root>
           <Slider.Track className={className}>{SLIDER_TRACK_CONTENT}</Slider.Track>
-        </Slider>
+        </Slider.Root>
       );
       expect(screen.getByText(SLIDER_TRACK_CONTENT)).toHaveClass(className);
     });
@@ -57,11 +57,11 @@ describe('Slider', () => {
       const ref = createRef<HTMLSpanElement>();
 
       render(
-        <Slider>
+        <Slider.Root>
           <Slider.Track>
             <Slider.Range ref={ref} />
           </Slider.Track>
-        </Slider>
+        </Slider.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLSpanElement);
     });
@@ -70,11 +70,11 @@ describe('Slider', () => {
       const className = 'test';
 
       render(
-        <Slider>
+        <Slider.Root>
           <Slider.Track>
             <Slider.Range className={className}>{SLIDER_RANGE_CONTENT}</Slider.Range>
           </Slider.Track>
-        </Slider>
+        </Slider.Root>
       );
       expect(screen.getByText(SLIDER_RANGE_CONTENT)).toHaveClass(className);
     });
@@ -85,24 +85,24 @@ describe('Slider', () => {
       const ref = createRef<HTMLSpanElement>();
 
       render(
-        <Slider>
+        <Slider.Root>
           <Slider.Track>
             <Slider.Marker value={0} ref={ref} />
           </Slider.Track>
-        </Slider>
+        </Slider.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLSpanElement);
     });
 
     it('should be span element when asChild property not provided', () => {
       const { container } = render(
-        <Slider>
+        <Slider.Root>
           <Slider.Track>
             <Slider.Marker value={0} data-testid={SLIDER_MARKER_TEST_ID}>
               {SLIDER_MARKER_CONTENT}
             </Slider.Marker>
           </Slider.Track>
-        </Slider>
+        </Slider.Root>
       );
 
       expect(screen.getByTestId(SLIDER_MARKER_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
@@ -112,13 +112,13 @@ describe('Slider', () => {
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
-        <Slider>
+        <Slider.Root>
           <Slider.Track>
             <Slider.Marker asChild value={0} data-testid={SLIDER_MARKER_TEST_ID}>
               <p>{SLIDER_MARKER_CONTENT}</p>
             </Slider.Marker>
           </Slider.Track>
-        </Slider>
+        </Slider.Root>
       );
 
       expect(screen.getByTestId(SLIDER_MARKER_TEST_ID)).toBeInstanceOf(HTMLParagraphElement);
@@ -128,46 +128,46 @@ describe('Slider', () => {
 
     it('should have role="presentation" attribute', () => {
       render(
-        <Slider>
+        <Slider.Root>
           <Slider.Track>
             <Slider.Marker value={0}>{SLIDER_MARKER_CONTENT}</Slider.Marker>
           </Slider.Track>
-        </Slider>
+        </Slider.Root>
       );
       expect(screen.getByText(SLIDER_MARKER_CONTENT)).toHaveAttribute('role', 'presentation');
     });
 
     it('should have not data-disabled attribute when disabled property not provided on Root element', () => {
       render(
-        <Slider disabled={false}>
+        <Slider.Root disabled={false}>
           <Slider.Track>
             <Slider.Marker value={0}>{SLIDER_MARKER_CONTENT}</Slider.Marker>
           </Slider.Track>
-        </Slider>
+        </Slider.Root>
       );
       expect(screen.getByText(SLIDER_MARKER_CONTENT)).not.toHaveAttribute('data-disabled');
     });
 
     it('should have data-disabled attribute when disabled property provided on Root element', () => {
       render(
-        <Slider disabled={true}>
+        <Slider.Root disabled={true}>
           <Slider.Track>
             <Slider.Marker value={0}>{SLIDER_MARKER_CONTENT}</Slider.Marker>
           </Slider.Track>
-        </Slider>
+        </Slider.Root>
       );
       expect(screen.getByText(SLIDER_MARKER_CONTENT)).toHaveAttribute('data-disabled');
     });
 
     it('should have style handed over by style property', () => {
       render(
-        <Slider>
+        <Slider.Root>
           <Slider.Track>
             <Slider.Marker style={{ color: 'test' }} value={0}>
               {SLIDER_MARKER_CONTENT}
             </Slider.Marker>
           </Slider.Track>
-        </Slider>
+        </Slider.Root>
       );
       expect(screen.getByText(SLIDER_MARKER_CONTENT)).toHaveStyle({ color: 'test' });
     });
@@ -176,13 +176,13 @@ describe('Slider', () => {
       const className = 'test';
 
       render(
-        <Slider>
+        <Slider.Root>
           <Slider.Track>
             <Slider.Marker value={0} className={className}>
               {SLIDER_MARKER_CONTENT}
             </Slider.Marker>
           </Slider.Track>
-        </Slider>
+        </Slider.Root>
       );
       expect(screen.getByText(SLIDER_MARKER_CONTENT)).toHaveClass(className);
     });
@@ -200,9 +200,9 @@ describe('Slider', () => {
       const ref = createRef<HTMLSpanElement>();
 
       render(
-        <Slider>
+        <Slider.Root>
           <Slider.Thumb ref={ref} />
-        </Slider>
+        </Slider.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLSpanElement);
     });
@@ -211,12 +211,12 @@ describe('Slider', () => {
       const className = 'test';
 
       render(
-        <Slider>
+        <Slider.Root>
           <Slider.Track>
             <Slider.Range />
           </Slider.Track>
           <Slider.Thumb className={className}>{SLIDER_THUMB_CONTENT}</Slider.Thumb>
-        </Slider>
+        </Slider.Root>
       );
       expect(screen.getByText(SLIDER_THUMB_CONTENT)).toHaveClass(className);
     });

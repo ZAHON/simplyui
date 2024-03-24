@@ -18,4 +18,4 @@ export const SliderTrack = forwardRef<HTMLSpanElement, SliderTrackProps>((props,
   );
 });
 
-SliderTrack.displayName = 'SliderTrack';
+SliderTrack.displayName = 'Slider.Track';

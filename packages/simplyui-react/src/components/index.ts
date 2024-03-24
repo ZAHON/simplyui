@@ -26,7 +26,7 @@ export * as SegmentedControl from './segmented-control/index.js';
 export * as Select from './select/index.js';
 export * from './separator/index.js';
 export * from './sheet/index.js';
-export * from './slider/index.js';
+export * as Slider from './slider/index.js';
 export * as Switch from './switch/index.js';
 export * from './text/index.js';
 export * as TextField from './text-field/index.js';

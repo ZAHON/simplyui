@@ -34,4 +34,4 @@ export const SliderRoot = forwardRef<HTMLSpanElement, SliderRootProps>((props, r
   );
 });
 
-SliderRoot.displayName = 'SliderRoot';
+SliderRoot.displayName = 'Slider.Root';

@@ -18,4 +18,4 @@ export const SliderRange = forwardRef<HTMLSpanElement, SliderRangeProps>((props,
   );
 });
 
-SliderRange.displayName = 'SliderRange';
+SliderRange.displayName = 'Slider.Range';

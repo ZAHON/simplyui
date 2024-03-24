@@ -18,4 +18,4 @@ export const SliderThumb = forwardRef<HTMLSpanElement, SliderThumbProps>((props,
   );
 });
 
-SliderThumb.displayName = 'SliderThumb';
+SliderThumb.displayName = 'Slider.Thumb';
