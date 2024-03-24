@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Loader } from '@/components/loader';
-import { Button } from '.';
+import * as Button from '.';
 
-const meta: Meta<typeof Button> = {
+const meta: Meta<typeof Button.Root> = {
   title: 'Buttons/Button',
-  component: Button,
+  component: Button.Root,
   args: {
     size: '2',
     radius: 'md',
@@ -16,28 +16,28 @@ const meta: Meta<typeof Button> = {
     fullWidth: false,
   },
   argTypes: {
-    size: { control: 'select' },
-    type: { control: 'select' },
-    variant: { control: 'select' },
-    color: { control: 'select' },
-    radius: { control: 'select' },
+    size: { options: ['1', '2', '3', '4'], control: 'select' },
+    type: { options: ['submit', 'reset', 'button'], control: 'select' },
+    variant: { options: ['filled', 'light', 'outline', 'subtle', 'light-outline'], control: 'select' },
+    color: { options: ['default', 'primary', 'success', 'warning', 'danger'], control: 'select' },
+    radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
     children: { control: false },
     asChild: { control: false },
   },
   render: ({ size, ...others }) => {
     return (
-      <Button size={size} {...others}>
+      <Button.Root size={size} {...others}>
         <Button.Content>Edit profile</Button.Content>
         <Button.Loader>
           <Loader size={size} variant="dots" color="currentColor" />
         </Button.Loader>
-      </Button>
+      </Button.Root>
     );
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof Button.Root>;
 
 export const Default: Story = {};
 
@@ -51,7 +51,7 @@ export const WithIcon: Story = {
     };
 
     return (
-      <Button size={size} {...others}>
+      <Button.Root size={size} {...others}>
         <Button.Content>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ export const WithIcon: Story = {
         <Button.Loader>
           <Loader size={size} variant="dots" color="currentColor" />
         </Button.Loader>
-      </Button>
+      </Button.Root>
     );
   },
 };

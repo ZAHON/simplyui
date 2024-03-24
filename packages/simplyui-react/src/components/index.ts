@@ -2,7 +2,7 @@ export * from './alert/index.js';
 export * from './avatar/index.js';
 export * from './badge/index.js';
 export * from './burger/index.js';
-export * from './button/index.js';
+export * as Button from './button/index.js';
 export * from './card/index.js';
 export * from './checkbox/index.js';
 export * from './close-button/index.js';

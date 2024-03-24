@@ -28,4 +28,4 @@ export const ButtonLoader = forwardRef<HTMLDivElement, ButtonLoaderProps>((props
   );
 });
 
-ButtonLoader.displayName = 'ButtonLoader';
+ButtonLoader.displayName = 'Button.Loader';

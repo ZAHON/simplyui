@@ -24,4 +24,4 @@ export const ButtonContent = forwardRef<HTMLSpanElement, ButtonContentProps>((pr
   );
 });
 
-ButtonContent.displayName = 'ButtonContent';
+ButtonContent.displayName = 'Button.Content';

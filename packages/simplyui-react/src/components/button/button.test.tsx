@@ -1,7 +1,7 @@
 import { createRef } from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { Button } from '.';
+import * as Button from '.';
 
 const BUTTON_ROOT_TEST_ID = 'button-root-test-id';
 const BUTTON_CONTENT_TEST_ID = 'button-content-test-id';
@@ -16,12 +16,12 @@ describe('Button', () => {
     it('should support ref', () => {
       const ref = createRef<HTMLButtonElement>();
 
-      render(<Button ref={ref}>{BUTTON_ROOT_CONTENT}</Button>);
+      render(<Button.Root ref={ref}>{BUTTON_ROOT_CONTENT}</Button.Root>);
       expect(ref.current).toBeInstanceOf(HTMLButtonElement);
     });
 
     it('should be button element when asChild property not provided', () => {
-      const { container } = render(<Button data-testid={BUTTON_ROOT_TEST_ID}>{BUTTON_ROOT_CONTENT}</Button>);
+      const { container } = render(<Button.Root data-testid={BUTTON_ROOT_TEST_ID}>{BUTTON_ROOT_CONTENT}</Button.Root>);
 
       expect(screen.getByTestId(BUTTON_ROOT_TEST_ID)).toBeInstanceOf(HTMLButtonElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
@@ -30,9 +30,9 @@ describe('Button', () => {
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
-        <Button asChild data-testid={BUTTON_ROOT_TEST_ID}>
+        <Button.Root asChild data-testid={BUTTON_ROOT_TEST_ID}>
           <div>{BUTTON_ROOT_CONTENT}</div>
-        </Button>
+        </Button.Root>
       );
 
       expect(screen.getByTestId(BUTTON_ROOT_TEST_ID)).toBeInstanceOf(HTMLDivElement);
@@ -41,49 +41,49 @@ describe('Button', () => {
     });
 
     it('should be not disabled when disabled property not provided', () => {
-      render(<Button disabled={false}>{BUTTON_ROOT_CONTENT}</Button>);
+      render(<Button.Root disabled={false}>{BUTTON_ROOT_CONTENT}</Button.Root>);
       expect(screen.getByRole('button')).toBeEnabled();
     });
 
     it('should be disabled when disabled property provided', () => {
-      render(<Button disabled={true}>{BUTTON_ROOT_CONTENT}</Button>);
+      render(<Button.Root disabled={true}>{BUTTON_ROOT_CONTENT}</Button.Root>);
       expect(screen.getByRole('button')).toBeDisabled();
     });
 
     it('should be not disabled when loading property not provided', () => {
-      render(<Button loading={false}>{BUTTON_ROOT_CONTENT}</Button>);
+      render(<Button.Root loading={false}>{BUTTON_ROOT_CONTENT}</Button.Root>);
       expect(screen.getByRole('button')).toBeEnabled();
     });
 
     it('should be disabled when loading property provided', () => {
-      render(<Button loading={true}>{BUTTON_ROOT_CONTENT}</Button>);
+      render(<Button.Root loading={true}>{BUTTON_ROOT_CONTENT}</Button.Root>);
       expect(screen.getByRole('button')).toBeDisabled();
     });
 
     it('should have not data-disabled attribute when disabled property not provided', () => {
-      render(<Button disabled={false}>{BUTTON_ROOT_CONTENT}</Button>);
+      render(<Button.Root disabled={false}>{BUTTON_ROOT_CONTENT}</Button.Root>);
       expect(screen.getByRole('button')).not.toHaveAttribute('data-disabled');
     });
 
     it('should have data-disabled attribute when disabled property provided', () => {
-      render(<Button disabled={true}>{BUTTON_ROOT_CONTENT}</Button>);
+      render(<Button.Root disabled={true}>{BUTTON_ROOT_CONTENT}</Button.Root>);
       expect(screen.getByRole('button')).toHaveAttribute('data-disabled');
     });
 
     it('should have not data-loading attribute when loading property not provided', () => {
-      render(<Button loading={false}>{BUTTON_ROOT_CONTENT}</Button>);
+      render(<Button.Root loading={false}>{BUTTON_ROOT_CONTENT}</Button.Root>);
       expect(screen.getByRole('button')).not.toHaveAttribute('data-loading');
     });
 
     it('should have data-loading attribute when loading property provided', () => {
-      render(<Button loading={true}>{BUTTON_ROOT_CONTENT}</Button>);
+      render(<Button.Root loading={true}>{BUTTON_ROOT_CONTENT}</Button.Root>);
       expect(screen.getByRole('button')).toHaveAttribute('data-loading');
     });
 
     it('should have class name handed over by className property', () => {
       const className = 'test';
 
-      render(<Button className={className}>{BUTTON_ROOT_CONTENT}</Button>);
+      render(<Button.Root className={className}>{BUTTON_ROOT_CONTENT}</Button.Root>);
       expect(screen.getByRole('button')).toHaveClass(className);
     });
   });
@@ -93,18 +93,18 @@ describe('Button', () => {
       const ref = createRef<HTMLSpanElement>();
 
       render(
-        <Button>
+        <Button.Root>
           <Button.Content ref={ref}>{BUTTON_CONTENT_CONTENT}</Button.Content>
-        </Button>
+        </Button.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLSpanElement);
     });
 
     it('should be span element when asChild property not provided', () => {
       const { container } = render(
-        <Button>
+        <Button.Root>
           <Button.Content data-testid={BUTTON_CONTENT_TEST_ID}>{BUTTON_CONTENT_CONTENT}</Button.Content>
-        </Button>
+        </Button.Root>
       );
 
       expect(screen.getByTestId(BUTTON_CONTENT_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
@@ -114,11 +114,11 @@ describe('Button', () => {
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
-        <Button>
+        <Button.Root>
           <Button.Content asChild data-testid={BUTTON_CONTENT_TEST_ID}>
             <div>{BUTTON_CONTENT_CONTENT}</div>
           </Button.Content>
-        </Button>
+        </Button.Root>
       );
 
       expect(screen.getByTestId(BUTTON_CONTENT_TEST_ID)).toBeInstanceOf(HTMLDivElement);
@@ -128,36 +128,36 @@ describe('Button', () => {
 
     it('should have not data-disabled attribute when disabled property not provided on Root element', () => {
       render(
-        <Button disabled={false}>
+        <Button.Root disabled={false}>
           <Button.Content data-testid={BUTTON_CONTENT_TEST_ID}>{BUTTON_CONTENT_CONTENT}</Button.Content>
-        </Button>
+        </Button.Root>
       );
       expect(screen.getByTestId(BUTTON_CONTENT_TEST_ID)).not.toHaveAttribute('data-disabled');
     });
 
     it('should have data-disabled attribute when disabled property provided on Root element', () => {
       render(
-        <Button disabled={true}>
+        <Button.Root disabled={true}>
           <Button.Content data-testid={BUTTON_CONTENT_TEST_ID}>{BUTTON_CONTENT_CONTENT}</Button.Content>
-        </Button>
+        </Button.Root>
       );
       expect(screen.getByTestId(BUTTON_CONTENT_TEST_ID)).toHaveAttribute('data-disabled');
     });
 
     it('should have not data-loading attribute when loading property not provided on Root element', () => {
       render(
-        <Button loading={false}>
+        <Button.Root loading={false}>
           <Button.Content data-testid={BUTTON_CONTENT_TEST_ID}>{BUTTON_CONTENT_CONTENT}</Button.Content>
-        </Button>
+        </Button.Root>
       );
       expect(screen.getByTestId(BUTTON_CONTENT_TEST_ID)).not.toHaveAttribute('data-loading');
     });
 
     it('should have data-loading attribute when loading property provided on Root element', () => {
       render(
-        <Button loading={true}>
+        <Button.Root loading={true}>
           <Button.Content data-testid={BUTTON_CONTENT_TEST_ID}>{BUTTON_CONTENT_CONTENT}</Button.Content>
-        </Button>
+        </Button.Root>
       );
       expect(screen.getByTestId(BUTTON_CONTENT_TEST_ID)).toHaveAttribute('data-loading');
     });
@@ -166,11 +166,11 @@ describe('Button', () => {
       const className = 'test';
 
       render(
-        <Button disabled={false}>
+        <Button.Root disabled={false}>
           <Button.Content data-testid={BUTTON_CONTENT_TEST_ID} className={className}>
             {BUTTON_CONTENT_CONTENT}
           </Button.Content>
-        </Button>
+        </Button.Root>
       );
       expect(screen.getByTestId(BUTTON_CONTENT_TEST_ID)).toHaveClass(className);
     });
@@ -181,18 +181,18 @@ describe('Button', () => {
       const ref = createRef<HTMLDivElement>();
 
       render(
-        <Button loading={true}>
+        <Button.Root loading={true}>
           <Button.Loader ref={ref}>{BUTTON_LOADER_CONTENT}</Button.Loader>
-        </Button>
+        </Button.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLDivElement);
     });
 
     it('should be div element when asChild property not provided', () => {
       const { container } = render(
-        <Button loading={true}>
+        <Button.Root loading={true}>
           <Button.Loader data-testid={BUTTON_LOADER_TEST_ID}>{BUTTON_LOADER_CONTENT}</Button.Loader>
-        </Button>
+        </Button.Root>
       );
 
       expect(screen.getByTestId(BUTTON_LOADER_TEST_ID)).toBeInstanceOf(HTMLDivElement);
@@ -202,11 +202,11 @@ describe('Button', () => {
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
-        <Button loading={true}>
+        <Button.Root loading={true}>
           <Button.Loader asChild data-testid={BUTTON_LOADER_TEST_ID}>
             <span>{BUTTON_LOADER_CONTENT}</span>
           </Button.Loader>
-        </Button>
+        </Button.Root>
       );
 
       expect(screen.getByTestId(BUTTON_LOADER_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
@@ -216,27 +216,27 @@ describe('Button', () => {
 
     it('should be not render when loading property not provided on Root element', () => {
       render(
-        <Button loading={false}>
+        <Button.Root loading={false}>
           <Button.Loader data-testid={BUTTON_LOADER_TEST_ID}>{BUTTON_LOADER_CONTENT}</Button.Loader>
-        </Button>
+        </Button.Root>
       );
       expect(screen.queryByTestId(BUTTON_LOADER_TEST_ID)).not.toBeInTheDocument();
     });
 
     it('should have not data-disabled attribute when disabled property not provided on Root element', () => {
       render(
-        <Button loading={true} disabled={false}>
+        <Button.Root loading={true} disabled={false}>
           <Button.Loader data-testid={BUTTON_LOADER_TEST_ID}>{BUTTON_LOADER_CONTENT}</Button.Loader>
-        </Button>
+        </Button.Root>
       );
       expect(screen.getByTestId(BUTTON_LOADER_TEST_ID)).not.toHaveAttribute('data-disabled');
     });
 
     it('should have data-disabled attribute when disabled property provided on Root element', () => {
       render(
-        <Button loading={true} disabled={true}>
+        <Button.Root loading={true} disabled={true}>
           <Button.Loader data-testid={BUTTON_LOADER_TEST_ID}>{BUTTON_LOADER_CONTENT}</Button.Loader>
-        </Button>
+        </Button.Root>
       );
       expect(screen.getByTestId(BUTTON_LOADER_TEST_ID)).toHaveAttribute('data-disabled');
     });
@@ -245,11 +245,11 @@ describe('Button', () => {
       const className = 'test';
 
       render(
-        <Button loading={true}>
+        <Button.Root loading={true}>
           <Button.Loader className={className} data-testid={BUTTON_LOADER_TEST_ID}>
             {BUTTON_LOADER_CONTENT}
           </Button.Loader>
-        </Button>
+        </Button.Root>
       );
       expect(screen.getByTestId(BUTTON_LOADER_TEST_ID)).toHaveClass(className);
     });

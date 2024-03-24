@@ -35,4 +35,4 @@ export const ButtonRoot = forwardRef<HTMLButtonElement, ButtonRootProps>((props,
   );
 });
 
-ButtonRoot.displayName = 'ButtonRoot';
+ButtonRoot.displayName = 'Button.Root';
