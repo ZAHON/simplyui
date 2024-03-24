@@ -3,7 +3,7 @@ import type { MenuContentProps } from './menu-content.types';
 import { forwardRef } from 'react';
 import { Content } from '@radix-ui/react-dropdown-menu';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { MenuContentContextProvider } from '../menu-content-context';
 import { menuContentStyles } from './menu-content.styles';
 

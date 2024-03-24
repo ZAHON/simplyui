@@ -3,7 +3,7 @@ import type { ModalContentProps } from './modal-content.types';
 import { forwardRef } from 'react';
 import { Content } from '@radix-ui/react-dialog';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { ModalContentContextProvider } from '../modal-content-context';
 import { modalContentStyles } from './modal-content.styles';
 

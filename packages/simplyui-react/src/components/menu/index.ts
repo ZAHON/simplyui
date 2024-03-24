@@ -1,3 +1,5 @@
+'use client';
+
 export type { MenuRootProps } from './menu-root';
 export type { MenuTriggerProps } from './menu-trigger';
 export type { MenuPortalProps } from './menu-portal';

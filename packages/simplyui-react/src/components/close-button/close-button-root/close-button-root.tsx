@@ -1,8 +1,8 @@
 import type { CloseButtonRootProps } from './close-button-root.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { CloseButtonIcon } from '../close-button-icon';
 import { closeButtonRootStyles } from './close-button-root.styles';
 

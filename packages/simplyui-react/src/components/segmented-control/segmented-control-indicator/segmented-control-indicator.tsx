@@ -2,7 +2,7 @@
 import type { SegmentedControlIndicatorProps } from './segmented-control-indicator.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useSegmentedControlContext } from '../segmented-control-context';
 import { segmentedControlIndicatorStyles } from './segmented-control-indicator.styles';
 

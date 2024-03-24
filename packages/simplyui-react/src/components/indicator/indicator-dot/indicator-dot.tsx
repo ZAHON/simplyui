@@ -1,8 +1,8 @@
 import type { IndicatorDotProps, IndicatorDotStyle } from './indicator-dot.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { Primitive } from '../../primitive';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { getIndicatorDotPositionVariables } from './utils/get-indicator-dot-position-variables';
 import { indicatorDotStyles } from './indicator-dot.styles';
 

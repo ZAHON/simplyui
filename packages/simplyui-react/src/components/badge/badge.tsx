@@ -1,8 +1,8 @@
 import type { BadgeProps } from './badge.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { Primitive } from '../primitive';
+import { applayComponentDefaultProps } from '../../utils/applay-component-default-props';
 import { badgeStyles } from './badge.styles';
 
 const defaultProps: Partial<BadgeProps> = {

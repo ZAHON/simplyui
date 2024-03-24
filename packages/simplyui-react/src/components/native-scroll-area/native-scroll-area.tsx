@@ -1,8 +1,8 @@
 import type { NativeScrollAreaProps } from './native-scroll-area.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { Primitive } from '../primitive';
+import { applayComponentDefaultProps } from '../../utils/applay-component-default-props';
 import { nativeScrollAreaStyles } from './native-scroll-area.styles';
 
 const defaultProps: Partial<NativeScrollAreaProps> = {

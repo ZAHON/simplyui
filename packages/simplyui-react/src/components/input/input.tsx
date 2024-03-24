@@ -1,7 +1,7 @@
 import type { InputProps } from './input.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../utils/applay-component-default-props';
 import { inputStyles } from './input.styles';
 
 const defaultProps: Partial<InputProps> = {

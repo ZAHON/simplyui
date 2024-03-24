@@ -2,7 +2,7 @@
 import type { BurgerIconProps } from './burger-icon.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useBurgerContext } from '../burger-context';
 import { burgerIconStyles } from './burger-icon.styles';
 

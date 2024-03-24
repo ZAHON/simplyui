@@ -2,7 +2,7 @@
 import type { SelectScrollDownButtonIconProps } from './select-scroll-down-button-icon.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { IconChevronDown } from '@/icons/icon-chevron-down';
+import { IconChevronDown } from '../../../../icons/icon-chevron-down';
 import { useSelectContext } from '../../select-context';
 import { selectScrollDownButtonIconStyles } from './select-scroll-down-button-icon.styles';
 

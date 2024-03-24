@@ -1,3 +1,5 @@
+'use client';
+
 export type { LabelRootProps } from './label-root';
 export type { LabelIndicatorProps } from './label-indicator';
 

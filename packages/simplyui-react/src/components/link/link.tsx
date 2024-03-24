@@ -1,8 +1,8 @@
 import type { LinkProps } from './link.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { Primitive } from '../primitive';
+import { applayComponentDefaultProps } from '../../utils/applay-component-default-props';
 import { linkStyles } from './link.styles';
 
 const defaultProps: Partial<LinkProps> = {

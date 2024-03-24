@@ -3,7 +3,7 @@ import type { CheckboxRootProps } from './checkbox-root.types';
 import { forwardRef } from 'react';
 import { Root } from '@radix-ui/react-checkbox';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { CheckboxContextProvider } from '../checkbox-context';
 import { checkboxRootStyles } from './checkbox-root.styles';
 

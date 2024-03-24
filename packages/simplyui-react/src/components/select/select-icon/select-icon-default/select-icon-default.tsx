@@ -2,7 +2,7 @@
 import type { SelectIconDefaultProps } from './select-icon-default.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { IconSelector } from '@/icons/icon-selector';
+import { IconSelector } from '../../../../icons/icon-selector';
 import { useSelectContext } from '../../select-context';
 import { selectIconDefaultStyles } from './select-icon-default.styles';
 

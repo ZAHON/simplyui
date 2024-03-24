@@ -1,4 +1,4 @@
-import { clamp } from '@/utils/clamp';
+import { clamp } from '../clamp';
 
 export function convertValueToPercentage(value: number, min: number, max: number) {
   const maxSteps = max - min;

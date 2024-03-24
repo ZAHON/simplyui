@@ -2,7 +2,7 @@
 import type { SheetBodyProps } from './sheet-body.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useSheetContentContext } from '../sheet-content-context';
 import { sheetBodyStyles } from './sheet-body.styles';
 

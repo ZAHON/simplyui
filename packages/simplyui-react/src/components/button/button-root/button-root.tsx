@@ -2,8 +2,8 @@
 import type { ButtonRootProps } from './button-root.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
-import { Primitive } from '@/components/primitive';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
+import { Primitive } from '../../primitive';
 import { ButtonContextProvider } from '../button-context';
 import { buttonRootStyles } from './button-root.styles';
 

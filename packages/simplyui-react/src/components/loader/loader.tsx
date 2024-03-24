@@ -1,6 +1,6 @@
 import type { LoaderProps } from './loader.types';
 import { forwardRef } from 'react';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../utils/applay-component-default-props';
 import { LoaderOval } from './loader-oval';
 import { LoaderDots } from './loader-dots';
 

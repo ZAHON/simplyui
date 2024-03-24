@@ -3,7 +3,7 @@ import type { SheetOverlayProps } from './sheet-overlay.types';
 import { forwardRef } from 'react';
 import { Overlay } from '@radix-ui/react-dialog';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { sheetOverlayStyles } from './sheet-overlay.styles';
 
 const defaultProps: Partial<SheetOverlayProps> = {

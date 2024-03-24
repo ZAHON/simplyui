@@ -2,8 +2,8 @@
 import type { NativeSelectRootProps } from './native-select-root.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { NativeSelectContextProvider } from '../native-select-context';
 import { nativeSelectRootStyles } from './native-select-root.styles';
 

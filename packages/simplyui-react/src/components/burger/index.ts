@@ -1,3 +1,5 @@
+'use client';
+
 export type { BurgerRootProps } from './burger-root';
 export type { BurgerIconProps } from './burger-icon';
 

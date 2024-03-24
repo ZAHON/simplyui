@@ -2,7 +2,7 @@
 import type { ButtonLoaderProps } from './button-loader.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useButtonContext } from '../button-context';
 import { buttonLoaderStyles } from './button-loader.styles';
 

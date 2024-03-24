@@ -2,7 +2,7 @@
 import type { ModalFooterProps } from './modal-footer.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useModalContentContext } from '../modal-content-context';
 import { modalFooterStyles } from './modal-footer.styles';
 

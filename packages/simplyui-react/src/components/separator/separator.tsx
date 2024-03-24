@@ -1,8 +1,8 @@
 import type { SeparatorProps } from './separator.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { Primitive } from '../primitive';
+import { applayComponentDefaultProps } from '../../utils/applay-component-default-props';
 import { separatorStyles } from './separator.styles';
 
 const defaultProps: Partial<SeparatorProps> = {

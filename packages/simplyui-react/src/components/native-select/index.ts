@@ -1,3 +1,5 @@
+'use client';
+
 export type { NativeSelectRootProps } from './native-select-root';
 export type { NativeSelectSlotProps } from './native-select-slot';
 export type { NativeSelectInputProps } from './native-select-input';

@@ -2,8 +2,8 @@
 import type { IconButtonRootProps } from './icon-button-root.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { Primitive } from '../../primitive';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { IconButtonContextProvider } from '../icon-button-context';
 import { iconButtonRootStyles } from './icon-button-root.styles';
 

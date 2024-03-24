@@ -3,7 +3,7 @@ import type { ScrollAreaScrollbarProps } from './scroll-area-scrollbar.types';
 import { forwardRef } from 'react';
 import { Scrollbar } from '@radix-ui/react-scroll-area';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { scrollAreaScrollbarStyles } from './scroll-area-scrollbar.styles';
 
 const defaultProps: Partial<ScrollAreaScrollbarProps> = {

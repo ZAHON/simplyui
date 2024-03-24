@@ -2,7 +2,7 @@
 import type { TextFieldInputProps } from './text-field-input.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { useTextFieldContext } from '../text-field-context';
 import { textFieldInputStyles } from './text-field-input.styles';
 

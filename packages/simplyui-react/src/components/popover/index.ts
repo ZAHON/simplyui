@@ -1,3 +1,5 @@
+'use client';
+
 export type { PopoverRootProps } from './popover-root';
 export type { PopoverTriggerProps } from './popover-trigger';
 export type { PopoverAnchorProps } from './popover-anchor';

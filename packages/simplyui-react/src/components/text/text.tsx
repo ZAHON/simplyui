@@ -2,7 +2,7 @@ import type { TextProps } from './text.types';
 import { forwardRef } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../utils/applay-component-default-props';
 import { textStyles } from './text.styles';
 
 const defaultProps: Partial<TextProps> = {

@@ -1,3 +1,5 @@
+'use client';
+
 export type { SheetRootProps } from './sheet-root';
 export type { SheetTriggerProps } from './sheet-trigger';
 export type { SheetPortalProps } from './sheet-portal';

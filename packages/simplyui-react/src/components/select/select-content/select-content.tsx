@@ -3,7 +3,7 @@ import type { SelectContentProps } from './select-content.types';
 import { forwardRef } from 'react';
 import { Content } from '@radix-ui/react-select';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { SelectContentContextProvider } from '../select-content-context';
 import { useSelectContext } from '../select-context';
 import { selectContentStyles } from './select-content.styles';

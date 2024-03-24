@@ -2,8 +2,8 @@
 import type { AlertRootProps } from './alert-root.types';
 import { forwardRef, useId } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { Primitive } from '../../primitive';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { AlertContextProvider } from '../alert-context';
 import { alertRootStyles } from './alert-root.styles';
 

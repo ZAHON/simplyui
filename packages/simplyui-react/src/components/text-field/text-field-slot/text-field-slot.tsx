@@ -2,7 +2,7 @@
 import type { TextFieldSlotProps } from './text-field-slot.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useTextFieldContext } from '../text-field-context';
 import { textFieldSlotStyles } from './text-field-slot.styles';
 

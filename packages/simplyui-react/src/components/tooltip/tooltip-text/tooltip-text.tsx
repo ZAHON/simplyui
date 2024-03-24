@@ -1,7 +1,7 @@
 import type { TooltipTextProps } from './tooltip-text.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { tooltipTextStyles } from './tooltip-text.styles';
 
 export const TooltipText = forwardRef<HTMLParagraphElement, TooltipTextProps>((props, ref) => {

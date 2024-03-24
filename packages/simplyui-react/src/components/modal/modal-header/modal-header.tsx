@@ -2,7 +2,7 @@
 import type { ModalHeaderProps } from './modal-header.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useModalContentContext } from '../modal-content-context';
 import { modalHeaderStyles } from './modal-header.styles';
 

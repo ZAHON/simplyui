@@ -2,7 +2,7 @@
 import type { NativeSelectIconProps } from './native-select-icon.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useNativeSelectContext } from '../native-select-context';
 import { NativeSelectIconDefault } from './native-select-icon-default';
 import { nativeSelectIconStyles } from './native-select-icon.styles';

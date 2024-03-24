@@ -1,7 +1,7 @@
 import type { IndicatorRootProps } from './indicator-root.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { indicatorRootStyles } from './indicator-root.styles';
 
 export const IndicatorRoot = forwardRef<HTMLDivElement, IndicatorRootProps>((props, ref) => {

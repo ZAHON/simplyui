@@ -3,7 +3,7 @@ import type { SwitchRootProps } from './switch-root.types';
 import { forwardRef } from 'react';
 import { Root } from '@radix-ui/react-switch';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { SwitchContextProvider } from '../switch-context';
 import { switchRootStyles } from './switch-root.styles';
 

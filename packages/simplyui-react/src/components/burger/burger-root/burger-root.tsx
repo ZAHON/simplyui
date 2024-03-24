@@ -3,9 +3,9 @@ import type { BurgerRootProps } from './burger-root.types';
 import type { MouseEvent } from 'react';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { useUncontrolled } from '@/hooks/use-uncontrolled';
-import { Primitive } from '@/components/primitive';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { useUncontrolled } from '../../../hooks/use-uncontrolled';
+import { Primitive } from '../../primitive';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { BurgerContextProvider } from '../burger-context';
 import { burgerRootStyles } from './burger-root.styles';
 

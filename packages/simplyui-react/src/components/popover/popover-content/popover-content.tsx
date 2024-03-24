@@ -3,7 +3,7 @@ import type { PopoverContentProps } from './popover-content.types';
 import { forwardRef } from 'react';
 import { Content } from '@radix-ui/react-popover';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { popoverContentStyles } from './popover-content.styles';
 
 const defaultProps: Partial<PopoverContentProps> = {

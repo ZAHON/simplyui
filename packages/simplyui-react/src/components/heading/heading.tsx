@@ -2,7 +2,7 @@ import type { HeadingProps } from './heading.types';
 import { forwardRef } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../utils/applay-component-default-props';
 import { headingStyles } from './heading.styles';
 
 const defaultProps: Partial<HeadingProps> = {

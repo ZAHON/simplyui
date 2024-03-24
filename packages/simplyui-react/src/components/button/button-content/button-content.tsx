@@ -2,7 +2,7 @@
 import type { ButtonContentProps } from './button-content.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useButtonContext } from '../button-context';
 import { buttonContentStyles } from './button-content.styles';
 

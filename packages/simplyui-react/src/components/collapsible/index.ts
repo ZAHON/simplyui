@@ -1,3 +1,5 @@
+'use client';
+
 export type { CollapsibleRootProps } from './collapsible-root';
 export type { CollapsibleTriggerProps } from './collapsible-trigger';
 export type { CollapsibleContentProps } from './collapsible-content';

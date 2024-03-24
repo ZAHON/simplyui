@@ -1,3 +1,5 @@
+'use client';
+
 export type { SliderRootProps } from './slider-root';
 export type { SliderTrackProps } from './slider-track';
 export type { SliderRangeProps } from './slider-range';

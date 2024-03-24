@@ -1,4 +1,7 @@
-export * from './tooltip-provider';
+'use client';
+
+export type { TooltipProviderProps } from './tooltip-provider';
+export { TooltipProvider } from './tooltip-provider';
 
 export type { TooltipRootProps } from './tooltip-root';
 export type { TooltipTriggerProps } from './tooltip-trigger';

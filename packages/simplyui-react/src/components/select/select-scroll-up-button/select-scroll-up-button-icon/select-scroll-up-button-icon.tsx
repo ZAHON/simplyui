@@ -2,7 +2,7 @@
 import type { SelectScrollUpButtonIconProps } from './select-scroll-up-button-icon.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { IconChevronUp } from '@/icons/icon-chevron-up';
+import { IconChevronUp } from '../../../../icons/icon-chevron-up';
 import { useSelectContext } from '../../select-context';
 import { selectScrollUpButtonIconStyles } from './select-scroll-up-button-icon.styles';
 

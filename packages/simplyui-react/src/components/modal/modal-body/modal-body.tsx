@@ -2,7 +2,7 @@
 import type { ModalBodyProps } from './modal-body.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useModalContentContext } from '../modal-content-context';
 import { modalBodyStyles } from './modal-body.styles';
 

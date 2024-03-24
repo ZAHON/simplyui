@@ -3,8 +3,8 @@ import type { SegmentedControlRootProps } from './segmented-control-root.types';
 import { forwardRef } from 'react';
 import { Root } from '@radix-ui/react-radio-group';
 import { twMerge } from 'tailwind-merge';
-import { useUncontrolled } from '@/hooks/use-uncontrolled';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { useUncontrolled } from '../../../hooks/use-uncontrolled';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { SegmentedControlContextProvider } from '../segmented-control-context';
 import { segmentedControlRootStyles } from './segmented-control-root.styles';
 

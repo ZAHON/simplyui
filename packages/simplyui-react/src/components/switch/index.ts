@@ -1,3 +1,5 @@
+'use client';
+
 export type { SwitchRootProps } from './switch-root';
 export type { SwitchThumb } from './switch-thumb';
 

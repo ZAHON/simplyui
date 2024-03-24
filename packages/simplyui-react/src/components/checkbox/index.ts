@@ -1,3 +1,5 @@
+'use client';
+
 export type { CheckboxRootProps } from './checkbox-root';
 export type { CheckboxIndicatorProps } from './checkbox-indicator';
 

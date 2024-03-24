@@ -3,8 +3,8 @@ import type { LabelRootProps } from './label-root.types';
 import type { MouseEvent } from 'react';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { Primitive } from '../../primitive';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { LabelContextProvider } from '../label-context';
 import { labelRootStyles } from './label-root.styles';
 

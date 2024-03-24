@@ -2,7 +2,7 @@
 import type { SelectRootProps } from './select-root.types';
 import { Root } from '@radix-ui/react-select';
 import { SelectContextProvider } from '../select-context';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 
 const defaultProps: Partial<SelectRootProps> = {
   radius: 'md',

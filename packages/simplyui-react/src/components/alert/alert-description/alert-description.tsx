@@ -2,7 +2,7 @@
 import type { AlertDescriptionProps } from './alert-description.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useAlertContext } from '../alert-context';
 import { alertDescriptionStyles } from './alert-description.styles';
 

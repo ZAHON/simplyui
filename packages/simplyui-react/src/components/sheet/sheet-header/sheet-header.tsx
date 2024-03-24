@@ -2,7 +2,7 @@
 import type { SheetHeaderProps } from './sheet-header.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useSheetContentContext } from '../sheet-content-context';
 import { sheetHeaderStyles } from './sheet-header.styles';
 

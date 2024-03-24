@@ -1,3 +1,5 @@
+'use client';
+
 export type { SelectRootProps } from './select-root';
 export type { SelectTriggerProps } from './select-trigger';
 export type { SelectValueProps } from './select-value';

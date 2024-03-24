@@ -3,8 +3,8 @@ import type { TextFieldRootProps } from './text-field-root.types';
 import type { PointerEvent } from 'react';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { Primitive } from '../../primitive';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { TextFieldContextProvider } from '../text-field-context';
 import { textFieldRootStyles } from './text-field-root.styles';
 

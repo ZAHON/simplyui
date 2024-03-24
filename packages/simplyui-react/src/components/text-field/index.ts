@@ -1,3 +1,5 @@
+'use client';
+
 export type { TextFieldRootProps } from './text-field-root';
 export type { TextFieldSlotProps } from './text-field-slot';
 export type { TextFieldButtonProps } from './text-field-button';

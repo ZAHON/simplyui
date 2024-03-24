@@ -2,8 +2,8 @@
 import type { SegmentedControlContentProps, SegmentedControlContentStyle } from './segmented-control-content.types';
 import { forwardRef, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
-import { getValidChildren } from '@/utils/get-valid-children';
+import { Primitive } from '../../primitive';
+import { getValidChildren } from '../../../utils/get-valid-children';
 import { useSegmentedControlContext } from '../segmented-control-context';
 import { segmentedControlContentStyles } from './segmented-control-content.styles';
 

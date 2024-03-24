@@ -1,3 +1,5 @@
+'use client';
+
 export type { SegmentedControlRootProps } from './segmented-control-root';
 export type { SegmentedControlContentProps } from './segmented-control-content';
 export type { SegmentedControlIndicatorProps } from './segmented-control-indicator';

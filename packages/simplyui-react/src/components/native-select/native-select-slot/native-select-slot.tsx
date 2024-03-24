@@ -2,7 +2,7 @@
 import type { NativeSelectSlotProps } from './native-select-slot.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useNativeSelectContext } from '../native-select-context';
 import { nativeSelectSlotStyles } from './native-select-slot.styles';
 

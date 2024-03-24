@@ -3,7 +3,7 @@ import type { ModalOverlayProps } from './modal-overlay.types';
 import { forwardRef } from 'react';
 import { Overlay } from '@radix-ui/react-dialog';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { modalOverlayStyles } from './modal-overlay.styles';
 
 const defaultProps: Partial<ModalOverlayProps> = {

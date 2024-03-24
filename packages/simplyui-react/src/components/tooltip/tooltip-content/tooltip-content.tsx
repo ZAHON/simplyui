@@ -3,7 +3,7 @@ import type { TooltipContentProps } from './tooltip-content.types';
 import { forwardRef } from 'react';
 import { Content } from '@radix-ui/react-tooltip';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { tooltipContentStyles } from './tooltip-content.styles';
 
 const defaultProps: Partial<TooltipContentProps> = {

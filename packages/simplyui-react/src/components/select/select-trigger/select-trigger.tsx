@@ -3,7 +3,7 @@ import type { SelectTriggerProps } from './select-trigger.types';
 import { forwardRef } from 'react';
 import { Trigger } from '@radix-ui/react-select';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { useSelectContext } from '../select-context';
 import { selectTriggerStyles } from './select-trigger.styles';
 

@@ -3,7 +3,7 @@ import type { SliderRootProps } from './slider-root.types';
 import { forwardRef } from 'react';
 import { Root } from '@radix-ui/react-slider';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { SliderContextProvider } from '../slider-context';
 import { sliderRootStyles } from './slider-root.styles';
 

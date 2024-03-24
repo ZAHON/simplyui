@@ -1,3 +1,5 @@
+'use client';
+
 export type { ButtonRootProps } from './button-root';
 export type { ButtonContentProps } from './button-content';
 export type { ButtonLoaderProps } from './button-loader';

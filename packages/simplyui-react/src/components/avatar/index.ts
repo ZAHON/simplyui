@@ -1,3 +1,5 @@
+'use client';
+
 export type { AvatarRootProps } from './avatar-root';
 export type { AvatarImageProps } from './avatar-image';
 export type { AvatarFallbackProps } from './avatar-fallback';

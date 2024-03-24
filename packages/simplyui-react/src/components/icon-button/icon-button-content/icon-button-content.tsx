@@ -2,7 +2,7 @@
 import type { IconButtonContentProps } from './icon-button-content.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Primitive } from '@/components/primitive';
+import { Primitive } from '../../primitive';
 import { useIconButtonContext } from '../icon-button-context';
 import { iconButtonContentStyles } from './icon-button-content.styles';
 

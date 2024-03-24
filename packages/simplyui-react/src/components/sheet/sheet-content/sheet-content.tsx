@@ -3,7 +3,7 @@ import type { SheetContentProps } from './sheet-content.types';
 import { forwardRef } from 'react';
 import { Content } from '@radix-ui/react-dialog';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { SheetContentContextProvider } from '../sheet-content-context';
 import { sheetContentStyles } from './sheet-content.styles';
 

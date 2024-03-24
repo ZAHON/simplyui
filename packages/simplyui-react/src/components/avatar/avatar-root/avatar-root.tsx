@@ -3,7 +3,7 @@ import type { AvatarRootProps } from './avatar-root.types';
 import { forwardRef } from 'react';
 import { Root } from '@radix-ui/react-avatar';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { avatarRootStyles } from './avatar-root.styles';
 
 const defaultProps: Partial<AvatarRootProps> = {

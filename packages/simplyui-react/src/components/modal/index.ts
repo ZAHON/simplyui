@@ -1,3 +1,5 @@
+'use client';
+
 export type { ModalRootProps } from './modal-root';
 export type { ModalTriggerProps } from './modal-trigger';
 export type { ModalPortalProps } from './modal-portal';

@@ -3,7 +3,7 @@ import type { ScrollAreaThumbProps } from './scroll-area-thumb.types';
 import { forwardRef } from 'react';
 import { Thumb } from '@radix-ui/react-scroll-area';
 import { twMerge } from 'tailwind-merge';
-import { applayComponentDefaultProps } from '@/utils/applay-component-default-props';
+import { applayComponentDefaultProps } from '../../../utils/applay-component-default-props';
 import { scrollAreaThumbStyles } from './scroll-area-thumb.styles';
 
 const defaultProps: Partial<ScrollAreaThumbProps> = {

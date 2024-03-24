@@ -2,7 +2,7 @@
 import type { SelectItemIndicatorIconProps } from './select-item-indicator-icon.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { IconCheck } from '@/icons/icon-check';
+import { IconCheck } from '../../../../icons/icon-check';
 import { useSelectContext } from '../../select-context';
 import { selectItemIndicatorIconStyles } from './select-item-indicator-icon.styles';
 

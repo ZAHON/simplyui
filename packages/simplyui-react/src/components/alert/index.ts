@@ -1,3 +1,5 @@
+'use client';
+
 export type { AlertRootProps } from './alert-root';
 export type { AlertIconProps } from './alert-icon';
 export type { AlertBodyProps } from './alert-body';
