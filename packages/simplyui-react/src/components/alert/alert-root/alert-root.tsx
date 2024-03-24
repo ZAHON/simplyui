@@ -41,4 +41,4 @@ export const AlertRoot = forwardRef<HTMLDivElement, AlertRootProps>((props, ref)
   );
 });
 
-AlertRoot.displayName = 'AlertRoot';
+AlertRoot.displayName = 'Alert.Root';

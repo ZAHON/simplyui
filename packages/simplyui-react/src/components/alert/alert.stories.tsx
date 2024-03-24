@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Alert } from '.';
+import * as Alert from '.';
 
-const meta: Meta<typeof Alert> = {
+const meta: Meta<typeof Alert.Root> = {
   title: 'Feedback/Alert',
-  component: Alert,
+  component: Alert.Root,
   args: {
     color: 'danger',
     radius: 'md',
@@ -23,10 +23,10 @@ const meta: Meta<typeof Alert> = {
   argTypes: {
     asChild: { control: false },
     children: { control: false },
-    color: { control: 'select' },
-    radius: { control: 'select' },
-    size: { control: 'select' },
-    variant: { control: 'select' },
+    color: { options: ['default', 'primary', 'success', 'warning', 'danger'], control: 'select' },
+    radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
+    size: { options: ['1', '2', '3', '4'], control: 'select' },
+    variant: { options: ['filled', 'light', 'outline', 'light-outline'], control: 'select' },
   },
   decorators: [
     (Story) => (
@@ -38,7 +38,7 @@ const meta: Meta<typeof Alert> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Alert>;
+type Story = StoryObj<typeof Alert.Root>;
 
 export const Default: Story = {};
 
@@ -55,7 +55,7 @@ export const WithIcon: Story = {
     };
 
     return (
-      <Alert size={size} {...others}>
+      <Alert.Root size={size} {...others}>
         <Alert.Icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,6 @@ export const WithIcon: Story = {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5"
-            className="icon icon-tabler icon-tabler-alert-triangle"
             viewBox="0 0 24 24"
           >
             <path stroke="none" d="M0 0h24v24H0z"></path>
@@ -83,7 +82,7 @@ export const WithIcon: Story = {
             aut praesentium quibusdam reiciendis.
           </Alert.Description>
         </Alert.Body>
-      </Alert>
+      </Alert.Root>
     );
   },
 };
@@ -94,7 +93,7 @@ export const WithVisuallyHiddenDescription: Story = {
   },
   render: ({ ...props }) => {
     return (
-      <Alert aria-describedby={undefined} {...props}>
+      <Alert.Root aria-describedby={undefined} {...props}>
         <Alert.Body>
           <Alert.Title>You will need admin privileges to install and access this application.</Alert.Title>
           <Alert.Description visuallyHidden>
@@ -103,7 +102,7 @@ export const WithVisuallyHiddenDescription: Story = {
             aut praesentium quibusdam reiciendis.
           </Alert.Description>
         </Alert.Body>
-      </Alert>
+      </Alert.Root>
     );
   },
 };

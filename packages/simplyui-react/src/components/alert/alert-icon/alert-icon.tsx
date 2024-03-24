@@ -18,4 +18,4 @@ export const AlertIcon = forwardRef<HTMLDivElement, AlertIconProps>((props, ref)
   );
 });
 
-AlertIcon.displayName = 'AlertIcon';
+AlertIcon.displayName = 'Alert.Icon';

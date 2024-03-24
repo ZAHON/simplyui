@@ -1,4 +1,4 @@
-export * from './alert/index.js';
+export * as Alert from './alert/index.js';
 export * from './avatar/index.js';
 export * from './badge/index.js';
 export * from './burger/index.js';

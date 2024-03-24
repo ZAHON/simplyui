@@ -23,4 +23,4 @@ export const AlertTitle = forwardRef<HTMLParagraphElement, AlertTitleProps>((pro
   );
 });
 
-AlertTitle.displayName = 'AlertTitle';
+AlertTitle.displayName = 'Alert.Title';

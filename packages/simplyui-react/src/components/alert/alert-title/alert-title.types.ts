@@ -15,7 +15,7 @@ export interface AlertTitleProps extends ComponentPropsWithRef<'p'> {
   /**
    * When `true`, alert title will be hidden from the screen in an accessible way.
    *
-   * If you want to remove the alert title entirely, remove this part and pass `aria-labelledby={undefined}` to `Alert` component.
+   * If you want to remove the alert title entirely, remove this part and pass `aria-labelledby={undefined}` to `Alert.Root` component.
    * @default false
    */
   visuallyHidden?: boolean;

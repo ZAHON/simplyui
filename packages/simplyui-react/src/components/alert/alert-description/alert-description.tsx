@@ -23,4 +23,4 @@ export const AlertDescription = forwardRef<HTMLParagraphElement, AlertDescriptio
   );
 });
 
-AlertDescription.displayName = 'AlertDescription';
+AlertDescription.displayName = 'Alert.Description';

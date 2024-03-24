@@ -18,4 +18,4 @@ export const AlertBody = forwardRef<HTMLDivElement, AlertBodyProps>((props, ref)
   );
 });
 
-AlertBody.displayName = 'AlertBody';
+AlertBody.displayName = 'Alert.Body';
