@@ -15,4 +15,4 @@ export const CollapsibleContent = forwardRef<HTMLDivElement, CollapsibleContentP
   );
 });
 
-CollapsibleContent.displayName = 'CollapsibleContent';
+CollapsibleContent.displayName = 'Collapsible.Content';

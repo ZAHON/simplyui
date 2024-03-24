@@ -13,4 +13,4 @@ export const CollapsibleTrigger = forwardRef<HTMLButtonElement, CollapsibleTrigg
   );
 });
 
-CollapsibleTrigger.displayName = 'CollapsibleTrigger';
+CollapsibleTrigger.displayName = 'Collapsible.Trigger';

@@ -30,4 +30,4 @@ export const ScrollAreaScrollbar = forwardRef<HTMLDivElement, ScrollAreaScrollba
   );
 });
 
-ScrollAreaScrollbar.displayName = 'ScrollAreaScrollbar';
+ScrollAreaScrollbar.displayName = 'ScrollArea.Scrollbar';

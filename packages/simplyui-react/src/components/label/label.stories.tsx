@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Label } from '.';
+import * as Label from '.';
 
-const meta: Meta<typeof Label> = {
+const meta: Meta<typeof Label.Root> = {
   title: 'Typography/Label',
-  component: Label,
+  component: Label.Root,
   args: {
     children: 'This is a label element.',
     size: '3',
@@ -13,15 +13,15 @@ const meta: Meta<typeof Label> = {
     htmlFor: 'id',
   },
   argTypes: {
-    size: { control: 'select' },
-    tracking: { control: 'select' },
-    weight: { control: 'select' },
+    size: { options: ['1', '2', '3', '4', '5', '6', '7', '8', '9'], control: 'select' },
+    tracking: { options: ['tighter', 'tight', 'normal', 'wide', 'wider', 'widest'], control: 'select' },
+    weight: { options: ['light', 'regular', 'medium', 'semibold', 'bold'], control: 'select' },
     asChild: { control: false },
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof Label>;
+type Story = StoryObj<typeof Label.Root>;
 
 export const Default: Story = {};
 
@@ -34,10 +34,10 @@ export const Disabled: Story = {
 export const WithIndicator: Story = {
   render: ({ children, ...others }) => {
     return (
-      <Label {...others}>
+      <Label.Root {...others}>
         {children}
         <Label.Indicator />
-      </Label>
+      </Label.Root>
     );
   },
 };

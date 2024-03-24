@@ -15,4 +15,4 @@ export const ScrollAreaCorner = forwardRef<HTMLDivElement, ScrollAreaCornerProps
   );
 });
 
-ScrollAreaCorner.displayName = 'ScrollAreaCorner';
+ScrollAreaCorner.displayName = 'ScrollArea.Corner';

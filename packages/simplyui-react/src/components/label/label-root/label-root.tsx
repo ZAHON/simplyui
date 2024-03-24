@@ -42,4 +42,4 @@ export const LabelRoot = forwardRef<HTMLLabelElement, LabelRootProps>((props, re
   );
 });
 
-LabelRoot.displayName = 'LabelRoot';
+LabelRoot.displayName = 'Label.Root';

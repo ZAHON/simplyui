@@ -35,4 +35,4 @@ export const IconButtonRoot = forwardRef<HTMLButtonElement, IconButtonRootProps>
   );
 });
 
-IconButtonRoot.displayName = 'IconButtonRoot';
+IconButtonRoot.displayName = 'IconButton.Root';

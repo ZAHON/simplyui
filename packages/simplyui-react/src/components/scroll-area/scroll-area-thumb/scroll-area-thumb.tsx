@@ -19,3 +19,5 @@ export const ScrollAreaThumb = forwardRef<HTMLDivElement, ScrollAreaThumbProps>(
     </Thumb>
   );
 });
+
+ScrollAreaThumb.displayName = 'ScrollArea.Thumb';

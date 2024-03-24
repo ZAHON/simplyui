@@ -15,4 +15,4 @@ export const ScrollAreaRoot = forwardRef<HTMLDivElement, ScrollAreaRootProps>((p
   );
 });
 
-ScrollAreaRoot.displayName = 'ScrollAreaRoot';
+ScrollAreaRoot.displayName = 'ScrollArea.Root';

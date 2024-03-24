@@ -15,4 +15,4 @@ export const ScrollAreaViewport = forwardRef<HTMLDivElement, ScrollAreaViewportP
   );
 });
 
-ScrollAreaViewport.displayName = 'ScrollAreaViewport';
+ScrollAreaViewport.displayName = 'ScrollArea.Viewport';

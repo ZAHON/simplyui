@@ -28,4 +28,4 @@ export const IconButtonLoader = forwardRef<HTMLDivElement, IconButtonLoaderProps
   );
 });
 
-IconButtonLoader.displayName = 'IconButtonLoader';
+IconButtonLoader.displayName = 'IconButton.Loader';

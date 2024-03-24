@@ -24,4 +24,4 @@ export const IconButtonContent = forwardRef<HTMLSpanElement, IconButtonContentPr
   );
 });
 
-IconButtonContent.displayName = 'IconButtonContent';
+IconButtonContent.displayName = 'IconButton.Content';

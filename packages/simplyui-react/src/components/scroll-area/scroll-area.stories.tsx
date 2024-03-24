@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from '@/components/card';
-import { ScrollArea } from '.';
+import * as ScrollArea from '.';
 
-const meta: Meta<typeof ScrollArea> = {
+const meta: Meta<typeof ScrollArea.Root> = {
   title: 'Misc/ScrollArea',
-  component: ScrollArea,
+  component: ScrollArea.Root,
   args: {
     scrollHideDelay: 600,
     type: 'hover',
@@ -12,7 +12,7 @@ const meta: Meta<typeof ScrollArea> = {
   argTypes: {
     asChild: { control: false },
     children: { control: false },
-    type: { control: 'select' },
+    type: { options: ['auto', 'always', 'scroll', 'hover'], control: 'select' },
   },
 };
 
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof ScrollArea>;
 export const WithScrollbarOrientationVertical: Story = {
   render: ({ ...props }) => {
     return (
-      <ScrollArea {...props} asChild>
+      <ScrollArea.Root {...props} asChild>
         <Card style={{ height: '16rem', width: '16rem' }}>
           <ScrollArea.Viewport>
             <p>
@@ -47,7 +47,7 @@ export const WithScrollbarOrientationVertical: Story = {
             <ScrollArea.Thumb />
           </ScrollArea.Scrollbar>
         </Card>
-      </ScrollArea>
+      </ScrollArea.Root>
     );
   },
 };
@@ -55,7 +55,7 @@ export const WithScrollbarOrientationVertical: Story = {
 export const WithScrollbarOrientationHorizontal: Story = {
   render: ({ ...props }) => {
     return (
-      <ScrollArea {...props} asChild>
+      <ScrollArea.Root {...props} asChild>
         <Card style={{ height: '6rem', width: '16rem' }}>
           <ScrollArea.Viewport>
             <div style={{ width: '40rem' }}>
@@ -70,7 +70,7 @@ export const WithScrollbarOrientationHorizontal: Story = {
             <ScrollArea.Thumb />
           </ScrollArea.Scrollbar>
         </Card>
-      </ScrollArea>
+      </ScrollArea.Root>
     );
   },
 };
@@ -78,7 +78,7 @@ export const WithScrollbarOrientationHorizontal: Story = {
 export const WithScrollbarOrientationVerticalAndHorizontal: Story = {
   render: ({ ...props }) => {
     return (
-      <ScrollArea {...props} asChild>
+      <ScrollArea.Root {...props} asChild>
         <Card style={{ height: '16rem', width: '16rem' }}>
           <ScrollArea.Viewport>
             <div style={{ display: 'flex', columnGap: '1rem', width: '36rem' }}>
@@ -128,7 +128,7 @@ export const WithScrollbarOrientationVerticalAndHorizontal: Story = {
           </ScrollArea.Scrollbar>
           <ScrollArea.Corner />
         </Card>
-      </ScrollArea>
+      </ScrollArea.Root>
     );
   },
 };
