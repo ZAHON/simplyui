@@ -18,4 +18,4 @@ export const MenuLabel = forwardRef<HTMLDivElement, MenuLabelProps>((props, ref)
   );
 });
 
-MenuLabel.displayName = 'MenuLabel';
+MenuLabel.displayName = 'Menu.Label';

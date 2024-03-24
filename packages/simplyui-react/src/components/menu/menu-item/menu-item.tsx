@@ -23,4 +23,4 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>((props, ref) =
   );
 });
 
-MenuItem.displayName = 'MenuItem';
+MenuItem.displayName = 'Menu.Item';

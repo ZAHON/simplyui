@@ -13,4 +13,4 @@ export const MenuTrigger = forwardRef<HTMLButtonElement, MenuTriggerProps>((prop
   );
 });
 
-MenuTrigger.displayName = 'MenuTrigger';
+MenuTrigger.displayName = 'Menu.Trigger';

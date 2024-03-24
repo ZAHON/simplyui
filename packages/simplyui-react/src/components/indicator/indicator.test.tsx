@@ -1,7 +1,7 @@
 import { createRef } from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { Indicator } from '.';
+import * as Indicator from '.';
 
 const INDICATOR_ROOT_TEST_ID = 'indicator-root-test-id';
 const INDICATOR_DOT_TEST_ID = 'indicator-dot-test-id';
@@ -14,9 +14,9 @@ describe('Indicator', () => {
       const ref = createRef<HTMLDivElement>();
 
       render(
-        <Indicator ref={ref}>
+        <Indicator.Root ref={ref}>
           <Indicator.Dot />
-        </Indicator>
+        </Indicator.Root>
       );
 
       expect(ref.current).toBeInstanceOf(HTMLDivElement);
@@ -24,7 +24,7 @@ describe('Indicator', () => {
 
     it('should be div element when asChild property not provided', () => {
       const { container } = render(
-        <Indicator data-testid={INDICATOR_ROOT_TEST_ID}>{INDICATOR_ROOT_CONTENT}</Indicator>
+        <Indicator.Root data-testid={INDICATOR_ROOT_TEST_ID}>{INDICATOR_ROOT_CONTENT}</Indicator.Root>
       );
 
       expect(screen.getByTestId(INDICATOR_ROOT_TEST_ID)).toBeInstanceOf(HTMLDivElement);
@@ -34,9 +34,9 @@ describe('Indicator', () => {
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
-        <Indicator asChild data-testid={INDICATOR_ROOT_TEST_ID}>
+        <Indicator.Root asChild data-testid={INDICATOR_ROOT_TEST_ID}>
           <span>{INDICATOR_ROOT_CONTENT}</span>
-        </Indicator>
+        </Indicator.Root>
       );
 
       expect(screen.getByTestId(INDICATOR_ROOT_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
@@ -48,9 +48,9 @@ describe('Indicator', () => {
       const className = 'test';
 
       render(
-        <Indicator className={className} data-testid={INDICATOR_ROOT_TEST_ID}>
+        <Indicator.Root className={className} data-testid={INDICATOR_ROOT_TEST_ID}>
           {INDICATOR_ROOT_CONTENT}
-        </Indicator>
+        </Indicator.Root>
       );
       expect(screen.getByTestId(INDICATOR_ROOT_TEST_ID)).toHaveClass(className);
     });

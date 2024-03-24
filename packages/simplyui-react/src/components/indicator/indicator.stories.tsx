@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import type { IndicatorDotProps } from '.';
+import type { DotProps } from '.';
 import { useState } from 'react';
-import { Avatar } from '@/components/avatar';
-import { Label } from '@/components/label';
-import { Slider } from '@/components/slider';
-import { Switch } from '@/components/switch';
-import { Indicator } from '.';
+import * as Avatar from '@/components/avatar';
+import * as Label from '@/components/label';
+import * as Slider from '@/components/slider';
+import * as Switch from '@/components/switch';
+import * as Indicator from '.';
 
-const meta: Meta<typeof Indicator> = {
+const meta: Meta<typeof Indicator.Root> = {
   title: 'Data Display/Indicator',
-  component: Indicator,
+  component: Indicator.Root,
 };
 
 export default meta;
-type Story = StoryObj<typeof Indicator>;
+type Story = StoryObj<typeof Indicator.Root>;
 
 export const Default: Story = {
   render: () => {
@@ -23,26 +23,26 @@ export const Default: Story = {
       <div style={{ maxWidth: '36rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', rowGap: '2rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.5rem' }}>
-            <Label asChild>
+            <Label.Root asChild>
               <span id="size">Size: {size[0]}</span>
-            </Label>
-            <Slider min={1} max={9} value={[size[0]]} onValueChange={(value) => setSize([...value])}>
+            </Label.Root>
+            <Slider.Root min={1} max={9} value={[size[0]]} onValueChange={(value) => setSize([...value])}>
               <Slider.Track>
                 <Slider.Range />
               </Slider.Track>
               <Slider.Thumb aria-labelledby="size" />
-            </Slider>
+            </Slider.Root>
           </div>
-          <Indicator>
-            <Indicator.Dot size={size[0].toString() as IndicatorDotProps['size']} />
-            <Avatar size={size[0].toString() as IndicatorDotProps['size']}>
+          <Indicator.Root>
+            <Indicator.Dot size={size[0].toString() as DotProps['size']} />
+            <Avatar.Root size={size[0].toString() as DotProps['size']}>
               <Avatar.Image
                 src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
                 alt="A"
               />
               <Avatar.Fallback>A</Avatar.Fallback>
-            </Avatar>
-          </Indicator>
+            </Avatar.Root>
+          </Indicator.Root>
         </div>
       </div>
     );
@@ -55,21 +55,21 @@ export const WithProcessingDot: Story = {
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', rowGap: '1rem' }}>
-        <Indicator>
+        <Indicator.Root>
           <Indicator.Dot processing={processing} color="danger" />
-          <Avatar>
+          <Avatar.Root>
             <Avatar.Image
               src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
               alt="A"
             />
             <Avatar.Fallback>A</Avatar.Fallback>
-          </Avatar>
-        </Indicator>
+          </Avatar.Root>
+        </Indicator.Root>
         <div style={{ display: 'flex', alignItems: 'center', columnGap: '0.5rem' }}>
-          <Switch id="processing" checked={processing} onCheckedChange={setProcessing}>
+          <Switch.Root id="processing" checked={processing} onCheckedChange={setProcessing}>
             <Switch.Thumb />
-          </Switch>
-          <Label htmlFor="processing">Processing</Label>
+          </Switch.Root>
+          <Label.Root htmlFor="processing">Processing</Label.Root>
         </div>
       </div>
     );
@@ -82,21 +82,21 @@ export const WithDisabledDot: Story = {
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', rowGap: '1rem' }}>
-        <Indicator>
+        <Indicator.Root>
           <Indicator.Dot disabled={disabled} color="danger" />
-          <Avatar>
+          <Avatar.Root>
             <Avatar.Image
               src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
               alt="A"
             />
             <Avatar.Fallback>A</Avatar.Fallback>
-          </Avatar>
-        </Indicator>
+          </Avatar.Root>
+        </Indicator.Root>
         <div style={{ display: 'flex', alignItems: 'center', columnGap: '0.5rem' }}>
-          <Switch id="disabled" checked={disabled} onCheckedChange={setDisabled}>
+          <Switch.Root id="disabled" checked={disabled} onCheckedChange={setDisabled}>
             <Switch.Thumb />
-          </Switch>
-          <Label htmlFor="disabled">Disabled</Label>
+          </Switch.Root>
+          <Label.Root htmlFor="disabled">Disabled</Label.Root>
         </div>
       </div>
     );
@@ -109,21 +109,21 @@ export const WithBorderDot: Story = {
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', rowGap: '1rem' }}>
-        <Indicator>
+        <Indicator.Root>
           <Indicator.Dot withBorder={withBorder} />
-          <Avatar>
+          <Avatar.Root>
             <Avatar.Image
               src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
               alt="A"
             />
             <Avatar.Fallback>A</Avatar.Fallback>
-          </Avatar>
-        </Indicator>
+          </Avatar.Root>
+        </Indicator.Root>
         <div style={{ display: 'flex', alignItems: 'center', columnGap: '0.5rem' }}>
-          <Switch id="with-border" checked={withBorder} onCheckedChange={setWithBorder}>
+          <Switch.Root id="with-border" checked={withBorder} onCheckedChange={setWithBorder}>
             <Switch.Thumb />
-          </Switch>
-          <Label htmlFor="with-border">With border</Label>
+          </Switch.Root>
+          <Label.Root htmlFor="with-border">With border</Label.Root>
         </div>
       </div>
     );
@@ -137,26 +137,26 @@ export const WithOffsetDot: Story = {
     return (
       <div style={{ maxWidth: '36rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', rowGap: '2rem' }}>
-          <Indicator>
+          <Indicator.Root>
             <Indicator.Dot offset={offset[0]} position="bottom-end" withBorder />
-            <Avatar radius="full">
+            <Avatar.Root radius="full">
               <Avatar.Image
                 src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
                 alt="A"
               />
               <Avatar.Fallback>A</Avatar.Fallback>
-            </Avatar>
-          </Indicator>
+            </Avatar.Root>
+          </Indicator.Root>
           <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
-            <Label asChild>
+            <Label.Root asChild>
               <span id="offset">Offset: {offset[0]}</span>
-            </Label>
-            <Slider min={0} max={10} value={[offset[0]]} onValueChange={(value) => setOffset([...value])}>
+            </Label.Root>
+            <Slider.Root min={0} max={10} value={[offset[0]]} onValueChange={(value) => setOffset([...value])}>
               <Slider.Track>
                 <Slider.Range />
               </Slider.Track>
               <Slider.Thumb aria-labelledby="offset" />
-            </Slider>
+            </Slider.Root>
           </div>
         </div>
       </div>

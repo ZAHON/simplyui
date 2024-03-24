@@ -9,13 +9,11 @@ export interface BurgerRootProps extends ComponentPropsWithRef<'button'> {
 
   /**
    * The open state of the burger when it is initially rendered. Use when you do not need to control its open state.
-   * @default false
    */
   defaultOpen?: boolean;
 
   /**
    * The controlled open state of the burger. Must be used in conjunction with `onOpenChange` property.
-   * @default false
    */
   open?: boolean;
 
@@ -57,5 +55,5 @@ export interface BurgerRootProps extends ComponentPropsWithRef<'button'> {
    * The variant of the burger.
    * @default "subtle"
    */
-  variant?: 'filled' | 'light' | 'outline' | 'subtle';
+  variant?: 'filled' | 'light' | 'outline' | 'subtle' | 'light-outline';
 }
