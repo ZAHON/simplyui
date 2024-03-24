@@ -34,40 +34,39 @@ export const nativeSelectInputStyles = cva(
         full: ['rounded-full'],
       },
       size: {
-        sm: ['h-6', 'pl-1.5', 'pr-6', 'text-xs'],
-        md: ['h-8', 'pl-2', 'pr-8', 'text-sm'],
-        lg: ['h-10', 'pl-2.5', 'pr-10', 'text-base'],
-        xl: ['h-12', 'pl-3', 'pr-12', , 'text-lg'],
+        '1': [
+          'h-6',
+          'px-1',
+          'group-has-[[data-native-select-slot]+select]:pl-6',
+          'group-has-[select+[data-native-select-icon]]:pr-6',
+          'text-xs',
+        ],
+        '2': [
+          'h-8',
+          'px-2',
+          'group-has-[[data-native-select-slot]+select]:pl-8',
+          'group-has-[select+[data-native-select-icon]]:pr-8',
+          'text-sm',
+        ],
+        '3': [
+          'h-10',
+          'px-2.5',
+          'group-has-[[data-native-select-slot]+select]:pl-10',
+          'group-has-[select+[data-native-select-icon]]:pr-10',
+          'text-base',
+        ],
+        '4': [
+          'h-12',
+          'px-3',
+          'group-has-[[data-native-select-slot]+select]:pl-12',
+          'group-has-[select+[data-native-select-icon]]:pr-12',
+          'text-lg',
+        ],
       },
       variant: {
         default: ['bg-surface', '*:bg-white', 'dark:*:bg-default-1', 'border-default-7'],
         filled: ['bg-default-3', 'border-default-3'],
       },
-      withSlot: {
-        true: [''],
-      },
     },
-    compoundVariants: [
-      {
-        withSlot: true,
-        size: 'sm',
-        className: ['pl-6'],
-      },
-      {
-        withSlot: true,
-        size: 'md',
-        className: ['pl-8'],
-      },
-      {
-        withSlot: true,
-        size: 'lg',
-        className: ['pl-10'],
-      },
-      {
-        withSlot: true,
-        size: 'xl',
-        className: ['pl-12'],
-      },
-    ],
   }
 );

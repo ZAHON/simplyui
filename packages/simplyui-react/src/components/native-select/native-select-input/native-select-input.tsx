@@ -8,7 +8,7 @@ import { nativeSelectInputStyles } from './native-select-input.styles';
 export const NativeSelectInput = forwardRef<HTMLSelectElement, NativeSelectInputProps>((props, ref) => {
   const { placeholder, className, children, ...others } = props;
 
-  const { disabled, invalid, radius, required, size, variant, withSlot } = useNativeSelectContext();
+  const { disabled, invalid, radius, required, size, variant } = useNativeSelectContext();
 
   return (
     <select
@@ -18,7 +18,7 @@ export const NativeSelectInput = forwardRef<HTMLSelectElement, NativeSelectInput
       aria-required={required ? true : undefined}
       data-disabled={disabled ? '' : undefined}
       data-invalid={invalid ? '' : undefined}
-      className={twMerge(nativeSelectInputStyles({ radius, size, variant, withSlot }), className)}
+      className={twMerge(nativeSelectInputStyles({ radius, size, variant }), className)}
       {...others}
     >
       {placeholder && <option value="">{placeholder}</option>}

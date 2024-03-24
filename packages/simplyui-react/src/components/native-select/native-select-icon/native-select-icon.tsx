@@ -2,32 +2,27 @@
 import type { NativeSelectIconProps } from './native-select-icon.types';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { Primitive } from '@/components/primitive';
 import { useNativeSelectContext } from '../native-select-context';
+import { NativeSelectIconDefault } from './native-select-icon-default';
 import { nativeSelectIconStyles } from './native-select-icon.styles';
 
-export const NativeSelectIcon = forwardRef<SVGSVGElement, NativeSelectIconProps>((props, ref) => {
-  const { className, ...others } = props;
+export const NativeSelectIcon = forwardRef<HTMLDivElement, NativeSelectIconProps>((props, ref) => {
+  const { className, children, ...others } = props;
 
-  const { size } = useNativeSelectContext();
+  const { disabled, invalid } = useNativeSelectContext();
 
   return (
-    <svg
+    <Primitive.div
       ref={ref}
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      focusable="false"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.5"
-      viewBox="0 0 24 24"
-      className={twMerge(nativeSelectIconStyles({ size }), className)}
+      data-native-select-icon=""
+      data-disabled={disabled ? '' : undefined}
+      data-invalid={invalid ? '' : undefined}
+      className={twMerge(nativeSelectIconStyles(), className)}
       {...others}
     >
-      <path stroke="none" d="M0 0h24v24H0z"></path>
-      <path d="M8 9l4-4 4 4M16 15l-4 4-4-4"></path>
-    </svg>
+      {children ? children : <NativeSelectIconDefault />}
+    </Primitive.div>
   );
 });
 

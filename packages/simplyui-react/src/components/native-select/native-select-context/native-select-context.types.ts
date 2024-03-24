@@ -24,17 +24,12 @@ export interface NativeSelectContextValue {
   /**
    * The size of the native select.
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: '1' | '2' | '3' | '4';
 
   /**
    * The variant of the native select.
    */
   variant?: 'default' | 'filled';
-
-  /**
-   * When `true`, indicate that native select contains slot.
-   */
-  withSlot?: boolean;
 }
 
 export type NativeSelectContextProviderProps = {

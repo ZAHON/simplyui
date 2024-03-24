@@ -10,7 +10,7 @@ const meta: Meta<typeof NativeSelect> = {
     invalid: false,
     radius: 'md',
     required: false,
-    size: 'md',
+    size: '2',
     variant: 'default',
     children: (
       <>
@@ -20,9 +20,7 @@ const meta: Meta<typeof NativeSelect> = {
           <option value="svelte">Svelte</option>
           <option value="vue">Vue</option>
         </NativeSelect.Input>
-        <NativeSelect.Indicator>
-          <NativeSelect.Icon />
-        </NativeSelect.Indicator>
+        <NativeSelect.Icon />
       </>
     ),
   },
@@ -50,9 +48,7 @@ export const WithPlaceholder: Story = {
           <option value="svelte">Svelte</option>
           <option value="vue">Vue</option>
         </NativeSelect.Input>
-        <NativeSelect.Indicator>
-          <NativeSelect.Icon />
-        </NativeSelect.Indicator>
+        <NativeSelect.Icon />
       </>
     ),
   },
@@ -61,10 +57,10 @@ export const WithPlaceholder: Story = {
 export const WithSlot: Story = {
   render: ({ size, ...others }) => {
     const iconSizes = {
-      sm: 14,
-      md: 16,
-      lg: 18,
-      xl: 20,
+      '1': 14,
+      '2': 16,
+      '3': 18,
+      '4': 20,
     };
 
     return (
@@ -93,9 +89,7 @@ export const WithSlot: Story = {
           <option value="svelte">Svelte</option>
           <option value="vue">Vue</option>
         </NativeSelect.Input>
-        <NativeSelect.Indicator>
-          <NativeSelect.Icon />
-        </NativeSelect.Indicator>
+        <NativeSelect.Icon />
       </NativeSelect>
     );
   },
@@ -115,9 +109,7 @@ export const WithLabel: Story = {
             <option value="svelte">Svelte</option>
             <option value="vue">Vue</option>
           </NativeSelect.Input>
-          <NativeSelect.Indicator>
-            <NativeSelect.Icon />
-          </NativeSelect.Indicator>
+          <NativeSelect.Icon />
         </NativeSelect>
       </div>
     );
@@ -133,17 +125,5 @@ export const Disabled: Story = {
 export const Invalid: Story = {
   args: {
     invalid: true,
-  },
-};
-
-export const VariantDefault: Story = {
-  args: {
-    variant: 'default',
-  },
-};
-
-export const VariantFilled: Story = {
-  args: {
-    variant: 'filled',
   },
 };
