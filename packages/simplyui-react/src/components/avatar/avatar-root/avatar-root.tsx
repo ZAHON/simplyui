@@ -26,4 +26,4 @@ export const AvatarRoot = forwardRef<HTMLSpanElement, AvatarRootProps>((props, r
   );
 });
 
-AvatarRoot.displayName = 'AvatarRoot';
+AvatarRoot.displayName = 'Avatar.Root';

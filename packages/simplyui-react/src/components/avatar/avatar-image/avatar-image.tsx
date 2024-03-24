@@ -11,4 +11,4 @@ export const AvatarImage = forwardRef<HTMLImageElement, AvatarImageProps>((props
   return <Image ref={ref} className={twMerge(avatarImageStyles(), className)} {...others} />;
 });
 
-AvatarImage.displayName = 'AvatarImage';
+AvatarImage.displayName = 'Avatar.Image';

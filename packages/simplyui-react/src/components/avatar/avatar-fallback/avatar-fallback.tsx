@@ -15,4 +15,4 @@ export const AvatarFallback = forwardRef<HTMLSpanElement, AvatarFallbackProps>((
   );
 });
 
-AvatarFallback.displayName = 'AvatarFallback';
+AvatarFallback.displayName = 'Avatar.Fallback';
