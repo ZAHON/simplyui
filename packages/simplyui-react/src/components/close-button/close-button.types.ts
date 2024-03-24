@@ -1,6 +1,6 @@
 import type { ComponentPropsWithRef } from 'react';
 
-export interface CloseButtonRootProps extends ComponentPropsWithRef<'button'> {
+export interface CloseButtonProps extends ComponentPropsWithRef<'button'> {
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    * @default false

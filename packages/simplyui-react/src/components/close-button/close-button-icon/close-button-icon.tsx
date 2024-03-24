@@ -10,4 +10,4 @@ export const CloseButtonIcon = forwardRef<SVGSVGElement, CloseButtonIconProps>((
   return <IconX ref={ref} className={twMerge(closeButtonIconStyles({ size }), className)} {...others} />;
 });
 
-CloseButtonIcon.displayName = 'CloseButtonIcon';
+CloseButtonIcon.displayName = 'CloseButton.Icon';

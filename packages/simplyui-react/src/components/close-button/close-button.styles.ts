@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-export const closeButtonRootStyles = cva(
+export const closeButtonStyles = cva(
   [
     'inline-flex',
     'justify-center',
