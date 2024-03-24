@@ -46,4 +46,4 @@ export const SegmentedControlContent = forwardRef<HTMLDivElement, SegmentedContr
   );
 });
 
-SegmentedControlContent.displayName = 'SegmentedControlContent';
+SegmentedControlContent.displayName = 'SegmentedControl.Content';

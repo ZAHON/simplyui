@@ -47,4 +47,4 @@ export const SegmentedControlRoot = forwardRef<HTMLDivElement, SegmentedControlR
   );
 });
 
-SegmentedControlRoot.displayName = 'SegmentedControlRoot';
+SegmentedControlRoot.displayName = 'SegmentedControl.Root';

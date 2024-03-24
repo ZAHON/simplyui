@@ -18,4 +18,4 @@ export const SegmentedControlItem = forwardRef<HTMLButtonElement, SegmentedContr
   );
 });
 
-SegmentedControlItem.displayName = 'SegmentedControlItem';
+SegmentedControlItem.displayName = 'SegmentedControl.Item';

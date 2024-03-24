@@ -22,7 +22,7 @@ export * from './native-scroll-area/index.js';
 export * as NativeSelect from './native-select/index.js';
 export * from './popover/index.js';
 export * as ScrollArea from './scroll-area/index.js';
-export * from './segmented-control/index.js';
+export * as SegmentedControl from './segmented-control/index.js';
 export * from './select/index.js';
 export * from './separator/index.js';
 export * from './sheet/index.js';

@@ -28,4 +28,4 @@ export const SegmentedControlIndicator = forwardRef<HTMLDivElement, SegmentedCon
   );
 });
 
-SegmentedControlIndicator.displayName = 'SegmentedControlIndicator';
+SegmentedControlIndicator.displayName = 'SegmentedControl.Indicator';

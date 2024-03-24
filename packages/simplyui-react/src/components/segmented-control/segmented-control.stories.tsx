@@ -1,19 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { Button } from '@/components/button';
-import { Label } from '@/components/label';
-import { Switch } from '@/components/switch';
-import { SegmentedControl } from '.';
+import * as Button from '@/components/button';
+import * as Label from '@/components/label';
+import * as Switch from '@/components/switch';
+import * as SegmentedControl from '.';
 
-const meta: Meta<typeof SegmentedControl> = {
+const meta: Meta<typeof SegmentedControl.Root> = {
   title: 'Inputs/SegmentedControl',
-  component: SegmentedControl,
+  component: SegmentedControl.Root,
   args: {
     color: 'default',
     size: '2',
     radius: 'md',
     disabled: false,
     name: '',
+    loop: true,
     defaultValue: 'react',
     children: (
       <SegmentedControl.Content>
@@ -28,9 +29,9 @@ const meta: Meta<typeof SegmentedControl> = {
   argTypes: {
     defaultValue: { control: false },
     onValueChange: { control: false },
-    color: { control: 'select' },
-    radius: { control: 'select' },
-    size: { control: 'select' },
+    color: { options: ['default', 'primary', 'success', 'warning', 'danger'], control: 'select' },
+    radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
+    size: { options: ['1', '2', '3', '4'], control: 'select' },
     value: { control: false },
     asChild: { control: false },
     children: { control: false },
@@ -45,7 +46,7 @@ const meta: Meta<typeof SegmentedControl> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SegmentedControl>;
+type Story = StoryObj<typeof SegmentedControl.Root>;
 
 export const Default: Story = {};
 
@@ -56,7 +57,7 @@ export const Unset: Story = {
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', rowGap: '1rem' }}>
-        <SegmentedControl
+        <SegmentedControl.Root
           {...props}
           disabled={disabled}
           defaultValue={undefined}
@@ -70,30 +71,30 @@ export const Unset: Story = {
             <SegmentedControl.Item value="svelte">Svelte</SegmentedControl.Item>
             <SegmentedControl.Item value="vue">Vue</SegmentedControl.Item>
           </SegmentedControl.Content>
-        </SegmentedControl>
+        </SegmentedControl.Root>
 
         <div style={{ display: 'flex', columnGap: '0.5rem' }}>
-          <Button onClick={() => setValue('')}>
+          <Button.Root onClick={() => setValue('')}>
             <Button.Content>Unset</Button.Content>
-          </Button>
-          <Button onClick={() => setValue('angular')}>
+          </Button.Root>
+          <Button.Root onClick={() => setValue('angular')}>
             <Button.Content>Angular</Button.Content>
-          </Button>
-          <Button onClick={() => setValue('react')}>
+          </Button.Root>
+          <Button.Root onClick={() => setValue('react')}>
             <Button.Content>React</Button.Content>
-          </Button>
-          <Button onClick={() => setValue('svelte')}>
+          </Button.Root>
+          <Button.Root onClick={() => setValue('svelte')}>
             <Button.Content>Svelte</Button.Content>
-          </Button>
-          <Button onClick={() => setValue('vue')}>
+          </Button.Root>
+          <Button.Root onClick={() => setValue('vue')}>
             <Button.Content>Vue</Button.Content>
-          </Button>
+          </Button.Root>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', columnGap: '0.5rem' }}>
-          <Switch id="disabled" checked={disabled} onCheckedChange={setDisabled}>
+          <Switch.Root id="disabled" checked={disabled} onCheckedChange={setDisabled}>
             <Switch.Thumb />
-          </Switch>
-          <Label htmlFor="disabled">Disabled</Label>
+          </Switch.Root>
+          <Label.Root htmlFor="disabled">Disabled</Label.Root>
         </div>
       </div>
     );
@@ -132,7 +133,7 @@ export const ItemsWithTextAndIcon: Story = {
     };
 
     return (
-      <SegmentedControl size={size} {...others}>
+      <SegmentedControl.Root size={size} {...others}>
         <SegmentedControl.Content>
           <SegmentedControl.Indicator />
           <SegmentedControl.Item value="angular">
@@ -217,7 +218,7 @@ export const ItemsWithTextAndIcon: Story = {
             Vue
           </SegmentedControl.Item>
         </SegmentedControl.Content>
-      </SegmentedControl>
+      </SegmentedControl.Root>
     );
   },
 };
