@@ -32,4 +32,4 @@ export const NativeSelectRoot = forwardRef<HTMLDivElement, NativeSelectRootProps
   );
 });
 
-NativeSelectRoot.displayName = 'NativeSelectRoot';
+NativeSelectRoot.displayName = 'NativeSelect.Root';

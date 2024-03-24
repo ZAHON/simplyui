@@ -25,4 +25,4 @@ export const NativeSelectSlot = forwardRef<HTMLDivElement, NativeSelectSlotProps
   );
 });
 
-NativeSelectSlot.displayName = 'NativeSelectSlot';
+NativeSelectSlot.displayName = 'NativeSelect.Slot';

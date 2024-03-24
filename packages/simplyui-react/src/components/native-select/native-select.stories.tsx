@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Label } from '@/components/label';
-import { NativeSelect } from '.';
+import * as Label from '@/components/label';
+import * as NativeSelect from '.';
 
-const meta: Meta<typeof NativeSelect> = {
+const meta: Meta<typeof NativeSelect.Root> = {
   title: 'Inputs/NativeSelect',
-  component: NativeSelect,
+  component: NativeSelect.Root,
   args: {
     disabled: false,
     invalid: false,
@@ -25,16 +25,16 @@ const meta: Meta<typeof NativeSelect> = {
     ),
   },
   argTypes: {
-    radius: { control: 'select' },
-    size: { control: 'select' },
-    variant: { control: 'select' },
+    radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
+    size: { options: ['1', '2', '3', '4'], control: 'select' },
+    variant: { options: ['default', 'filled'], control: 'select' },
     asChild: { control: false },
     children: { control: false },
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof NativeSelect>;
+type Story = StoryObj<typeof NativeSelect.Root>;
 
 export const Default: Story = {};
 
@@ -64,7 +64,7 @@ export const WithSlot: Story = {
     };
 
     return (
-      <NativeSelect size={size} {...others}>
+      <NativeSelect.Root size={size} {...others}>
         <NativeSelect.Slot>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +90,7 @@ export const WithSlot: Story = {
           <option value="vue">Vue</option>
         </NativeSelect.Input>
         <NativeSelect.Icon />
-      </NativeSelect>
+      </NativeSelect.Root>
     );
   },
 };
@@ -99,10 +99,10 @@ export const WithLabel: Story = {
   render: ({ size, disabled, ...others }) => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
-        <Label htmlFor="test" size={size} disabled={disabled}>
+        <Label.Root htmlFor="test" size={size} disabled={disabled}>
           Select your favorite framework/library
-        </Label>
-        <NativeSelect size={size} disabled={disabled} {...others}>
+        </Label.Root>
+        <NativeSelect.Root size={size} disabled={disabled} {...others}>
           <NativeSelect.Input id="test">
             <option value="angular">Angular</option>
             <option value="react">React</option>
@@ -110,7 +110,7 @@ export const WithLabel: Story = {
             <option value="vue">Vue</option>
           </NativeSelect.Input>
           <NativeSelect.Icon />
-        </NativeSelect>
+        </NativeSelect.Root>
       </div>
     );
   },

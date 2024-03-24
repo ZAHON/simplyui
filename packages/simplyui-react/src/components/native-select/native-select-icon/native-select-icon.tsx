@@ -26,4 +26,4 @@ export const NativeSelectIcon = forwardRef<HTMLDivElement, NativeSelectIconProps
   );
 });
 
-NativeSelectIcon.displayName = 'NativeSelectIcon';
+NativeSelectIcon.displayName = 'NativeSelect.Icon';

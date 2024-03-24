@@ -27,4 +27,4 @@ export const NativeSelectInput = forwardRef<HTMLSelectElement, NativeSelectInput
   );
 });
 
-NativeSelectInput.displayName = 'NativeSelectInput';
+NativeSelectInput.displayName = 'NativeSelect.Input';

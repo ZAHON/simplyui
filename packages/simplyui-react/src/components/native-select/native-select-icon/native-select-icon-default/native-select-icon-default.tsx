@@ -14,4 +14,4 @@ export const NativeSelectIconDefault = forwardRef<SVGSVGElement, NativeSelectIco
   return <IconSelector ref={ref} className={twMerge(nativeSelectIconDefaultStyles({ size }), className)} {...others} />;
 });
 
-NativeSelectIconDefault.displayName = 'NativeSelectIconDefault';
+NativeSelectIconDefault.displayName = 'NativeSelect.IconDefault';
