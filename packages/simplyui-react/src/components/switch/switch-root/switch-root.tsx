@@ -35,4 +35,4 @@ export const SwitchRoot = forwardRef<HTMLButtonElement, SwitchRootProps>((props,
   );
 });
 
-SwitchRoot.displayName = 'SwitchRoot';
+SwitchRoot.displayName = 'Switch.Root';

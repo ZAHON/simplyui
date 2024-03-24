@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Label } from '@/components/label';
-import { Switch } from '.';
+import * as Label from '@/components/label';
+import * as Switch from '.';
 
-const meta: Meta<typeof Switch> = {
+const meta: Meta<typeof Switch.Root> = {
   title: 'Inputs/Switch',
-  component: Switch,
+  component: Switch.Root,
   args: {
     variant: 'default',
     size: '2',
@@ -18,10 +18,10 @@ const meta: Meta<typeof Switch> = {
     children: <Switch.Thumb />,
   },
   argTypes: {
-    variant: { control: 'select' },
-    size: { control: 'select' },
-    color: { control: 'select' },
-    radius: { control: 'select' },
+    variant: { options: ['default', 'filled'], control: 'select' },
+    size: { options: ['1', '2', '3', '4'], control: 'select' },
+    color: { options: ['default', 'primary', 'success', 'warning', 'danger'], control: 'select' },
+    radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
     asChild: { control: false },
     defaultChecked: { control: false },
     checked: { control: false },
@@ -31,7 +31,7 @@ const meta: Meta<typeof Switch> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Switch>;
+type Story = StoryObj<typeof Switch.Root>;
 
 export const Default: Story = {};
 
@@ -39,12 +39,12 @@ export const WithLabel: Story = {
   render: ({ size, disabled, ...others }) => {
     return (
       <div style={{ display: 'flex', alignItems: 'center', columnGap: '0.5rem' }}>
-        <Switch id="test" size={size} disabled={disabled} {...others}>
+        <Switch.Root id="test" size={size} disabled={disabled} {...others}>
           <Switch.Thumb />
-        </Switch>
-        <Label size={size} disabled={disabled} htmlFor="test">
+        </Switch.Root>
+        <Label.Root size={size} disabled={disabled} htmlFor="test">
           Sync settings
-        </Label>
+        </Label.Root>
       </div>
     );
   },
@@ -72,7 +72,7 @@ export const WithThumbIcon: Story = {
     };
 
     return (
-      <Switch size={size} {...others}>
+      <Switch.Root size={size} {...others}>
         <Switch.Thumb>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +92,7 @@ export const WithThumbIcon: Story = {
             <path d="M10 5a2 2 0 114 0 7 7 0 014 6v3a4 4 0 002 3H4a4 4 0 002-3v-3a7 7 0 014-6M9 17v1a3 3 0 006 0v-1"></path>
           </svg>
         </Switch.Thumb>
-      </Switch>
+      </Switch.Root>
     );
   },
 };

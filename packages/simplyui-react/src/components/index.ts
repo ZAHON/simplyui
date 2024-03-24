@@ -27,7 +27,7 @@ export * from './select/index.js';
 export * from './separator/index.js';
 export * from './sheet/index.js';
 export * from './slider/index.js';
-export * from './switch/index.js';
+export * as Switch from './switch/index.js';
 export * from './text/index.js';
 export * from './text-field/index.js';
 export * from './tooltip/index.js';

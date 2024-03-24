@@ -23,4 +23,4 @@ export const SwitchThumb = forwardRef<HTMLSpanElement, SwitchThumbProps>((props,
   );
 });
 
-SwitchThumb.displayName = 'SwitchThumb';
+SwitchThumb.displayName = 'Switch.Thumb';
