@@ -16,12 +16,20 @@ import { MenuGroup } from './menu-group';
 import { MenuLabel } from './menu-label';
 import { MenuSeparator } from './menu-separator';
 
+/** Contains all the parts of a menu. */
 export const Menu = Object.assign(MenuRoot, {
+  /** The button that toggles the menu. By default, the `Menu.Content` will position itself against the trigger. This component is based on the `button` element. */
   Trigger: MenuTrigger,
+  /** When used, portals the content part into the `body`. */
   Portal: MenuPortal,
+  /** The component that pops out when the menu is open. This component is based on the `div` element. */
   Content: MenuContent,
+  /** The component that contains the menu items. This component is based on the `div` element. */
   Item: MenuItem,
+  /** Used to group multiple `Menu.Item`s. This component is based on the `div` element. */
   Group: MenuGroup,
+  /** Used to render a label. It won't be focusable using arrow keys. This component is based on the `div` element. */
   Label: MenuLabel,
+  /** Used to visually separate items in the menu. This component is based on the `div` element. */
   Separator: MenuSeparator,
 });

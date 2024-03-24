@@ -8,9 +8,10 @@ import { MenuContentContextProvider } from '../menu-content-context';
 import { menuContentStyles } from './menu-content.styles';
 
 const defaultProps: Partial<MenuContentProps> = {
+  collisionPadding: 10,
   radius: 'md',
   shadow: 'md',
-  size: 'md',
+  size: '2',
   sideOffset: 8,
 };
 

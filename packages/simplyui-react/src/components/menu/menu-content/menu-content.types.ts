@@ -39,7 +39,7 @@ export interface MenuContentProps extends ComponentPropsWithRef<'div'> {
 
   /**
    * The distance in pixels from the boundary edges where collision detection should occur. Accepts a number (same for all sides), or a partial padding object, for example: `{ top: 20, left: 20 }`.
-   * @default 0
+   * @default 10
    */
   collisionPadding?: number | Partial<Record<'top' | 'right' | 'bottom' | 'left', number>>;
 
@@ -110,9 +110,9 @@ export interface MenuContentProps extends ComponentPropsWithRef<'div'> {
 
   /**
    * The size of the menu content.
-   * @default "md"
+   * @default "2"
    */
-  size?: 'sm' | 'md';
+  size?: '1' | '2' | '3' | '4';
 
   /**
    * The sticky behavior on the align axis. `"partial"` will keep the content in the boundary as long as the trigger is at least partially in the boundary whilst `"always"` will keep the content in the boundary regardless.

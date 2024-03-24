@@ -41,11 +41,13 @@ export const menuItemStyles = cva(
         md: ['rounded'],
         lg: ['rounded-md'],
         xl: ['rounded-lg'],
-        full: ['rounded-lg'],
+        full: ['rounded-xl'],
       },
       size: {
-        sm: ['h-6', 'gap-x-1', 'px-2', 'text-xs'],
-        md: ['h-8', 'gap-x-2', 'px-3', 'text-sm'],
+        '1': ['h-6', 'gap-x-[0.1875rem]', 'px-1.5', 'text-xs'],
+        '2': ['h-8', 'gap-x-1', 'px-2', 'text-sm'],
+        '3': ['h-10', 'gap-x-[0.3125rem]', 'px-2.5', 'text-base'],
+        '4': ['h-12', 'gap-x-1.5', 'px-3', 'text-lg'],
       },
     },
   }

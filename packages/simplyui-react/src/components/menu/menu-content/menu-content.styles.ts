@@ -2,13 +2,16 @@ import { cva } from 'class-variance-authority';
 
 export const menuContentStyles = cva(
   [
+    'relative',
+    'z-40',
     'min-w-32',
     'max-h-[var(--radix-dropdown-menu-content-available-height)]',
     'origin-[var(--radix-dropdown-menu-content-transform-origin)]',
     'border',
     'border-default-6',
-    'bg-panel-solid',
+    'bg-panel',
     'outline-none',
+    'overflow-hidden',
 
     'motion-safe:data-[state=open]:animate-in',
     'motion-safe:data-[state=open]:fade-in-0',
@@ -47,8 +50,10 @@ export const menuContentStyles = cva(
         xl: ['drop-shadow-lg'],
       },
       size: {
-        sm: ['p-1', 'text-xs'],
-        md: ['p-2', 'text-sm'],
+        '1': ['p-0.5'],
+        '2': ['p-1'],
+        '3': ['p-1.5'],
+        '4': ['p-2'],
       },
     },
   }
