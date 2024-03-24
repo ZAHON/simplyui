@@ -14,6 +14,7 @@ const defaultProps: Partial<NativeScrollAreaProps> = {
   thumbRadius: 'full',
 };
 
+/** This component is based on the `div` element. */
 export const NativeScrollArea = forwardRef<HTMLDivElement, NativeScrollAreaProps>((props, ref) => {
   const {
     scrollbarBackground,
