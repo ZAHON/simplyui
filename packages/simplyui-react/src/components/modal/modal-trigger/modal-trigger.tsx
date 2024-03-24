@@ -13,4 +13,4 @@ export const ModalTrigger = forwardRef<HTMLButtonElement, ModalTriggerProps>((pr
   );
 });
 
-ModalTrigger.displayName = 'ModalTrigger';
+ModalTrigger.displayName = 'Modal.Trigger';

@@ -15,4 +15,4 @@ export const ModalCloseButton = forwardRef<HTMLButtonElement, ModalCloseButtonPr
   );
 });
 
-ModalCloseButton.displayName = 'ModalCloseButton';
+ModalCloseButton.displayName = 'Modal.CloseButton';

@@ -18,4 +18,4 @@ export const ModalFooter = forwardRef<HTMLDivElement, ModalFooterProps>((props, 
   );
 });
 
-ModalFooter.displayName = 'ModalFooter';
+ModalFooter.displayName = 'Modal.Footer';

@@ -18,4 +18,4 @@ export const ModalDescription = forwardRef<HTMLHeadingElement, ModalDescriptionP
   );
 });
 
-ModalDescription.displayName = 'ModalDescription';
+ModalDescription.displayName = 'Modal.Description';

@@ -3,7 +3,6 @@ import { cva } from 'class-variance-authority';
 export const modalBodyStyles = cva(
   [
     'max-h-full',
-    'overflow-y-auto',
     'focus-visible:outline',
     'focus-visible:outline-2',
     'focus-visible:outline-offset-0',

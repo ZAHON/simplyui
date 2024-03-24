@@ -16,4 +16,4 @@ export const ModalOverlay = forwardRef<HTMLDivElement, ModalOverlayProps>((props
   return <Overlay ref={ref} className={twMerge(modalOverlayStyles({ backdrop }), className)} {...others} />;
 });
 
-ModalOverlay.displayName = 'ModalOverlay';
+ModalOverlay.displayName = 'Modal.Overlay';

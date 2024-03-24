@@ -17,7 +17,7 @@ export * as Label from './label/index.js';
 export * from './link/index.js';
 export * from './loader/index.js';
 export * as Menu from './menu/index.js';
-export * from './modal/index.js';
+export * as Modal from './modal/index.js';
 export * from './native-scroll-area/index.js';
 export * as NativeSelect from './native-select/index.js';
 export * from './popover/index.js';

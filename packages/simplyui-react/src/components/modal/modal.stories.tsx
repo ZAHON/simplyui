@@ -1,33 +1,33 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@/components/button';
+import * as Button from '@/components/button';
 import { CloseButton } from '@/components/close-button';
-import { Label } from '@/components/label';
+import * as Label from '@/components/label';
 import { Input } from '@/components/input';
-import { ScrollArea } from '@/components/scroll-area';
+import * as ScrollArea from '@/components/scroll-area';
 import { NativeScrollArea } from '@/components/native-scroll-area';
-import { Modal } from '.';
+import * as Modal from '.';
 
-const meta: Meta<typeof Modal> = {
+const meta: Meta<typeof Modal.Root> = {
   title: 'Overlays/Modal',
-  component: Modal,
+  component: Modal.Root,
   parameters: {
     layout: 'centered',
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof Modal>;
+type Story = StoryObj<typeof Modal.Root>;
 
 export const Default: Story = {
   render: () => {
     const size = '2';
 
     return (
-      <Modal>
+      <Modal.Root>
         <Modal.Trigger asChild>
-          <Button size={size}>
+          <Button.Root size={size}>
             <Button.Content>Open</Button.Content>
-          </Button>
+          </Button.Root>
         </Modal.Trigger>
         <Modal.Portal>
           <Modal.Overlay />
@@ -41,33 +41,33 @@ export const Default: Story = {
             </Modal.Header>
             <Modal.Body style={{ display: 'flex', flexDirection: 'column', rowGap: '0.75rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
-                <Label size={size} htmlFor="name">
+                <Label.Root size={size} htmlFor="name">
                   Name
-                </Label>
+                </Label.Root>
                 <Input size={size} id="name" defaultValue="Freja Johnsen" />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
-                <Label size={size} htmlFor="email">
+                <Label.Root size={size} htmlFor="email">
                   Email
-                </Label>
+                </Label.Root>
                 <Input size={size} id="email" type="email" defaultValue="freja@example.com" />
               </div>
             </Modal.Body>
             <Modal.Footer>
               <Modal.Close asChild>
-                <Button size={size} variant="light" color="danger">
+                <Button.Root size={size} variant="light" color="danger">
                   <Button.Content>Cancel</Button.Content>
-                </Button>
+                </Button.Root>
               </Modal.Close>
               <Modal.Close asChild>
-                <Button size={size}>
+                <Button.Root size={size}>
                   <Button.Content>Save</Button.Content>
-                </Button>
+                </Button.Root>
               </Modal.Close>
             </Modal.Footer>
           </Modal.Content>
         </Modal.Portal>
-      </Modal>
+      </Modal.Root>
     );
   },
 };
@@ -77,11 +77,11 @@ export const WithContentFullScreen: Story = {
     const size = '2';
 
     return (
-      <Modal>
+      <Modal.Root>
         <Modal.Trigger asChild>
-          <Button size={size}>
+          <Button.Root size={size}>
             <Button.Content>Open</Button.Content>
-          </Button>
+          </Button.Root>
         </Modal.Trigger>
         <Modal.Portal>
           <Modal.Overlay />
@@ -95,33 +95,33 @@ export const WithContentFullScreen: Story = {
             </Modal.Header>
             <Modal.Body style={{ display: 'flex', flexDirection: 'column', rowGap: '0.75rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
-                <Label size={size} htmlFor="name">
+                <Label.Root size={size} htmlFor="name">
                   Name
-                </Label>
+                </Label.Root>
                 <Input size={size} id="name" defaultValue="Freja Johnsen" />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
-                <Label size={size} htmlFor="email">
+                <Label.Root size={size} htmlFor="email">
                   Email
-                </Label>
+                </Label.Root>
                 <Input size={size} id="email" type="email" defaultValue="freja@example.com" />
               </div>
             </Modal.Body>
             <Modal.Footer>
               <Modal.Close asChild>
-                <Button size={size} variant="light" color="danger">
+                <Button.Root size={size} variant="light" color="danger">
                   <Button.Content>Cancel</Button.Content>
-                </Button>
+                </Button.Root>
               </Modal.Close>
               <Modal.Close asChild>
-                <Button size={size}>
+                <Button.Root size={size}>
                   <Button.Content>Save</Button.Content>
-                </Button>
+                </Button.Root>
               </Modal.Close>
             </Modal.Footer>
           </Modal.Content>
         </Modal.Portal>
-      </Modal>
+      </Modal.Root>
     );
   },
 };
@@ -131,11 +131,11 @@ export const WithScrollArea: Story = {
     const size = '2';
 
     return (
-      <Modal>
+      <Modal.Root>
         <Modal.Trigger asChild>
-          <Button size={size}>
+          <Button.Root size={size}>
             <Button.Content>Open</Button.Content>
-          </Button>
+          </Button.Root>
         </Modal.Trigger>
         <Modal.Portal>
           <Modal.Overlay />
@@ -147,7 +147,7 @@ export const WithScrollArea: Story = {
                 <CloseButton size={size} />
               </Modal.CloseButton>
             </Modal.Header>
-            <ScrollArea type="always">
+            <ScrollArea.Root type="always">
               <ScrollArea.Viewport style={{ height: '20rem' }}>
                 <Modal.Body>
                   <p>
@@ -234,22 +234,22 @@ export const WithScrollArea: Story = {
               <ScrollArea.Scrollbar orientation="vertical" withBackground={false}>
                 <ScrollArea.Thumb />
               </ScrollArea.Scrollbar>
-            </ScrollArea>
+            </ScrollArea.Root>
             <Modal.Footer>
               <Modal.Close asChild>
-                <Button size={size} variant="light" color="danger">
+                <Button.Root size={size} variant="light" color="danger">
                   <Button.Content>Cancel</Button.Content>
-                </Button>
+                </Button.Root>
               </Modal.Close>
               <Modal.Close asChild>
-                <Button size={size}>
+                <Button.Root size={size}>
                   <Button.Content>Save</Button.Content>
-                </Button>
+                </Button.Root>
               </Modal.Close>
             </Modal.Footer>
           </Modal.Content>
         </Modal.Portal>
-      </Modal>
+      </Modal.Root>
     );
   },
 };
@@ -259,11 +259,11 @@ export const WithNativeScrollArea: Story = {
     const size = '2';
 
     return (
-      <Modal>
+      <Modal.Root>
         <Modal.Trigger asChild>
-          <Button size={size}>
+          <Button.Root size={size}>
             <Button.Content>Open</Button.Content>
-          </Button>
+          </Button.Root>
         </Modal.Trigger>
         <Modal.Portal>
           <Modal.Overlay />
@@ -306,19 +306,19 @@ export const WithNativeScrollArea: Story = {
             </NativeScrollArea>
             <Modal.Footer>
               <Modal.Close asChild>
-                <Button size={size} variant="light" color="danger">
+                <Button.Root size={size} variant="light" color="danger">
                   <Button.Content>Cancel</Button.Content>
-                </Button>
+                </Button.Root>
               </Modal.Close>
               <Modal.Close asChild>
-                <Button size={size}>
+                <Button.Root size={size}>
                   <Button.Content>Save</Button.Content>
-                </Button>
+                </Button.Root>
               </Modal.Close>
             </Modal.Footer>
           </Modal.Content>
         </Modal.Portal>
-      </Modal>
+      </Modal.Root>
     );
   },
 };

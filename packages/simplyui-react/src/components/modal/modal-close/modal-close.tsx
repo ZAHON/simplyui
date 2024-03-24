@@ -13,4 +13,4 @@ export const ModalClose = forwardRef<HTMLButtonElement, ModalCloseProps>((props,
   );
 });
 
-ModalClose.displayName = 'ModalClose';
+ModalClose.displayName = 'Modal.Close';

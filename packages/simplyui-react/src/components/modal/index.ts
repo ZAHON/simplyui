@@ -1,17 +1,17 @@
 'use client';
 
-export type { ModalRootProps } from './modal-root';
-export type { ModalTriggerProps } from './modal-trigger';
-export type { ModalPortalProps } from './modal-portal';
-export type { ModalOverlayProps } from './modal-overlay';
-export type { ModalContentProps } from './modal-content';
-export type { ModalHeaderProps } from './modal-header';
-export type { ModalCloseButtonProps } from './modal-close-button';
-export type { ModalCloseProps } from './modal-close';
-export type { ModalTitleProps } from './modal-title';
-export type { ModalDescriptionProps } from './modal-description';
-export type { ModalBodyProps } from './modal-body';
-export type { ModalFooterProps } from './modal-footer';
+import type { ModalRootProps } from './modal-root';
+import type { ModalTriggerProps } from './modal-trigger';
+import type { ModalPortalProps } from './modal-portal';
+import type { ModalOverlayProps } from './modal-overlay';
+import type { ModalContentProps } from './modal-content';
+import type { ModalHeaderProps } from './modal-header';
+import type { ModalCloseButtonProps } from './modal-close-button';
+import type { ModalCloseProps } from './modal-close';
+import type { ModalTitleProps } from './modal-title';
+import type { ModalDescriptionProps } from './modal-description';
+import type { ModalBodyProps } from './modal-body';
+import type { ModalFooterProps } from './modal-footer';
 
 import { ModalRoot } from './modal-root';
 import { ModalTrigger } from './modal-trigger';
@@ -26,28 +26,44 @@ import { ModalDescription } from './modal-description';
 import { ModalBody } from './modal-body';
 import { ModalFooter } from './modal-footer';
 
-/** Contains all the parts of a modal. */
-export const Modal = Object.assign(ModalRoot, {
+export type {
+  ModalRootProps as RootProps,
+  ModalTriggerProps as TriggerProps,
+  ModalPortalProps as PortalProps,
+  ModalOverlayProps as OverlayProps,
+  ModalContentProps as ContentProps,
+  ModalHeaderProps as HeaderProps,
+  ModalCloseButtonProps as CloseButtonProps,
+  ModalCloseProps as CloseProps,
+  ModalTitleProps as TitleProps,
+  ModalDescriptionProps as DescriptionProps,
+  ModalBodyProps as BodyProps,
+  ModalFooterProps as FooterProps,
+};
+
+export {
+  /** Contains all the parts of a modal. */
+  ModalRoot as Root,
   /** The button that opens the modal. This component is based on the `button` element. */
-  Trigger: ModalTrigger,
+  ModalTrigger as Trigger,
   /** When used, portals your overlay and content parts into the `body`. */
-  Portal: ModalPortal,
+  ModalPortal as Portal,
   /** A layer that covers the inert portion of the view when the modal is open. This component is based on the `div` element. */
-  Overlay: ModalOverlay,
+  ModalOverlay as Overlay,
   /** Contains content to be rendered in the open modal. This component is based on the `div` element. */
-  Content: ModalContent,
+  ModalContent as Content,
   /** An optional header of the modal content. This component usually contains `Modal.Title`, `Modal.Description` and `Modal.CloseButton`. This component is based on the `div` element. */
-  Header: ModalHeader,
+  ModalHeader as Header,
   /** The button that closes the modal. By default it will be rendered in the upper right corner of the `Modal.Content`. This component is based on the `button` element. */
-  CloseButton: ModalCloseButton,
+  ModalCloseButton as CloseButton,
   /** The button that closes the modal. This component is based on the `button` element. */
-  Close: ModalClose,
+  ModalClose as Close,
   /** An accessible title to be announced when the modal is opened. This component is based on the `h2` element. If you want to hide the title, pass `visuallyHidden` to this component. If you want to remove the title entirely, remove this part and pass `aria-labelledby={undefined}` to `Modal.Content` component. */
-  Title: ModalTitle,
+  ModalTitle as Title,
   /** An optional accessible description to be announced when the modal is opened. This component is based on the `p` element. If you want to hide the description, pass `visuallyHidden` to this component. If you want to remove the description entirely, remove this part and pass `aria-describedby={undefined}` to `Modal.Content` component. */
-  Description: ModalDescription,
+  ModalDescription as Description,
   /** An optional body of the modal content. This component usually contains main part of the modal. This component is based on the `div` element. */
-  Body: ModalBody,
+  ModalBody as Body,
   /** An optional footer of the modal content. This component usually contains some action button and `Modal.Close`. This component is based on the `div` element. */
-  Footer: ModalFooter,
-});
+  ModalFooter as Footer,
+};

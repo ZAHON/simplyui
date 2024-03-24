@@ -18,4 +18,4 @@ export const ModalTitle = forwardRef<HTMLHeadingElement, ModalTitleProps>((props
   );
 });
 
-ModalTitle.displayName = 'ModalTitle';
+ModalTitle.displayName = 'Modal.Title';
