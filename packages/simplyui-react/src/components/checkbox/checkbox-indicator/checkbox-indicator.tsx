@@ -25,4 +25,4 @@ export const CheckboxIndicator = forwardRef<HTMLSpanElement, CheckboxIndicatorPr
   );
 });
 
-CheckboxIndicator.displayName = 'CheckboxIndicator';
+CheckboxIndicator.displayName = 'Checkbox.Indicator';

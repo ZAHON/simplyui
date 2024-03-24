@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Label } from '@/components/label';
-import { Checkbox } from '.';
+import * as Label from '@/components/label';
+import * as Checkbox from '.';
 
-const meta: Meta<typeof Checkbox> = {
+const meta: Meta<typeof Checkbox.Root> = {
   title: 'Inputs/Checkbox',
-  component: Checkbox,
+  component: Checkbox.Root,
   args: {
     variant: 'default',
     color: 'primary',
@@ -18,10 +18,10 @@ const meta: Meta<typeof Checkbox> = {
     children: <Checkbox.Indicator />,
   },
   argTypes: {
-    variant: { control: 'select' },
-    color: { control: 'select' },
-    radius: { control: 'select' },
-    size: { control: 'select' },
+    variant: { options: ['default', 'filled'], control: 'select' },
+    color: { options: ['default', 'primary', 'success', 'warning', 'danger'], control: 'select' },
+    radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
+    size: { options: ['1', '2', '3', '4'], control: 'select' },
     asChild: { control: false },
     defaultChecked: { control: false },
     checked: { control: false },
@@ -30,7 +30,7 @@ const meta: Meta<typeof Checkbox> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Checkbox>;
+type Story = StoryObj<typeof Checkbox.Root>;
 
 export const Default: Story = {};
 
@@ -38,12 +38,12 @@ export const WithLabel: Story = {
   render: ({ size, disabled, ...others }) => {
     return (
       <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', columnGap: '0.5rem' }}>
-        <Checkbox id="test" size={size} disabled={disabled} {...others}>
+        <Checkbox.Root id="test" size={size} disabled={disabled} {...others}>
           <Checkbox.Indicator />
-        </Checkbox>
-        <Label htmlFor="test" size={size} disabled={disabled}>
+        </Checkbox.Root>
+        <Label.Root htmlFor="test" size={size} disabled={disabled}>
           Agree to Terms and Conditions
-        </Label>
+        </Label.Root>
       </div>
     );
   },
@@ -64,7 +64,7 @@ export const Invalid: Story = {
 export const WithCustomIcon: Story = {
   render: ({ ...others }) => {
     return (
-      <Checkbox {...others}>
+      <Checkbox.Root {...others}>
         <Checkbox.Indicator>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,14 +77,13 @@ export const WithCustomIcon: Story = {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5"
-            className="icon icon-tabler icon-tabler-heart"
             viewBox="0 0 24 24"
           >
             <path stroke="none" d="M0 0h24v24H0z"></path>
             <path d="M19.5 12.572L12 20l-7.5-7.428A5 5 0 1112 6.006a5 5 0 117.5 6.572"></path>
           </svg>
         </Checkbox.Indicator>
-      </Checkbox>
+      </Checkbox.Root>
     );
   },
 };

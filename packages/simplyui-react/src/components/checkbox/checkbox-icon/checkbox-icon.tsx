@@ -10,4 +10,4 @@ export const CheckboxIcon = forwardRef<SVGSVGElement, CheckboxIconProps>((props,
   return <IconCheck ref={ref} role="presentation" className={twMerge(checkboxIconStyles(), className)} {...others} />;
 });
 
-CheckboxIcon.displayName = 'CheckboxIcon';
+CheckboxIcon.displayName = 'Checkbox.Icon';

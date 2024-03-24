@@ -35,4 +35,4 @@ export const CheckboxRoot = forwardRef<HTMLButtonElement, CheckboxRootProps>((pr
   );
 });
 
-CheckboxRoot.displayName = 'CheckboxRoot';
+CheckboxRoot.displayName = 'Checkbox.Root';

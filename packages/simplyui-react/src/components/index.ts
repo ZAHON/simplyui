@@ -4,7 +4,7 @@ export * from './badge/index.js';
 export * from './burger/index.js';
 export * as Button from './button/index.js';
 export * from './card/index.js';
-export * from './checkbox/index.js';
+export * as Checkbox from './checkbox/index.js';
 export * from './close-button/index.js';
 export * from './code/index.js';
 export * as Collapsible from './collapsible/index.js';
