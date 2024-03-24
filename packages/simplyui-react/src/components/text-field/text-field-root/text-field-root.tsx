@@ -59,4 +59,4 @@ export const TextFieldRoot = forwardRef<HTMLDivElement, TextFieldRootProps>((pro
   );
 });
 
-TextFieldRoot.displayName = 'TextFieldRoot';
+TextFieldRoot.displayName = 'TextField.Root';

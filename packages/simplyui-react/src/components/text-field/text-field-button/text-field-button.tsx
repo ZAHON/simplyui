@@ -32,4 +32,4 @@ export const TextFieldButton = forwardRef<HTMLButtonElement, TextFieldButtonProp
   );
 });
 
-TextFieldButton.displayName = 'TextFieldButton';
+TextFieldButton.displayName = 'TextField.Button';

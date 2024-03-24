@@ -25,4 +25,4 @@ export const TextFieldSlot = forwardRef<HTMLDivElement, TextFieldSlotProps>((pro
   );
 });
 
-TextFieldSlot.displayName = 'TextFieldSlot';
+TextFieldSlot.displayName = 'TextField.Slot';

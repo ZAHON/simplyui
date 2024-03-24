@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Label } from '@/components/label';
-import { TextField } from '.';
+import * as Label from '@/components/label';
+import * as TextField from '.';
 
-const meta: Meta<typeof TextField> = {
+const meta: Meta<typeof TextField.Root> = {
   title: 'Inputs/TextField',
-  component: TextField,
+  component: TextField.Root,
   args: {
     variant: 'default',
     size: '2',
@@ -15,16 +15,16 @@ const meta: Meta<typeof TextField> = {
     children: <TextField.Input placeholder="Search the docs…" />,
   },
   argTypes: {
-    variant: { control: 'select' },
-    size: { control: 'select' },
-    radius: { control: 'select' },
+    variant: { options: ['default', 'filled'], control: 'select' },
+    size: { options: ['1', '2', '3', '4'], control: 'select' },
+    radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
     asChild: { control: false },
     children: { control: false },
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof TextField>;
+type Story = StoryObj<typeof TextField.Root>;
 
 export const Default: Story = {};
 
@@ -32,12 +32,12 @@ export const WithLabel: Story = {
   render: ({ size, disabled, ...others }) => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
-        <Label htmlFor="test" size={size} disabled={disabled}>
+        <Label.Root htmlFor="test" size={size} disabled={disabled}>
           Search the docs…
-        </Label>
-        <TextField size={size} disabled={disabled} {...others}>
+        </Label.Root>
+        <TextField.Root size={size} disabled={disabled} {...others}>
           <TextField.Input id="test" />
-        </TextField>
+        </TextField.Root>
       </div>
     );
   },
@@ -53,7 +53,7 @@ export const WithSlots: Story = {
     };
 
     return (
-      <TextField size={size} {...others}>
+      <TextField.Root size={size} {...others}>
         <TextField.Slot>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ export const WithSlots: Story = {
             </svg>
           </TextField.Button>
         </TextField.Slot>
-      </TextField>
+      </TextField.Root>
     );
   },
 };
