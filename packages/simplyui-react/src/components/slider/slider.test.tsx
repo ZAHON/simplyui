@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 import * as Slider from '.';
 
 const SLIDER_MARKER_TEST_ID = 'slider-marker-test-id';
+const SLIDER_THUMB_TEST_ID = 'slider-thumb-test-id';
 
 const SLIDER_ROOT_CONTENT = 'slider-root';
 const SLIDER_TRACK_CONTENT = 'slider-track';
@@ -197,14 +198,40 @@ describe('Slider', () => {
     }));
 
     it('should support ref', () => {
-      const ref = createRef<HTMLSpanElement>();
+      const ref = createRef<HTMLButtonElement>();
 
       render(
         <Slider.Root>
           <Slider.Thumb ref={ref} />
         </Slider.Root>
       );
-      expect(ref.current).toBeInstanceOf(HTMLSpanElement);
+      expect(ref.current).toBeInstanceOf(HTMLButtonElement);
+    });
+
+    it('should be button element when asChild property not provided', () => {
+      const { container } = render(
+        <Slider.Root>
+          <Slider.Thumb data-testid={SLIDER_THUMB_TEST_ID} />
+        </Slider.Root>
+      );
+
+      expect(screen.getByTestId(SLIDER_THUMB_TEST_ID)).toBeInstanceOf(HTMLButtonElement);
+      // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+      expect(container.querySelector(`button[data-testid="${SLIDER_THUMB_TEST_ID}"]`)).toBeInTheDocument();
+    });
+
+    it('should be Slot element when asChild property provided', () => {
+      const { container } = render(
+        <Slider.Root>
+          <Slider.Thumb asChild data-testid={SLIDER_THUMB_TEST_ID}>
+            <div>{SLIDER_THUMB_CONTENT}</div>
+          </Slider.Thumb>
+        </Slider.Root>
+      );
+
+      expect(screen.getByTestId(SLIDER_THUMB_TEST_ID)).toBeInstanceOf(HTMLDivElement);
+      // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+      expect(container.querySelector(`button[data-testid="${SLIDER_THUMB_TEST_ID}"]`)).not.toBeInTheDocument();
     });
 
     it('should have class name handed over by className property', () => {

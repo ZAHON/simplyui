@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import * as Label from '@/components/label';
 import * as Slider from '.';
 
 const meta: Meta<typeof Slider.Root> = {
@@ -45,6 +46,24 @@ export const Default: Story = {};
 export const Disabled: Story = {
   args: {
     disabled: true,
+  },
+};
+
+export const WithLabel: Story = {
+  render: ({ size, disabled, ...others }) => {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
+        <Label.Root htmlFor="test" size={size} disabled={disabled}>
+          Search the docs…
+        </Label.Root>
+        <Slider.Root size={size} disabled={disabled} {...others}>
+          <Slider.Track>
+            <Slider.Range />
+          </Slider.Track>
+          <Slider.Thumb id="test" aria-label="Thumb" />
+        </Slider.Root>
+      </div>
+    );
   },
 };
 

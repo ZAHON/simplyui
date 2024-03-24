@@ -29,6 +29,6 @@ export {
   SliderRange as Range,
   /** Optional marker part. Must live inside `Slider.Track`. This component is based on the `span` element. */
   SliderMarker as Marker,
-  /** A draggable thumb. You can render multiple thumbs. This component is based on the `span` element. */
+  /** A draggable thumb. You can render multiple thumbs. This component is based on the `button` element. */
   SliderThumb as Thumb,
 };
