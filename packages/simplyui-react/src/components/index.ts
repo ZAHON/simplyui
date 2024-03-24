@@ -25,7 +25,7 @@ export * as ScrollArea from './scroll-area/index.js';
 export * as SegmentedControl from './segmented-control/index.js';
 export * as Select from './select/index.js';
 export * from './separator/index.js';
-export * from './sheet/index.js';
+export * as Sheet from './sheet/index.js';
 export * as Slider from './slider/index.js';
 export * as Switch from './switch/index.js';
 export * from './text/index.js';

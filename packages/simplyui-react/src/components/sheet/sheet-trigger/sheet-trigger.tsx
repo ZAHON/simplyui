@@ -13,4 +13,4 @@ export const SheetTrigger = forwardRef<HTMLButtonElement, SheetTriggerProps>((pr
   );
 });
 
-SheetTrigger.displayName = 'SheetTrigger';
+SheetTrigger.displayName = 'Sheet.Trigger';

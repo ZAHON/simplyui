@@ -1,33 +1,33 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@/components/button';
+import * as Button from '@/components/button';
 import { CloseButton } from '@/components/close-button';
-import { Label } from '@/components/label';
+import * as Label from '@/components/label';
 import { Input } from '@/components/input';
-import { ScrollArea } from '@/components/scroll-area';
+import * as ScrollArea from '@/components/scroll-area';
 import { NativeScrollArea } from '@/components/native-scroll-area';
-import { Sheet } from '.';
+import * as Sheet from '.';
 
-const meta: Meta<typeof Sheet> = {
+const meta: Meta<typeof Sheet.Root> = {
   title: 'Overlays/Sheet',
-  component: Sheet,
+  component: Sheet.Root,
   parameters: {
     layout: 'centered',
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof Sheet>;
+type Story = StoryObj<typeof Sheet.Root>;
 
 export const Default: Story = {
   render: () => {
     const size = '2';
 
     return (
-      <Sheet>
+      <Sheet.Root>
         <Sheet.Trigger asChild>
-          <Button size={size}>
+          <Button.Root size={size}>
             <Button.Content>Open</Button.Content>
-          </Button>
+          </Button.Root>
         </Sheet.Trigger>
         <Sheet.Portal>
           <Sheet.Overlay />
@@ -41,33 +41,33 @@ export const Default: Story = {
             </Sheet.Header>
             <Sheet.Body style={{ display: 'flex', flexDirection: 'column', rowGap: '0.75rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
-                <Label size={size} htmlFor="name">
+                <Label.Root size={size} htmlFor="name">
                   Name
-                </Label>
+                </Label.Root>
                 <Input size={size} id="name" defaultValue="Freja Johnsen" />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
-                <Label size={size} htmlFor="email">
+                <Label.Root size={size} htmlFor="email">
                   Email
-                </Label>
+                </Label.Root>
                 <Input size={size} id="email" type="email" defaultValue="freja@example.com" />
               </div>
             </Sheet.Body>
             <Sheet.Footer>
               <Sheet.Close asChild>
-                <Button size={size} variant="light" color="danger">
+                <Button.Root size={size} variant="light" color="danger">
                   <Button.Content>Cancel</Button.Content>
-                </Button>
+                </Button.Root>
               </Sheet.Close>
               <Sheet.Close asChild>
-                <Button size={size}>
+                <Button.Root size={size}>
                   <Button.Content>Save</Button.Content>
-                </Button>
+                </Button.Root>
               </Sheet.Close>
             </Sheet.Footer>
           </Sheet.Content>
         </Sheet.Portal>
-      </Sheet>
+      </Sheet.Root>
     );
   },
 };
@@ -77,11 +77,11 @@ export const WithScrollArea: Story = {
     const size = '2';
 
     return (
-      <Sheet>
+      <Sheet.Root>
         <Sheet.Trigger asChild>
-          <Button size={size}>
+          <Button.Root size={size}>
             <Button.Content>Open</Button.Content>
-          </Button>
+          </Button.Root>
         </Sheet.Trigger>
         <Sheet.Portal>
           <Sheet.Overlay />
@@ -93,7 +93,7 @@ export const WithScrollArea: Story = {
                 <CloseButton size={size} />
               </Sheet.CloseButton>
             </Sheet.Header>
-            <ScrollArea type="always">
+            <ScrollArea.Root type="always">
               <ScrollArea.Viewport>
                 <Sheet.Body>
                   <p>
@@ -180,22 +180,22 @@ export const WithScrollArea: Story = {
               <ScrollArea.Scrollbar orientation="vertical" withBackground={false}>
                 <ScrollArea.Thumb />
               </ScrollArea.Scrollbar>
-            </ScrollArea>
+            </ScrollArea.Root>
             <Sheet.Footer>
               <Sheet.Close asChild>
-                <Button size={size} variant="light" color="danger">
+                <Button.Root size={size} variant="light" color="danger">
                   <Button.Content>Cancel</Button.Content>
-                </Button>
+                </Button.Root>
               </Sheet.Close>
               <Sheet.Close asChild>
-                <Button size={size}>
+                <Button.Root size={size}>
                   <Button.Content>Save</Button.Content>
-                </Button>
+                </Button.Root>
               </Sheet.Close>
             </Sheet.Footer>
           </Sheet.Content>
         </Sheet.Portal>
-      </Sheet>
+      </Sheet.Root>
     );
   },
 };
@@ -205,11 +205,11 @@ export const WithNativeScrollArea: Story = {
     const size = '2';
 
     return (
-      <Sheet>
+      <Sheet.Root>
         <Sheet.Trigger asChild>
-          <Button size={size}>
+          <Button.Root size={size}>
             <Button.Content>Open</Button.Content>
-          </Button>
+          </Button.Root>
         </Sheet.Trigger>
         <Sheet.Portal>
           <Sheet.Overlay />
@@ -304,19 +304,19 @@ export const WithNativeScrollArea: Story = {
             </NativeScrollArea>
             <Sheet.Footer>
               <Sheet.Close asChild>
-                <Button size={size} variant="light" color="danger">
+                <Button.Root size={size} variant="light" color="danger">
                   <Button.Content>Cancel</Button.Content>
-                </Button>
+                </Button.Root>
               </Sheet.Close>
               <Sheet.Close asChild>
-                <Button size={size}>
+                <Button.Root size={size}>
                   <Button.Content>Save</Button.Content>
-                </Button>
+                </Button.Root>
               </Sheet.Close>
             </Sheet.Footer>
           </Sheet.Content>
         </Sheet.Portal>
-      </Sheet>
+      </Sheet.Root>
     );
   },
 };

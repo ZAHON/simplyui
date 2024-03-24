@@ -18,4 +18,4 @@ export const SheetHeader = forwardRef<HTMLDivElement, SheetHeaderProps>((props, 
   );
 });
 
-SheetHeader.displayName = 'SheetHeader';
+SheetHeader.displayName = 'Sheet.Header';

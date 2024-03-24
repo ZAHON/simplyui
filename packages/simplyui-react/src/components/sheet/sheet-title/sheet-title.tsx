@@ -18,4 +18,4 @@ export const SheetTitle = forwardRef<HTMLHeadingElement, SheetTitleProps>((props
   );
 });
 
-SheetTitle.displayName = 'SheetTitle';
+SheetTitle.displayName = 'Sheet.Title';

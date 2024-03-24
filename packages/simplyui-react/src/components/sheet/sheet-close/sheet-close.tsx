@@ -13,4 +13,4 @@ export const SheetClose = forwardRef<HTMLButtonElement, SheetCloseProps>((props,
   );
 });
 
-SheetClose.displayName = 'SheetClose';
+SheetClose.displayName = 'Sheet.Close';

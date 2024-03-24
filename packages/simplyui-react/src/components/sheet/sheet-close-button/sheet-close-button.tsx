@@ -15,4 +15,4 @@ export const SheetCloseButton = forwardRef<HTMLButtonElement, SheetCloseButtonPr
   );
 });
 
-SheetCloseButton.displayName = 'SheetCloseButton';
+SheetCloseButton.displayName = 'Sheet.CloseButton';

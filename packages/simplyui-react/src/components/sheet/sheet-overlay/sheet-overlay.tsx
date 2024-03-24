@@ -16,4 +16,4 @@ export const SheetOverlay = forwardRef<HTMLDivElement, SheetOverlayProps>((props
   return <Overlay ref={ref} className={twMerge(sheetOverlayStyles({ backdrop }), className)} {...others} />;
 });
 
-SheetOverlay.displayName = 'SheetOverlay';
+SheetOverlay.displayName = 'Sheet.Overlay';

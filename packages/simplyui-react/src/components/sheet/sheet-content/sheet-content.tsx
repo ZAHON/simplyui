@@ -29,4 +29,4 @@ export const SheetContent = forwardRef<HTMLDivElement, SheetContentProps>((props
   );
 });
 
-SheetContent.displayName = 'SheetContent';
+SheetContent.displayName = 'Sheet.Content';

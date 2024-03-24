@@ -18,4 +18,4 @@ export const SheetFooter = forwardRef<HTMLDivElement, SheetFooterProps>((props, 
   );
 });
 
-SheetFooter.displayName = 'SheetFooter';
+SheetFooter.displayName = 'Sheet.Footer';

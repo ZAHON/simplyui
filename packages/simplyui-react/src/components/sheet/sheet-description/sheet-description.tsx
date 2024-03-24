@@ -18,4 +18,4 @@ export const SheetDescription = forwardRef<HTMLHeadingElement, SheetDescriptionP
   );
 });
 
-SheetDescription.displayName = 'SheetDescription';
+SheetDescription.displayName = 'Sheet.Description';
