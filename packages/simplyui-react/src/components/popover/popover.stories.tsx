@@ -1,25 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@/components/button';
-import { Popover } from '.';
+import * as Button from '@/components/button';
+import * as Popover from '.';
 
-const meta: Meta<typeof Popover> = {
+const meta: Meta<typeof Popover.Root> = {
   title: 'Overlays/Popover',
-  component: Popover,
+  component: Popover.Root,
   parameters: {
     layout: 'centered',
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof Popover>;
+type Story = StoryObj<typeof Popover.Root>;
 
 export const Default: Story = {
   render: () => (
-    <Popover defaultOpen>
+    <Popover.Root defaultOpen>
       <Popover.Trigger asChild>
-        <Button>
+        <Button.Root>
           <Button.Content>Toggle popover</Button.Content>
-        </Button>
+        </Button.Root>
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content style={{ width: '24rem' }}>
@@ -30,17 +30,17 @@ export const Default: Story = {
           </p>
         </Popover.Content>
       </Popover.Portal>
-    </Popover>
+    </Popover.Root>
   ),
 };
 
 export const WithClose: Story = {
   render: () => (
-    <Popover defaultOpen>
+    <Popover.Root defaultOpen>
       <Popover.Trigger asChild>
-        <Button>
+        <Button.Root>
           <Button.Content>Toggle popover</Button.Content>
-        </Button>
+        </Button.Root>
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content style={{ width: '24rem' }}>
@@ -50,23 +50,23 @@ export const WithClose: Story = {
             perspiciatis blanditiis magnam!
           </p>
           <Popover.Close asChild>
-            <Button color="danger" variant="light" fullWidth style={{ marginTop: '1rem' }}>
+            <Button.Root color="danger" variant="light" fullWidth style={{ marginTop: '1rem' }}>
               <Button.Content>Close popover</Button.Content>
-            </Button>
+            </Button.Root>
           </Popover.Close>
         </Popover.Content>
       </Popover.Portal>
-    </Popover>
+    </Popover.Root>
   ),
 };
 
 export const WithContentWidthTrigger: Story = {
   render: () => (
-    <Popover defaultOpen>
+    <Popover.Root defaultOpen>
       <Popover.Trigger asChild>
-        <Button style={{ paddingInline: '4rem' }}>
+        <Button.Root style={{ paddingInline: '4rem' }}>
           <Button.Content>Toggle popover</Button.Content>
-        </Button>
+        </Button.Root>
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content width="trigger">
@@ -77,17 +77,17 @@ export const WithContentWidthTrigger: Story = {
           </p>
         </Popover.Content>
       </Popover.Portal>
-    </Popover>
+    </Popover.Root>
   ),
 };
 
 export const WithContentSideTop: Story = {
   render: () => (
-    <Popover defaultOpen>
+    <Popover.Root defaultOpen>
       <Popover.Trigger asChild>
-        <Button>
+        <Button.Root>
           <Button.Content>Toggle popover</Button.Content>
-        </Button>
+        </Button.Root>
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content side="top" style={{ width: '24rem' }}>
@@ -98,17 +98,17 @@ export const WithContentSideTop: Story = {
           </p>
         </Popover.Content>
       </Popover.Portal>
-    </Popover>
+    </Popover.Root>
   ),
 };
 
 export const WithContentSideRight: Story = {
   render: () => (
-    <Popover defaultOpen>
+    <Popover.Root defaultOpen>
       <Popover.Trigger asChild>
-        <Button>
+        <Button.Root>
           <Button.Content>Toggle popover</Button.Content>
-        </Button>
+        </Button.Root>
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content side="right" style={{ width: '24rem' }}>
@@ -119,17 +119,17 @@ export const WithContentSideRight: Story = {
           </p>
         </Popover.Content>
       </Popover.Portal>
-    </Popover>
+    </Popover.Root>
   ),
 };
 
 export const WithContentSideBottom: Story = {
   render: () => (
-    <Popover defaultOpen>
+    <Popover.Root defaultOpen>
       <Popover.Trigger asChild>
-        <Button>
+        <Button.Root>
           <Button.Content>Toggle popover</Button.Content>
-        </Button>
+        </Button.Root>
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content side="bottom" style={{ width: '24rem' }}>
@@ -140,17 +140,17 @@ export const WithContentSideBottom: Story = {
           </p>
         </Popover.Content>
       </Popover.Portal>
-    </Popover>
+    </Popover.Root>
   ),
 };
 
 export const WithContentSideLeft: Story = {
   render: () => (
-    <Popover defaultOpen>
+    <Popover.Root defaultOpen>
       <Popover.Trigger asChild>
-        <Button>
+        <Button.Root>
           <Button.Content>Toggle popover</Button.Content>
-        </Button>
+        </Button.Root>
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content side="left" style={{ width: '24rem' }}>
@@ -161,6 +161,6 @@ export const WithContentSideLeft: Story = {
           </p>
         </Popover.Content>
       </Popover.Portal>
-    </Popover>
+    </Popover.Root>
   ),
 };

@@ -1,7 +1,7 @@
 import { createRef } from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { Popover } from '.';
+import * as Popover from '.';
 
 const POPOVER_TRIGGER_CONTENT = 'popover-trigger';
 const POPOVER_ANCHOR_CONTENT = 'popover-anchor';
@@ -14,9 +14,9 @@ describe('Popover', () => {
       const ref = createRef<HTMLButtonElement>();
 
       render(
-        <Popover>
+        <Popover.Root>
           <Popover.Trigger ref={ref}>{POPOVER_TRIGGER_CONTENT}</Popover.Trigger>
-        </Popover>
+        </Popover.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLButtonElement);
     });
@@ -25,9 +25,9 @@ describe('Popover', () => {
       const className = 'test';
 
       render(
-        <Popover>
+        <Popover.Root>
           <Popover.Trigger className={className}>{POPOVER_TRIGGER_CONTENT}</Popover.Trigger>
-        </Popover>
+        </Popover.Root>
       );
       expect(screen.getByText(POPOVER_TRIGGER_CONTENT)).toHaveClass(className);
     });
@@ -38,9 +38,9 @@ describe('Popover', () => {
       const ref = createRef<HTMLDivElement>();
 
       render(
-        <Popover>
+        <Popover.Root>
           <Popover.Anchor ref={ref}>{POPOVER_ANCHOR_CONTENT}</Popover.Anchor>
-        </Popover>
+        </Popover.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLDivElement);
     });
@@ -49,9 +49,9 @@ describe('Popover', () => {
       const className = 'test';
 
       render(
-        <Popover>
+        <Popover.Root>
           <Popover.Anchor className={className}>{POPOVER_ANCHOR_CONTENT}</Popover.Anchor>
-        </Popover>
+        </Popover.Root>
       );
       expect(screen.getByText(POPOVER_ANCHOR_CONTENT)).toHaveClass(className);
     });
@@ -62,9 +62,9 @@ describe('Popover', () => {
       const ref = createRef<HTMLDivElement>();
 
       render(
-        <Popover defaultOpen>
+        <Popover.Root defaultOpen>
           <Popover.Content ref={ref}>{POPOVER_CONTENT_CONTENT}</Popover.Content>
-        </Popover>
+        </Popover.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLDivElement);
     });
@@ -73,9 +73,9 @@ describe('Popover', () => {
       const className = 'test';
 
       render(
-        <Popover defaultOpen>
+        <Popover.Root defaultOpen>
           <Popover.Content className={className}>{POPOVER_CONTENT_CONTENT}</Popover.Content>
-        </Popover>
+        </Popover.Root>
       );
       expect(screen.getByText(POPOVER_CONTENT_CONTENT)).toHaveClass(className);
     });
@@ -86,9 +86,9 @@ describe('Popover', () => {
       const ref = createRef<HTMLButtonElement>();
 
       render(
-        <Popover defaultOpen>
+        <Popover.Root defaultOpen>
           <Popover.Close ref={ref}>{POPOVER_CLOSE_CONTENT}</Popover.Close>
-        </Popover>
+        </Popover.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLButtonElement);
     });
@@ -97,9 +97,9 @@ describe('Popover', () => {
       const className = 'test';
 
       render(
-        <Popover defaultOpen>
+        <Popover.Root defaultOpen>
           <Popover.Close className={className}>{POPOVER_CLOSE_CONTENT}</Popover.Close>
-        </Popover>
+        </Popover.Root>
       );
       expect(screen.getByText(POPOVER_CLOSE_CONTENT)).toHaveClass(className);
     });

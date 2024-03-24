@@ -20,7 +20,7 @@ export * as Menu from './menu/index.js';
 export * as Modal from './modal/index.js';
 export * from './native-scroll-area/index.js';
 export * as NativeSelect from './native-select/index.js';
-export * from './popover/index.js';
+export * as Popover from './popover/index.js';
 export * as ScrollArea from './scroll-area/index.js';
 export * as SegmentedControl from './segmented-control/index.js';
 export * as Select from './select/index.js';

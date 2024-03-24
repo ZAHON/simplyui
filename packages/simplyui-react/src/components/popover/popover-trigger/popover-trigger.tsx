@@ -13,4 +13,4 @@ export const PopoverTrigger = forwardRef<HTMLButtonElement, PopoverTriggerProps>
   );
 });
 
-PopoverTrigger.displayName = 'PopoverTrigger';
+PopoverTrigger.displayName = 'Popover.Trigger';

@@ -13,4 +13,4 @@ export const PopoverAnchor = forwardRef<HTMLDivElement, PopoverAnchorProps>((pro
   );
 });
 
-PopoverAnchor.displayName = 'PopoverAnchor';
+PopoverAnchor.displayName = 'Popover.Anchor';

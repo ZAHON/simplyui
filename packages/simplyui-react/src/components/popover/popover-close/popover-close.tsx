@@ -13,4 +13,4 @@ export const PopoverClose = forwardRef<HTMLButtonElement, PopoverCloseProps>((pr
   );
 });
 
-PopoverClose.displayName = 'PopoverClose';
+PopoverClose.displayName = 'Popover.Close';
