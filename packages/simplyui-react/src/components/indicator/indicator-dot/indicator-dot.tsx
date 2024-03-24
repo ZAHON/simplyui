@@ -58,4 +58,4 @@ export const IndicatorDot = forwardRef<HTMLDivElement, IndicatorDotProps>((props
   );
 });
 
-IndicatorDot.displayName = 'IndicatorDot';
+IndicatorDot.displayName = 'Indicator.Dot';

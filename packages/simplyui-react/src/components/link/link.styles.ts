@@ -22,7 +22,7 @@ export const linkStyles = cva(
   {
     variants: {
       color: {
-        default: ['text-default-12', 'decoration-default-6'],
+        default: ['text-default-11', 'decoration-default-6'],
         primary: ['text-primary-11', 'decoration-primary-6'],
         success: ['text-success-11', 'decoration-success-6'],
         warning: ['text-warning-11', 'decoration-warning-6'],

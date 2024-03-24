@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { Burger } from '.';
+import * as Burger from '.';
 
-const meta: Meta<typeof Burger> = {
+const meta: Meta<typeof Burger.Root> = {
   title: 'Navigation/Burger',
-  component: Burger,
+  component: Burger.Root,
   args: {
     color: 'default',
     variant: 'subtle',
@@ -14,10 +14,10 @@ const meta: Meta<typeof Burger> = {
     children: <Burger.Icon />,
   },
   argTypes: {
-    color: { control: 'select' },
-    variant: { control: 'select' },
-    size: { control: 'select' },
-    radius: { control: 'select' },
+    color: { options: ['default', 'primary', 'success', 'warning', 'danger'], control: 'select' },
+    variant: { options: ['filled', 'light', 'outline', 'subtle', 'light-outline'], control: 'select' },
+    size: { options: ['1', '2', '3', '4'], control: 'select' },
+    radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
     asChild: { control: false },
     defaultOpen: { control: false },
     open: { control: false },
@@ -27,7 +27,7 @@ const meta: Meta<typeof Burger> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Burger>;
+type Story = StoryObj<typeof Burger.Root>;
 
 export const Default: Story = {};
 
@@ -42,11 +42,11 @@ export const Controlled: Story = {
     const [open, setOpen] = useState(false);
 
     return (
-      <Burger asChild open={open} onOpenChange={setOpen}>
+      <Burger.Root asChild open={open} onOpenChange={setOpen}>
         <div>
           <Burger.Icon />
         </div>
-      </Burger>
+      </Burger.Root>
     );
   },
 };

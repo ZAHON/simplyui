@@ -63,4 +63,4 @@ export const BurgerRoot = forwardRef<HTMLButtonElement, BurgerRootProps>((props,
   );
 });
 
-BurgerRoot.displayName = 'BurgerRoot';
+BurgerRoot.displayName = 'Burger.Root';

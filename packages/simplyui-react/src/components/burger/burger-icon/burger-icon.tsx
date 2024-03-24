@@ -25,4 +25,4 @@ export const BurgerIcon = forwardRef<HTMLDivElement, BurgerIconProps>((props, re
   );
 });
 
-BurgerIcon.displayName = 'BurgerIcon';
+BurgerIcon.displayName = 'Burger.Icon';

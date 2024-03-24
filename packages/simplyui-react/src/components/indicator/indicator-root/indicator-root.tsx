@@ -14,4 +14,4 @@ export const IndicatorRoot = forwardRef<HTMLDivElement, IndicatorRootProps>((pro
   );
 });
 
-IndicatorRoot.displayName = 'IndicatorRoot';
+IndicatorRoot.displayName = 'Indicator.Root';

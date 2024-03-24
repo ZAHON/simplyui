@@ -1,13 +1,16 @@
 'use client';
 
-export type { BurgerRootProps } from './burger-root';
-export type { BurgerIconProps } from './burger-icon';
+import type { BurgerRootProps } from './burger-root';
+import type { BurgerIconProps } from './burger-icon';
 
 import { BurgerRoot } from './burger-root';
 import { BurgerIcon } from './burger-icon';
 
-/** Contains all the parts of a burger. This component is based on the `button` element. */
-export const Burger = Object.assign(BurgerRoot, {
+export type { BurgerRootProps as RootProps, BurgerIconProps as IconProps };
+
+export {
+  /** Contains all the parts of a burger. This component is based on the `button` element. */
+  BurgerRoot as Root,
   /** The icon that indicate state of the burger. Must live inside `Burger`. This component is based on the `div` element. */
-  Icon: BurgerIcon,
-});
+  BurgerIcon as Icon,
+};

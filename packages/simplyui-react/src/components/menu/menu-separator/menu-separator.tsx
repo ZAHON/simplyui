@@ -18,4 +18,4 @@ export const MenuSeparator = forwardRef<HTMLDivElement, MenuSeparatorProps>((pro
   );
 });
 
-MenuSeparator.displayName = 'MenuSeparator';
+MenuSeparator.displayName = 'Menu.Separator';

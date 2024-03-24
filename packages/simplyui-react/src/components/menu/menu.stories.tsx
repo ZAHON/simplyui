@@ -1,26 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@/components/button';
-import { Menu } from '.';
+import * as Button from '@/components/button';
+import * as Menu from '.';
 import { NativeScrollArea } from '@/components/native-scroll-area';
 
-const meta: Meta<typeof Menu> = {
+const meta: Meta<typeof Menu.Root> = {
   title: 'Overlays/Menu',
-  component: Menu,
+  component: Menu.Root,
   parameters: {
     layout: 'centered',
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof Menu>;
+type Story = StoryObj<typeof Menu.Root>;
 
 export const Default: Story = {
   render: () => (
-    <Menu>
+    <Menu.Root>
       <Menu.Trigger asChild>
-        <Button>
+        <Button.Root>
           <Button.Content>Toggle menu</Button.Content>
-        </Button>
+        </Button.Root>
       </Menu.Trigger>
       <Menu.Portal>
         <Menu.Content>
@@ -39,17 +39,17 @@ export const Default: Story = {
           </Menu.Group>
         </Menu.Content>
       </Menu.Portal>
-    </Menu>
+    </Menu.Root>
   ),
 };
 
 export const WithDisabledItem: Story = {
   render: () => (
-    <Menu>
+    <Menu.Root>
       <Menu.Trigger asChild>
-        <Button>
+        <Button.Root>
           <Button.Content>Toggle menu</Button.Content>
-        </Button>
+        </Button.Root>
       </Menu.Trigger>
       <Menu.Portal>
         <Menu.Content>
@@ -68,17 +68,17 @@ export const WithDisabledItem: Story = {
           </Menu.Group>
         </Menu.Content>
       </Menu.Portal>
-    </Menu>
+    </Menu.Root>
   ),
 };
 
 export const WithNativeScrollArea: Story = {
   render: () => (
-    <Menu>
+    <Menu.Root>
       <Menu.Trigger asChild>
-        <Button>
+        <Button.Root>
           <Button.Content>Toggle menu</Button.Content>
-        </Button>
+        </Button.Root>
       </Menu.Trigger>
       <Menu.Portal>
         <NativeScrollArea asChild scrollbarBackground={false}>
@@ -99,6 +99,6 @@ export const WithNativeScrollArea: Story = {
           </Menu.Content>
         </NativeScrollArea>
       </Menu.Portal>
-    </Menu>
+    </Menu.Root>
   ),
 };
