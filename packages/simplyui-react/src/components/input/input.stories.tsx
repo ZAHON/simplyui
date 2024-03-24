@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Label } from '@/components/label';
+import * as Label from '@/components/label';
 import { Input } from '.';
 
 const meta: Meta<typeof Input> = {
@@ -32,9 +32,9 @@ export const WithLabel: Story = {
   render: ({ size, disabled, ...others }) => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
-        <Label htmlFor="test" size={size} disabled={disabled}>
+        <Label.Root htmlFor="test" size={size} disabled={disabled}>
           Search the docs…
-        </Label>
+        </Label.Root>
         <Input id="test" size={size} disabled={disabled} {...others} />
       </div>
     );
