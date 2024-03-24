@@ -1,9 +1,13 @@
 import esbuild from 'esbuild';
+import glob from 'glob';
 
 const dir = 'dist/cjs';
 
+const files = glob.sync('src/**/*.tsx').concat(glob.sync('src/**/*.ts'));
+const filteredFiles = files.filter((file) => !file.endsWith('.test.tsx') && !file.endsWith('stories.tsx'));
+
 const options = {
-  entryPoints: ['src/**/*.ts*'],
+  entryPoints: filteredFiles,
   outdir: dir,
   format: 'cjs',
   target: 'es2020',

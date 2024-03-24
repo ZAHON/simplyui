@@ -1,9 +1,13 @@
 import esbuild from 'esbuild';
+import glob from 'glob';
 
 const dir = 'dist/esm';
 
+const files = glob.sync('src/**/*.tsx').concat(glob.sync('src/**/*.ts'));
+const filteredFiles = files.filter((file) => !file.endsWith('.test.tsx') && !file.endsWith('stories.tsx'));
+
 const options = {
-  entryPoints: ['src/**/*.ts*'],
+  entryPoints: filteredFiles,
   outdir: dir,
   format: 'esm',
   target: 'es2020',
