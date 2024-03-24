@@ -25,3 +25,5 @@ export const LoaderOval = forwardRef<HTMLDivElement, LoaderOvalProps>((props, re
     </div>
   );
 });
+
+LoaderOval.displayName = 'Loader.Oval';

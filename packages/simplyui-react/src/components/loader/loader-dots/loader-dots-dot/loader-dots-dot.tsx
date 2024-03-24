@@ -9,4 +9,4 @@ export const LoaderDotsDot = forwardRef<HTMLDivElement, LoaderDotsDotProps>((pro
   return <div ref={ref} className={twMerge(loaderDotsDotStyles(), className)} {...others} />;
 });
 
-LoaderDotsDot.displayName = 'LoaderDotsDot';
+LoaderDotsDot.displayName = 'Loader.DotsDot';

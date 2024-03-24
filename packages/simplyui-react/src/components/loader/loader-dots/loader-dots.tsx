@@ -30,4 +30,4 @@ export const LoaderDots = forwardRef<HTMLDivElement, LoaderDotsProps>((props, re
   );
 });
 
-LoaderDots.displayName = 'LoaderDots';
+LoaderDots.displayName = 'Loader.Dots';
