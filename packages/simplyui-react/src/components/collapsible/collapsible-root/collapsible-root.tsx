@@ -13,4 +13,4 @@ export const CollapsibleRoot = forwardRef<HTMLDivElement, CollapsibleRootProps>(
   );
 });
 
-CollapsibleRoot.displayName = 'CollapsibleRoot';
+CollapsibleRoot.displayName = 'Collapsible.Root';

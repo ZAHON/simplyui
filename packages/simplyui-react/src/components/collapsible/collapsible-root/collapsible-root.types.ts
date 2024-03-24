@@ -20,13 +20,11 @@ export interface CollapsibleRootProps extends ComponentPropsWithRef<'div'> {
 
   /**
    * The open state of the collapsible when it is initially rendered. Use when you do not need to control its open state.
-   * @default false
    */
   defaultOpen?: boolean;
 
   /**
    * The controlled open state of the collapsible. Must be used in conjunction with `onOpenChange` property.
-   * @default false
    */
   open?: boolean;
 

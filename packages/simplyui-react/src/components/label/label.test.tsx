@@ -2,7 +2,7 @@ import { createRef } from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Label } from '.';
+import * as Label from '.';
 
 const LABEL_ROOT_TEST_ID = 'label-root-test-id';
 const LABEL_INDICATOR_TEST_ID = 'label-indicator-test-id';
@@ -15,12 +15,12 @@ describe('Label', () => {
     it('should support ref', () => {
       const ref = createRef<HTMLLabelElement>();
 
-      render(<Label ref={ref}>{LABEL_ROOT_CONTENT}</Label>);
+      render(<Label.Root ref={ref}>{LABEL_ROOT_CONTENT}</Label.Root>);
       expect(ref.current).toBeInstanceOf(HTMLLabelElement);
     });
 
     it('should be label element when asChild property not provided', () => {
-      const { container } = render(<Label data-testid={LABEL_ROOT_TEST_ID}>{LABEL_ROOT_CONTENT}</Label>);
+      const { container } = render(<Label.Root data-testid={LABEL_ROOT_TEST_ID}>{LABEL_ROOT_CONTENT}</Label.Root>);
 
       expect(screen.getByTestId(LABEL_ROOT_TEST_ID)).toBeInstanceOf(HTMLLabelElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
@@ -29,9 +29,9 @@ describe('Label', () => {
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
-        <Label asChild data-testid={LABEL_ROOT_TEST_ID}>
+        <Label.Root asChild data-testid={LABEL_ROOT_TEST_ID}>
           <p>{LABEL_ROOT_CONTENT}</p>
-        </Label>
+        </Label.Root>
       );
 
       expect(screen.getByTestId(LABEL_ROOT_TEST_ID)).toBeInstanceOf(HTMLParagraphElement);
@@ -41,7 +41,7 @@ describe('Label', () => {
 
     it('should prevent text selection when double clicking', async () => {
       const user = userEvent.setup();
-      render(<Label>{LABEL_ROOT_CONTENT}</Label>);
+      render(<Label.Root>{LABEL_ROOT_CONTENT}</Label.Root>);
 
       const labelElement = screen.getByText(LABEL_ROOT_CONTENT);
       await user.dblClick(labelElement);
@@ -51,19 +51,19 @@ describe('Label', () => {
     });
 
     it('should have not data-disabled attribute when disabled property not provided', () => {
-      render(<Label disabled={false}>{LABEL_ROOT_CONTENT}</Label>);
+      render(<Label.Root disabled={false}>{LABEL_ROOT_CONTENT}</Label.Root>);
       expect(screen.getByText(LABEL_ROOT_CONTENT)).not.toHaveAttribute('data-disabled');
     });
 
     it('should have data-disabled attribute when disabled property provided', () => {
-      render(<Label disabled={true}>{LABEL_ROOT_CONTENT}</Label>);
+      render(<Label.Root disabled={true}>{LABEL_ROOT_CONTENT}</Label.Root>);
       expect(screen.getByText(LABEL_ROOT_CONTENT)).toHaveAttribute('data-disabled');
     });
 
     it('should have class name handed over by className property', () => {
       const className = 'test';
 
-      render(<Label className={className}>{LABEL_ROOT_CONTENT}</Label>);
+      render(<Label.Root className={className}>{LABEL_ROOT_CONTENT}</Label.Root>);
       expect(screen.getByText(LABEL_ROOT_CONTENT)).toHaveClass(className);
     });
   });
@@ -73,18 +73,18 @@ describe('Label', () => {
       const ref = createRef<HTMLSpanElement>();
 
       render(
-        <Label>
+        <Label.Root>
           <Label.Indicator ref={ref}>{LABEL_INDICATOR_CONTENT}</Label.Indicator>
-        </Label>
+        </Label.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLSpanElement);
     });
 
     it('should be span element when asChild property not provided', () => {
       const { container } = render(
-        <Label>
+        <Label.Root>
           <Label.Indicator data-testid={LABEL_INDICATOR_TEST_ID}>{LABEL_INDICATOR_CONTENT}</Label.Indicator>
-        </Label>
+        </Label.Root>
       );
 
       expect(screen.getByTestId(LABEL_INDICATOR_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
@@ -94,11 +94,11 @@ describe('Label', () => {
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
-        <Label>
+        <Label.Root>
           <Label.Indicator asChild data-testid={LABEL_INDICATOR_TEST_ID}>
             <p>{LABEL_INDICATOR_CONTENT}</p>
           </Label.Indicator>
-        </Label>
+        </Label.Root>
       );
 
       expect(screen.getByTestId(LABEL_INDICATOR_TEST_ID)).toBeInstanceOf(HTMLParagraphElement);
@@ -108,27 +108,27 @@ describe('Label', () => {
 
     it('should have aria-hidden="true" attribute', () => {
       render(
-        <Label>
+        <Label.Root>
           <Label.Indicator>{LABEL_INDICATOR_CONTENT}</Label.Indicator>
-        </Label>
+        </Label.Root>
       );
       expect(screen.getByText(LABEL_INDICATOR_CONTENT)).toHaveAttribute('aria-hidden', 'true');
     });
 
     it('should have not data-disabled attribute when disabled property not provided on Root element', () => {
       render(
-        <Label disabled={false}>
+        <Label.Root disabled={false}>
           <Label.Indicator>{LABEL_INDICATOR_CONTENT}</Label.Indicator>
-        </Label>
+        </Label.Root>
       );
       expect(screen.getByText(LABEL_INDICATOR_CONTENT)).not.toHaveAttribute('data-disabled');
     });
 
     it('should have data-disabled attribute when disabled property provided on Root element', () => {
       render(
-        <Label disabled={true}>
+        <Label.Root disabled={true}>
           <Label.Indicator>{LABEL_INDICATOR_CONTENT}</Label.Indicator>
-        </Label>
+        </Label.Root>
       );
       expect(screen.getByText(LABEL_INDICATOR_CONTENT)).toHaveAttribute('data-disabled');
     });
@@ -137,9 +137,9 @@ describe('Label', () => {
       const className = 'test';
 
       render(
-        <Label>
+        <Label.Root>
           <Label.Indicator className={className}>{LABEL_INDICATOR_CONTENT}</Label.Indicator>
-        </Label>
+        </Label.Root>
       );
       expect(screen.getByText(LABEL_INDICATOR_CONTENT)).toHaveClass(className);
     });

@@ -7,7 +7,7 @@ const meta: Meta<typeof Kbd> = {
   args: {
     children: '⌘ + Tab',
     radius: 'md',
-    size: '3',
+    size: '2',
   },
   argTypes: {
     radius: { control: 'select' },

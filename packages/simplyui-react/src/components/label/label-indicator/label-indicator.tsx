@@ -24,4 +24,4 @@ export const LabelIndicator = forwardRef<HTMLSpanElement, LabelIndicatorProps>((
   );
 });
 
-LabelIndicator.displayName = 'LabelIndicator';
+LabelIndicator.displayName = 'Label.Indicator';

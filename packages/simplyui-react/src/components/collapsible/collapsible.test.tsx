@@ -1,7 +1,7 @@
 import { createRef } from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { Collapsible } from '.';
+import * as Collapsible from '.';
 
 const COLLAPSIBLE_CONTENT_TEST_ID = 'collapsible-content-test-id';
 
@@ -14,7 +14,7 @@ describe('Collapsible', () => {
     it('should support ref', () => {
       const ref = createRef<HTMLDivElement>();
 
-      render(<Collapsible ref={ref}>{COLLAPSIBLE_ROOT_CONTENT}</Collapsible>);
+      render(<Collapsible.Root ref={ref}>{COLLAPSIBLE_ROOT_CONTENT}</Collapsible.Root>);
       expect(ref.current).toBeInstanceOf(HTMLDivElement);
     });
   });
@@ -24,9 +24,9 @@ describe('Collapsible', () => {
       const ref = createRef<HTMLButtonElement>();
 
       render(
-        <Collapsible>
+        <Collapsible.Root>
           <Collapsible.Trigger ref={ref}>{COLLAPSIBLE_TRIGGER_CONTENT}</Collapsible.Trigger>
-        </Collapsible>
+        </Collapsible.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLButtonElement);
     });
@@ -37,10 +37,10 @@ describe('Collapsible', () => {
       const ref = createRef<HTMLDivElement>();
 
       render(
-        <Collapsible>
+        <Collapsible.Root>
           <Collapsible.Trigger>{COLLAPSIBLE_TRIGGER_CONTENT}</Collapsible.Trigger>
           <Collapsible.Content ref={ref}>{COLLAPSIBLE_CONTENT_CONTENT}</Collapsible.Content>
-        </Collapsible>
+        </Collapsible.Root>
       );
       expect(ref.current).toBeInstanceOf(HTMLDivElement);
     });
@@ -49,12 +49,12 @@ describe('Collapsible', () => {
       const className = 'test';
 
       render(
-        <Collapsible>
+        <Collapsible.Root>
           <Collapsible.Trigger>{COLLAPSIBLE_TRIGGER_CONTENT}</Collapsible.Trigger>
           <Collapsible.Content className={className} data-testid={COLLAPSIBLE_CONTENT_TEST_ID}>
             {COLLAPSIBLE_CONTENT_CONTENT}
           </Collapsible.Content>
-        </Collapsible>
+        </Collapsible.Root>
       );
       expect(screen.getByTestId(COLLAPSIBLE_CONTENT_TEST_ID)).toHaveClass(className);
     });

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Loader } from '@/components/loader';
-import { IconButton } from '.';
+import * as IconButton from '.';
 
-const meta: Meta<typeof IconButton> = {
+const meta: Meta<typeof IconButton.Root> = {
   title: 'Buttons/IconButton',
-  component: IconButton,
+  component: IconButton.Root,
   args: {
     size: '2',
     radius: 'md',
@@ -15,11 +15,11 @@ const meta: Meta<typeof IconButton> = {
     loading: false,
   },
   argTypes: {
-    size: { control: 'select' },
-    type: { control: 'select' },
-    variant: { control: 'select' },
-    color: { control: 'select' },
-    radius: { control: 'select' },
+    size: { options: ['1', '2', '3', '4'], control: 'select' },
+    type: { options: ['submit', 'reset', 'button'], control: 'select' },
+    variant: { options: ['filled', 'light', 'outline', 'subtle', 'light-outline'], control: 'select' },
+    color: { options: ['default', 'primary', 'success', 'warning', 'danger'], control: 'select' },
+    radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
     children: { control: false },
     asChild: { control: false },
   },
@@ -32,7 +32,7 @@ const meta: Meta<typeof IconButton> = {
     };
 
     return (
-      <IconButton size={size} {...others}>
+      <IconButton.Root size={size} {...others}>
         <IconButton.Content>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,6 @@ const meta: Meta<typeof IconButton> = {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5"
-            className="icon icon-tabler icon-tabler-search"
             viewBox="0 0 24 24"
           >
             <path stroke="none" d="M0 0h24v24H0z"></path>
@@ -55,13 +54,13 @@ const meta: Meta<typeof IconButton> = {
         <IconButton.Loader>
           <Loader size={size} variant="oval" color="currentColor" />
         </IconButton.Loader>
-      </IconButton>
+      </IconButton.Root>
     );
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof IconButton>;
+type Story = StoryObj<typeof IconButton.Root>;
 
 export const Default: Story = {};
 

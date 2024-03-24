@@ -7,7 +7,7 @@ import { kbdStyles } from './kbd.styles';
 
 const defaultProps: Partial<KbdProps> = {
   radius: 'md',
-  size: '3',
+  size: '2',
 };
 
 /** This component is based on the `kbd` element.  */

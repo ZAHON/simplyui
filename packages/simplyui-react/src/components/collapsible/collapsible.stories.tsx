@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@/components/button';
-import { Collapsible } from '.';
+import * as Button from '@/components/button';
+import * as Collapsible from '.';
 
-const meta: Meta<typeof Collapsible> = {
+const meta: Meta<typeof Collapsible.Root> = {
   title: 'Misc/Collapsible',
-  component: Collapsible,
+  component: Collapsible.Root,
   decorators: [
     (Story) => (
       <div style={{ maxWidth: '36rem' }}>
@@ -20,11 +20,11 @@ type Story = StoryObj<typeof Collapsible>;
 export const Default: Story = {
   render: () => {
     return (
-      <Collapsible>
+      <Collapsible.Root>
         <Collapsible.Trigger asChild>
-          <Button style={{ marginBottom: '1rem' }}>
+          <Button.Root style={{ marginBottom: '1rem' }}>
             <Button.Content>Toggle content</Button.Content>
-          </Button>
+          </Button.Root>
         </Collapsible.Trigger>
         <Collapsible.Content>
           <p>
@@ -36,7 +36,7 @@ export const Default: Story = {
             with energy through photosynthesis as well as from the nutrient-rich seeds contained within.
           </p>
         </Collapsible.Content>
-      </Collapsible>
+      </Collapsible.Root>
     );
   },
 };

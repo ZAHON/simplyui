@@ -7,6 +7,7 @@ export const kbdStyles = cva(
     'items-center',
     'whitespace-nowrap',
     'bg-panel',
+    'text-default-12',
     'shadow-kbd',
     'font-sans',
     'cursor-default',
