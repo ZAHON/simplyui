@@ -3,13 +3,11 @@ import type { ReactNode } from 'react';
 export interface TooltipRootProps {
   /**
    * The open state of the tooltip when it is initially rendered. Use when you do not need to control its open state.
-   * @default false
    */
   defaultOpen?: boolean;
 
   /**
    * The controlled open state of the tooltip. Must be used in conjunction with `onOpenChange` property.
-   * @default false
    */
   open?: boolean;
 

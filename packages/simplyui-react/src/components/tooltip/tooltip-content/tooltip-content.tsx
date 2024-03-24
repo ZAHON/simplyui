@@ -10,17 +10,16 @@ const defaultProps: Partial<TooltipContentProps> = {
   collisionPadding: 10,
   radius: 'md',
   sideOffset: 4,
-  size: '1',
 };
 
 export const TooltipContent = forwardRef<HTMLDivElement, TooltipContentProps>((props, ref) => {
-  const { radius, size, className, children, ...others } = applayComponentDefaultProps(defaultProps, props);
+  const { radius, className, children, ...others } = applayComponentDefaultProps(defaultProps, props);
 
   return (
-    <Content ref={ref} className={twMerge(tooltipContentStyles({ radius, size }), className)} {...others}>
+    <Content ref={ref} className={twMerge(tooltipContentStyles({ radius }), className)} {...others}>
       {children}
     </Content>
   );
 });
 
-TooltipContent.displayName = 'TooltipContent';
+TooltipContent.displayName = 'Tooltip.Content';

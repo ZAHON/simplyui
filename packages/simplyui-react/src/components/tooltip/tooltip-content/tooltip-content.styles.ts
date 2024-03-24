@@ -38,12 +38,6 @@ export const tooltipContentStyles = cva(
         xl: ['rounded-lg'],
         full: ['rounded-xl'],
       },
-      size: {
-        '1': ['text-xs'],
-        '2': ['text-sm'],
-        '3': ['text-base'],
-        '4': ['text-lg'],
-      },
     },
   }
 );

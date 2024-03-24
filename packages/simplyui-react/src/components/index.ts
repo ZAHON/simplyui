@@ -30,4 +30,4 @@ export * as Slider from './slider/index.js';
 export * as Switch from './switch/index.js';
 export * from './text/index.js';
 export * as TextField from './text-field/index.js';
-export * from './tooltip/index.js';
+export * as Tooltip from './tooltip/index.js';

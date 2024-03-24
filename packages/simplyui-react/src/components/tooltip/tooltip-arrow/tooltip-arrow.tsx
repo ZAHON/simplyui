@@ -15,4 +15,4 @@ export const TooltipArrow = forwardRef<SVGSVGElement, TooltipArrowProps>((props,
   );
 });
 
-TooltipArrow.displayName = 'TooltipArrow';
+TooltipArrow.displayName = 'Tooltip.Arrow';

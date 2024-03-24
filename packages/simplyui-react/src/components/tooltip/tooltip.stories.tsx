@@ -1,33 +1,33 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@/components/button';
-import { TooltipProvider, Tooltip } from '.';
+import * as Button from '@/components/button';
+import * as Tooltip from '.';
 
-const meta: Meta<typeof Tooltip> = {
+const meta: Meta<typeof Tooltip.Root> = {
   title: 'Overlays/Tooltip',
-  component: Tooltip,
+  component: Tooltip.Root,
   parameters: {
     layout: 'centered',
   },
   decorators: [
     (Story) => (
-      <TooltipProvider>
+      <Tooltip.Provider>
         <Story />
-      </TooltipProvider>
+      </Tooltip.Provider>
     ),
   ],
 };
 
 export default meta;
-type Story = StoryObj<typeof Tooltip>;
+type Story = StoryObj<typeof Tooltip.Root>;
 
 export const Default: Story = {
   render: () => {
     return (
-      <Tooltip defaultOpen>
+      <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <Button>
+          <Button.Root>
             <Button.Content>Hover</Button.Content>
-          </Button>
+          </Button.Root>
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content>
@@ -35,7 +35,7 @@ export const Default: Story = {
             <Tooltip.Arrow />
           </Tooltip.Content>
         </Tooltip.Portal>
-      </Tooltip>
+      </Tooltip.Root>
     );
   },
 };
@@ -43,11 +43,11 @@ export const Default: Story = {
 export const WithLarngeContent: Story = {
   render: () => {
     return (
-      <Tooltip defaultOpen>
+      <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <Button>
+          <Button.Root>
             <Button.Content>Hover</Button.Content>
-          </Button>
+          </Button.Root>
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content>
@@ -61,7 +61,7 @@ export const WithLarngeContent: Story = {
             <Tooltip.Arrow />
           </Tooltip.Content>
         </Tooltip.Portal>
-      </Tooltip>
+      </Tooltip.Root>
     );
   },
 };

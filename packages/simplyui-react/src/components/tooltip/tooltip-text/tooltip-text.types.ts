@@ -13,17 +13,20 @@ export interface TooltipTextProps extends ComponentPropsWithRef<'p'> {
   children: ReactNode;
 
   /**
-   * The size of the text. By default will be inherit from `Tooltip.Content`.
+   * The size of the text.
+   * @default "1"
    */
   size?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 
   /**
-   * The tracking (letter spacing) of the text. By default will be inherit from `Tooltip.Content`.
+   * The tracking (letter spacing) of the text.
+   * @default "normal"
    */
   tracking?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest';
 
   /**
-   * The font weight of the text. By default will be inherit from `Tooltip.Content`.
+   * The font weight of the text.
+   * @default "regular"
    */
   weight?: 'light' | 'regular' | 'medium' | 'semibold' | 'bold';
 }

@@ -13,4 +13,4 @@ export const TooltipTrigger = forwardRef<HTMLButtonElement, TooltipTriggerProps>
   );
 });
 
-TooltipTrigger.displayName = 'TooltipTrigger';
+TooltipTrigger.displayName = 'Tooltip.Trigger';

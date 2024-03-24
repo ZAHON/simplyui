@@ -94,12 +94,6 @@ export interface TooltipContentProps extends ComponentPropsWithRef<'div'> {
   sideOffset?: number;
 
   /**
-   * The size of the tooltip content.
-   * @default "1"
-   */
-  size?: '1' | '2' | '3' | '4';
-
-  /**
    * The sticky behavior on the align axis. `"partial"` will keep the content in the boundary as long as the trigger is at least partially in the boundary whilst `"always"` will keep the content in the boundary regardless.
    * @default "partial"
    */
