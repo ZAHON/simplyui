@@ -13,4 +13,4 @@ export const SelectValue = forwardRef<HTMLSpanElement, SelectValueProps>((props,
   );
 });
 
-SelectValue.displayName = 'SelectValue';
+SelectValue.displayName = 'Select.Value';

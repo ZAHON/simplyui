@@ -13,4 +13,4 @@ export const SelectGroup = forwardRef<HTMLDivElement, SelectGroupProps>((props, 
   );
 });
 
-SelectGroup.displayName = 'SelectGroup';
+SelectGroup.displayName = 'Select.Group';

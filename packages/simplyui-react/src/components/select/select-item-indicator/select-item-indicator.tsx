@@ -16,4 +16,4 @@ export const SelectItemIndicator = forwardRef<HTMLSpanElement, SelectItemIndicat
   );
 });
 
-SelectItemIndicator.displayName = 'SelectItemIndicator';
+SelectItemIndicator.displayName = 'Select.ItemIndicator';

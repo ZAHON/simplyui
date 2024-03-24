@@ -18,4 +18,4 @@ export const SelectLabel = forwardRef<HTMLDivElement, SelectLabelProps>((props, 
   );
 });
 
-SelectLabel.displayName = 'SelectLabel';
+SelectLabel.displayName = 'Select.Label';

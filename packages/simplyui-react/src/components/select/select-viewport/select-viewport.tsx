@@ -18,4 +18,4 @@ export const SelectViewport = forwardRef<HTMLDivElement, SelectViewportProps>((p
   );
 });
 
-SelectViewport.displayName = 'SelectViewport';
+SelectViewport.displayName = 'Select.Viewport';

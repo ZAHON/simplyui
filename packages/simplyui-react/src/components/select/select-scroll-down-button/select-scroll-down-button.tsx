@@ -19,4 +19,4 @@ export const SelectScrollDownButton = forwardRef<HTMLDivElement, SelectScrollDow
   );
 });
 
-SelectScrollDownButton.displayName = 'SelectScrollDownButton';
+SelectScrollDownButton.displayName = 'Select.ScrollDownButton';

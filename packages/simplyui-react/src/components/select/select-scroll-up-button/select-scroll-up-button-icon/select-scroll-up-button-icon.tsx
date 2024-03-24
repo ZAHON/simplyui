@@ -16,4 +16,4 @@ export const SelectScrollUpButtonIcon = forwardRef<SVGSVGElement, SelectScrollUp
   );
 });
 
-SelectScrollUpButtonIcon.displayName = 'SelectScrollUpButtonIcon';
+SelectScrollUpButtonIcon.displayName = 'Select.ScrollUpButtonIcon';

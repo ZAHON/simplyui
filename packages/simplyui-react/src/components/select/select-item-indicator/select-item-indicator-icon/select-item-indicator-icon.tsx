@@ -14,4 +14,4 @@ export const SelectItemIndicatorIcon = forwardRef<SVGSVGElement, SelectItemIndic
   return <IconCheck ref={ref} className={twMerge(selectItemIndicatorIconStyles({ size }), className)} {...others} />;
 });
 
-SelectItemIndicatorIcon.displayName = 'SelectItemIndicatorIcon';
+SelectItemIndicatorIcon.displayName = 'Select.ItemIndicatorIcon';

@@ -18,4 +18,4 @@ export const SelectSeparator = forwardRef<HTMLDivElement, SelectSeparatorProps>(
   );
 });
 
-SelectSeparator.displayName = 'SelectSeparator';
+SelectSeparator.displayName = 'Select.Separator';

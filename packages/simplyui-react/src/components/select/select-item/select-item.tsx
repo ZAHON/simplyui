@@ -20,4 +20,4 @@ export const SelectItem = forwardRef<HTMLDivElement, SelectItemProps>((props, re
   );
 });
 
-SelectItem.displayName = 'SelectItem';
+SelectItem.displayName = 'Select.Item';

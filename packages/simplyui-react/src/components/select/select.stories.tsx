@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Label } from '@/components/label';
-import { ScrollArea } from '@/components/scroll-area';
+import * as Label from '@/components/label';
+import * as ScrollArea from '@/components/scroll-area';
 import { NativeScrollArea } from '@/components/native-scroll-area';
-import { Select } from '.';
+import * as Select from '.';
 
-const meta: Meta<typeof Select> = {
+const meta: Meta<typeof Select.Root> = {
   title: 'Inputs/Select',
-  component: Select,
+  component: Select.Root,
   args: {
     size: '2',
     radius: 'md',
@@ -87,8 +87,8 @@ const meta: Meta<typeof Select> = {
     ),
   },
   argTypes: {
-    size: { control: 'select' },
-    radius: { control: 'select' },
+    size: { options: ['1', '2', '3', '4'], control: 'select' },
+    radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
     defaultValue: { control: false },
     value: { control: false },
     onValueChange: { control: false },
@@ -110,7 +110,7 @@ const meta: Meta<typeof Select> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Select>;
+type Story = StoryObj<typeof Select.Root>;
 
 export const Default: Story = {};
 
@@ -118,10 +118,10 @@ export const WithLabel: Story = {
   render: ({ size, disabled, ...others }) => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
-        <Label htmlFor="test" size={size} disabled={disabled}>
+        <Label.Root htmlFor="test" size={size} disabled={disabled}>
           Pick one
-        </Label>
-        <Select size={size} disabled={disabled} {...others}>
+        </Label.Root>
+        <Select.Root size={size} disabled={disabled} {...others}>
           <Select.Trigger id="test">
             <Select.Value />
             <Select.Icon />
@@ -189,7 +189,7 @@ export const WithLabel: Story = {
               <Select.ScrollDownButton />
             </Select.Content>
           </Select.Portal>
-        </Select>
+        </Select.Root>
       </div>
     );
   },
@@ -293,7 +293,7 @@ export const WithScrollArea: Story = {
         </Select.Trigger>
         <Select.Portal>
           <Select.Content style={{ height: '10rem' }}>
-            <ScrollArea type="always">
+            <ScrollArea.Root type="always">
               <Select.Viewport asChild style={{ paddingRight: '1rem' }}>
                 <ScrollArea.Viewport>
                   <Select.Group>
@@ -356,7 +356,7 @@ export const WithScrollArea: Story = {
               <ScrollArea.Scrollbar orientation="vertical">
                 <ScrollArea.Thumb />
               </ScrollArea.Scrollbar>
-            </ScrollArea>
+            </ScrollArea.Root>
           </Select.Content>
         </Select.Portal>
       </>

@@ -13,3 +13,5 @@ export const SelectIconDefault = forwardRef<SVGSVGElement, SelectIconDefaultProp
 
   return <IconSelector ref={ref} className={twMerge(selectIconDefaultStyles({ size }), className)} {...others} />;
 });
+
+SelectIconDefault.displayName = 'Select.IconDefault';

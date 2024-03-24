@@ -24,4 +24,4 @@ export const SelectIcon = forwardRef<HTMLSpanElement, SelectIconProps>((props, r
   );
 });
 
-SelectIcon.displayName = 'SelectIcon';
+SelectIcon.displayName = 'Select.Icon';

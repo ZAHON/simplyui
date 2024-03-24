@@ -13,4 +13,4 @@ export const SelectItemText = forwardRef<HTMLSpanElement, SelectItemTextProps>((
   );
 });
 
-SelectItemText.displayName = 'SelectItemText';
+SelectItemText.displayName = 'Select.ItemText';

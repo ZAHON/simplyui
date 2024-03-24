@@ -29,4 +29,4 @@ export const SelectTrigger = forwardRef<HTMLButtonElement, SelectTriggerProps>((
   );
 });
 
-SelectTrigger.displayName = 'SelectTrigger';
+SelectTrigger.displayName = 'Select.Trigger';
