@@ -9,7 +9,7 @@ import { segmentedControlIndicatorStyles } from './segmented-control-indicator.s
 export const SegmentedControlIndicator = forwardRef<HTMLDivElement, SegmentedControlIndicatorProps>((props, ref) => {
   const { className, children, ...others } = props;
 
-  const { color, disabled, radius, value } = useSegmentedControlContext();
+  const { disabled, radius, value } = useSegmentedControlContext();
 
   if (!value) {
     return null;
@@ -20,7 +20,7 @@ export const SegmentedControlIndicator = forwardRef<HTMLDivElement, SegmentedCon
       ref={ref}
       aria-hidden="true"
       data-disabled={disabled ? '' : undefined}
-      className={twMerge(segmentedControlIndicatorStyles({ color, radius }), className)}
+      className={twMerge(segmentedControlIndicatorStyles({ radius }), className)}
       {...others}
     >
       {children}

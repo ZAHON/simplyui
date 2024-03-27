@@ -2,14 +2,18 @@ import { cva } from 'class-variance-authority';
 
 export const segmentedControlRootStyles = cva(
   [
-    'w-full',
-    'p-0.5',
+    'relative',
+    'h-full',
+    'grid',
+    'grid-flow-col',
+    'auto-cols-fr',
+    'items-stretch',
+    'min-w-max',
     'bg-default-3',
 
     'motion-safe:transition',
     'motion-safe:duration-100',
 
-    'data-[disabled]:cursor-not-allowed',
     'data-[disabled]:opacity-60',
   ],
   {

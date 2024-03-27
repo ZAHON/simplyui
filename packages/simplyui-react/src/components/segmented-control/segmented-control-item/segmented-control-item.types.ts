@@ -8,7 +8,7 @@ export interface SegmentedControlItemProps extends ComponentPropsWithRef<'button
   asChild?: boolean;
 
   /**
-   * The content of the segmented control.
+   * The content of the item - `SegmentedControl.ItemLabel`.
    */
   children: ReactNode;
 
@@ -18,8 +18,14 @@ export interface SegmentedControlItemProps extends ComponentPropsWithRef<'button
   value: string;
 
   /**
-   * When true, prevents the user from interacting with the segmented control item.
+   * When true, prevents the user from interacting with the item.
    * @default false
    */
   disabled?: boolean;
+
+  /**
+   * When `true`, item will have separator.
+   * @default true
+   */
+  withSeparator?: boolean;
 }

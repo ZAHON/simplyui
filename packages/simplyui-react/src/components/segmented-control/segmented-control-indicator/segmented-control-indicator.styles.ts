@@ -7,29 +7,25 @@ export const segmentedControlIndicatorStyles = cva(
     'left-0',
     'h-full',
     'pointer-events-none',
+    'bg-white',
+    'dark:bg-default-5',
+    'border',
+    'border-default-7',
     'w-[calc(100%/var(--segmented-control-items-count))]',
-
     'translate-x-[calc(100%*var(--segmented-control-checked-item-index))]',
 
     'motion-safe:transition',
-    'motion-safe:duration-200',
+    'motion-safe:duration-150',
   ],
   {
     variants: {
-      color: {
-        default: ['bg-white', 'dark:bg-default-5', 'drop-shadow'],
-        primary: ['bg-primary-9'],
-        success: ['bg-success-9'],
-        warning: ['bg-warning-9'],
-        danger: ['bg-danger-9'],
-      },
       radius: {
         none: ['rounded-none'],
         sm: ['rounded-sm'],
-        md: ['rounded-[calc(0.25rem-0.125rem)]'],
-        lg: ['rounded-[calc(0.375rem-0.125rem)]'],
-        xl: ['rounded-[calc(0.5rem-0.125rem)]'],
-        full: ['rounded-[calc(9999px-0.125rem)]'],
+        md: ['rounded'],
+        lg: ['rounded-md'],
+        xl: ['rounded-lg'],
+        full: ['rounded-full'],
       },
     },
   }

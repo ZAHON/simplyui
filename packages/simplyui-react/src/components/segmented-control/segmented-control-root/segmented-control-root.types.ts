@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef, ReactNode } from 'react';
+import type { ComponentPropsWithRef, ReactNode, CSSProperties } from 'react';
 
 type HTMLAttributesToOmit = 'dir';
 
@@ -30,12 +30,6 @@ export interface SegmentedControlRootProps extends Omit<ComponentPropsWithRef<'d
   children: ReactNode;
 
   /**
-   * The color of the segmented control indicator.
-   * @default "default"
-   */
-  color?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
-
-  /**
    * When `true`, prevents the user from interacting with segmented control items.
    * @default false
    */
@@ -63,4 +57,9 @@ export interface SegmentedControlRootProps extends Omit<ComponentPropsWithRef<'d
    * @default "2"
    */
   size?: '1' | '2' | '3' | '4';
+}
+
+export interface SegmentedControlRootStyle extends CSSProperties {
+  '--segmented-control-items-count': number;
+  '--segmented-control-checked-item-index': number;
 }
