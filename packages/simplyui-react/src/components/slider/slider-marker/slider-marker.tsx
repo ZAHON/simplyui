@@ -3,24 +3,24 @@ import type { SliderMarkerProps } from './slider-marker.types';
 import type { CSSProperties } from 'react';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { useSize } from '../../../hooks/use-size';
 import { Primitive } from '../../primitive';
 import { convertValueToPercentage } from '../../../utils/convert-value-to-percentage';
 import { getMarkInBoundsOffset } from './utils/get-mark-in-bounds-offset';
-import { getSliderThumbSize } from './utils/get-slider-thumb-size';
 import { useSliderContext } from '../slider-context';
 import { sliderMarkerStyles } from './slider-marker.styles';
 
 export const SliderMarker = forwardRef<HTMLSpanElement, SliderMarkerProps>((props, ref) => {
   const { value, style, className, children, ...others } = props;
 
-  const { disabled, size } = useSliderContext();
+  const { disabled, min, max, size, thumbRef } = useSliderContext();
 
-  const percent = convertValueToPercentage(value, 0, 100);
-  const sliderThumbSize = getSliderThumbSize(size);
-  const markInBoundsOffset = sliderThumbSize ? getMarkInBoundsOffset(sliderThumbSize, percent, 1) : 0;
+  const thumbSize = useSize(thumbRef);
+  const valueToPercentage = value === undefined ? 0 : convertValueToPercentage(value, min ?? 0, max ?? 100);
+  const markInBoundsOffset = thumbSize ? getMarkInBoundsOffset(thumbSize.width, valueToPercentage, 1) : 0;
 
   const sliderMarkerStyle: CSSProperties = {
-    left: `calc(${percent}% + ${markInBoundsOffset}px)`,
+    left: `calc(${valueToPercentage}% + ${markInBoundsOffset}px)`,
     ...style,
   };
 

@@ -13,7 +13,7 @@ export const sliderMarkerStyles = cva(
     'before:block',
     'before:bg-white',
     'before:rounded-full',
-    'before:drop-shadow-md',
+    'before:drop-shadow-sm',
   ],
   {
     variants: {

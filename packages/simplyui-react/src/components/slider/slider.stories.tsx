@@ -1,4 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
+import { Text } from '@/components/text';
+import * as Button from '@/components/button';
 import * as Label from '@/components/label';
 import * as Slider from '.';
 
@@ -10,12 +13,11 @@ const meta: Meta<typeof Slider.Root> = {
     disabled: false,
     max: 100,
     min: 0,
-    minStepsBetweenThumbs: 0,
     name: '',
     radius: 'full',
     size: '2',
     step: 1,
-    defaultValue: [50],
+    defaultValue: 50,
     children: (
       <>
         <Slider.Track>
@@ -92,18 +94,66 @@ export const WithMarkers: Story = {
   },
 };
 
-export const RangeSlider: Story = {
-  args: {
-    minStepsBetweenThumbs: 1,
-    defaultValue: [25, 50],
-    children: (
-      <>
-        <Slider.Track>
-          <Slider.Range />
-        </Slider.Track>
-        <Slider.Thumb aria-label="Thumb 1" />
-        <Slider.Thumb aria-label="Thumb 2" />
-      </>
-    ),
+export const WithTooltip: Story = {
+  parameters: {
+    layout: 'centered',
+  },
+  render: ({ ...props }) => {
+    const [value, setValue] = useState(50);
+
+    return (
+      <div style={{ width: '34rem' }}>
+        <Slider.Root {...props} value={value} onValueChange={setValue}>
+          <Slider.Track>
+            <Slider.Range />
+          </Slider.Track>
+          <Slider.Thumb aria-label="Thumb 1">
+            <Slider.Tooltip side="top" type="always">
+              <Slider.TooltipContent>
+                <Slider.TooltipText>{(value) => `${value}%`}</Slider.TooltipText>
+              </Slider.TooltipContent>
+              <Slider.TooltipArrow />
+            </Slider.Tooltip>
+          </Slider.Thumb>
+        </Slider.Root>
+      </div>
+    );
+  },
+};
+
+export const Controlled: Story = {
+  render: ({ ...props }) => {
+    const [value, setValue] = useState(50);
+    const [valueCommit, setValueCommit] = useState(50);
+
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', rowGap: '1rem' }}>
+        <Slider.Root {...props} value={value} onValueChange={setValue} onValueCommit={setValueCommit}>
+          <Slider.Track>
+            <Slider.Range />
+          </Slider.Track>
+          <Slider.Thumb aria-label="Thumb 1" />
+        </Slider.Root>
+        <Text>Value: {value}</Text>
+        <Text>valueCommit: {valueCommit}</Text>
+        <div style={{ display: 'flex', columnGap: '0.5rem' }}>
+          <Button.Root onClick={() => setValue(0)}>
+            <Button.Content>0</Button.Content>
+          </Button.Root>
+          <Button.Root onClick={() => setValue(25)}>
+            <Button.Content>25</Button.Content>
+          </Button.Root>
+          <Button.Root onClick={() => setValue(50)}>
+            <Button.Content>50</Button.Content>
+          </Button.Root>
+          <Button.Root onClick={() => setValue(75)}>
+            <Button.Content>75</Button.Content>
+          </Button.Root>
+          <Button.Root onClick={() => setValue(100)}>
+            <Button.Content>100</Button.Content>
+          </Button.Root>
+        </div>
+      </div>
+    );
   },
 };
