@@ -1,3 +1,4 @@
+export * from './accessible-icon';
 export * as Alert from './alert/index.js';
 export * as Avatar from './avatar/index.js';
 export * from './badge/index.js';
