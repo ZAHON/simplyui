@@ -13,7 +13,6 @@ export const IconX = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
-      className="icon icon-tabler icons-tabler-outline icon-tabler-x"
       viewBox="0 0 24 24"
       {...props}
     >
