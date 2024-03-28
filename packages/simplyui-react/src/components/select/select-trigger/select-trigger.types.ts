@@ -16,5 +16,5 @@ export interface SelectTriggerProps extends ComponentPropsWithRef<'button'> {
    * The variant of the select trigger.
    * @default "default"
    */
-  variant?: 'default' | 'filled';
+  variant?: 'default' | 'filled' | 'filled-outline';
 }

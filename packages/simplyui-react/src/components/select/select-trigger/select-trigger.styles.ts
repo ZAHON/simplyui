@@ -55,6 +55,16 @@ export const selectTriggerStyles = cva(
           '[&:not([data-invalid])]:enabled:active:bg-default-5',
           '[&:not([data-invalid])]:enabled:active:border-default-5',
         ],
+        'filled-outline': [
+          'bg-default-3',
+          'border-default-7',
+
+          '[&:not([data-invalid])]:enabled:hover:bg-default-4',
+          '[&:not([data-invalid])]:enabled:hover:border-default-8',
+
+          '[&:not([data-invalid])]:enabled:active:bg-default-5',
+          '[&:not([data-invalid])]:enabled:active:border-default-8',
+        ],
       },
     },
   }
