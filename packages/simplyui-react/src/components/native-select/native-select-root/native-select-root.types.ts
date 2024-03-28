@@ -46,5 +46,5 @@ export interface NativeSelectRootProps extends ComponentPropsWithRef<'div'> {
    * The variant of the native select.
    * @default "default"
    */
-  variant?: 'default' | 'filled';
+  variant?: 'default' | 'filled' | 'filled-outline';
 }

@@ -27,7 +27,7 @@ const meta: Meta<typeof NativeSelect.Root> = {
   argTypes: {
     radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
     size: { options: ['1', '2', '3', '4'], control: 'select' },
-    variant: { options: ['default', 'filled'], control: 'select' },
+    variant: { options: ['default', 'filled', 'filled-outline'], control: 'select' },
     asChild: { control: false },
     children: { control: false },
   },
