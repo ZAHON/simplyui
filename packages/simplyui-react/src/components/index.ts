@@ -1,4 +1,4 @@
-export * from './accessible-icon';
+export * from './accessible-icon/index.js';
 export * as Alert from './alert/index.js';
 export * as Avatar from './avatar/index.js';
 export * from './badge/index.js';
@@ -29,6 +29,7 @@ export * from './separator/index.js';
 export * as Sheet from './sheet/index.js';
 export * as Slider from './slider/index.js';
 export * as Switch from './switch/index.js';
+export * as Table from './table/index.js';
 export * from './text/index.js';
 export * as TextField from './text-field/index.js';
 export * as Tooltip from './tooltip/index.js';
