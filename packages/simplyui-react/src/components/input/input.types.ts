@@ -37,7 +37,7 @@ export interface InputProps extends Omit<ComponentPropsWithRef<'input'>, HTMLAtt
    * The variant of the input.
    * @default "default"
    */
-  variant?: 'default' | 'filled';
+  variant?: 'default' | 'filled' | 'filled-outline';
 
   /**
    * The type of the input.

@@ -43,6 +43,7 @@ export const inputStyles = cva(
       variant: {
         default: ['bg-surface', 'border-default-7'],
         filled: ['bg-default-3', 'border-default-3'],
+        'filled-outline': ['bg-default-3', 'border-default-7'],
       },
     },
   }
