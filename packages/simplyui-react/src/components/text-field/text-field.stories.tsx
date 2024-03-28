@@ -15,7 +15,7 @@ const meta: Meta<typeof TextField.Root> = {
     children: <TextField.Input placeholder="Search the docs…" />,
   },
   argTypes: {
-    variant: { options: ['default', 'filled'], control: 'select' },
+    variant: { options: ['default', 'filled', 'filled-outline'], control: 'select' },
     size: { options: ['1', '2', '3', '4'], control: 'select' },
     radius: { options: ['none', 'sm', 'md', 'lg', 'xl', 'full'], control: 'select' },
     asChild: { control: false },

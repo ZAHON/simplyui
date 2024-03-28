@@ -46,5 +46,5 @@ export interface TextFieldRootProps extends ComponentPropsWithRef<'div'> {
    * The variant of the text field.
    * @default "default"
    */
-  variant?: 'default' | 'filled';
+  variant?: 'default' | 'filled' | 'filled-outline';
 }
