@@ -97,6 +97,7 @@ export const SliderTooltip = forwardRef<HTMLDivElement, SliderTooltipProps>((pro
           ...floatingStyles,
           transform: isPositioned ? floatingStyles.transform : 'translate(0, -200%)',
           minWidth: 'max-content',
+          pointerEvents: 'none',
           zIndex: 40,
         }}
       >
