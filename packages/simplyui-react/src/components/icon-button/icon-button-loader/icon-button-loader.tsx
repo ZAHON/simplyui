@@ -6,7 +6,7 @@ import { Primitive } from '../../primitive';
 import { useIconButtonContext } from '../icon-button-context';
 import { iconButtonLoaderStyles } from './icon-button-loader.styles';
 
-export const IconButtonLoader = forwardRef<HTMLDivElement, IconButtonLoaderProps>((props, ref) => {
+export const IconButtonLoader = forwardRef<HTMLSpanElement, IconButtonLoaderProps>((props, ref) => {
   const { className, children, ...others } = props;
 
   const { disabled, loading } = useIconButtonContext();
@@ -16,7 +16,7 @@ export const IconButtonLoader = forwardRef<HTMLDivElement, IconButtonLoaderProps
   }
 
   return (
-    <Primitive.div
+    <Primitive.span
       ref={ref}
       data-disabled={disabled ? '' : undefined}
       data-loading={loading ? '' : undefined}
@@ -24,7 +24,7 @@ export const IconButtonLoader = forwardRef<HTMLDivElement, IconButtonLoaderProps
       {...others}
     >
       {children}
-    </Primitive.div>
+    </Primitive.span>
   );
 });
 
