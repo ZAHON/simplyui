@@ -21,7 +21,7 @@ export const Separator = forwardRef<HTMLDivElement, SeparatorProps>((props, ref)
   return (
     <Primitive.div
       ref={ref}
-      aria-orientation={orientation === 'vertical' ? orientation : undefined}
+      aria-orientation={decorative ? undefined : orientation === 'vertical' ? orientation : undefined}
       role={decorative ? 'none' : 'separator'}
       data-orientation={orientation}
       className={twMerge(separatorStyles({ color }), className)}

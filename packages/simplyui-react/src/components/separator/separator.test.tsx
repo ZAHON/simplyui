@@ -33,13 +33,18 @@ describe('Separator', () => {
     expect(container.querySelector(`div[data-testid="${SEPARATOR_TEST_ID}"]`)).not.toBeInTheDocument();
   });
 
-  it('should have not aria-orientation attribute when orientation="horizontal"', () => {
-    render(<Separator orientation="horizontal" data-testid={SEPARATOR_TEST_ID} />);
+  it('should have not aria-orientation attribute when decorative={true}', () => {
+    render(<Separator decorative={true} data-testid={SEPARATOR_TEST_ID} />);
     expect(screen.getByTestId(SEPARATOR_TEST_ID)).not.toHaveAttribute('aria-orientation');
   });
 
-  it('should have aria-orientation="vertical" attribute when orientation="vertical"', () => {
-    render(<Separator orientation="vertical" data-testid={SEPARATOR_TEST_ID} />);
+  it('should have not aria-orientation attribute when decorative={false} and orientation="horizontal"', () => {
+    render(<Separator decorative={false} orientation="horizontal" data-testid={SEPARATOR_TEST_ID} />);
+    expect(screen.getByTestId(SEPARATOR_TEST_ID)).not.toHaveAttribute('aria-orientation');
+  });
+
+  it('should have not aria-orientation="vertical" attribute when decorative={false} and orientation="vertical"', () => {
+    render(<Separator decorative={false} orientation="vertical" data-testid={SEPARATOR_TEST_ID} />);
     expect(screen.getByTestId(SEPARATOR_TEST_ID)).toHaveAttribute('aria-orientation', 'vertical');
   });
 
