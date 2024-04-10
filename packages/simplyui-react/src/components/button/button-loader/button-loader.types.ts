@@ -1,6 +1,6 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react';
 
-export interface ButtonLoaderProps extends ComponentPropsWithRef<'div'> {
+export interface ButtonLoaderProps extends ComponentPropsWithRef<'span'> {
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    * @default false

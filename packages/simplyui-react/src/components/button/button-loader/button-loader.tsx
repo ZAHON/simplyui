@@ -6,7 +6,7 @@ import { Primitive } from '../../primitive';
 import { useButtonContext } from '../button-context';
 import { buttonLoaderStyles } from './button-loader.styles';
 
-export const ButtonLoader = forwardRef<HTMLDivElement, ButtonLoaderProps>((props, ref) => {
+export const ButtonLoader = forwardRef<HTMLSpanElement, ButtonLoaderProps>((props, ref) => {
   const { className, children, ...others } = props;
 
   const { disabled, loading } = useButtonContext();
@@ -16,7 +16,7 @@ export const ButtonLoader = forwardRef<HTMLDivElement, ButtonLoaderProps>((props
   }
 
   return (
-    <Primitive.div
+    <Primitive.span
       ref={ref}
       data-disabled={disabled ? '' : undefined}
       data-loading={loading ? '' : undefined}
@@ -24,7 +24,7 @@ export const ButtonLoader = forwardRef<HTMLDivElement, ButtonLoaderProps>((props
       {...others}
     >
       {children}
-    </Primitive.div>
+    </Primitive.span>
   );
 });
 

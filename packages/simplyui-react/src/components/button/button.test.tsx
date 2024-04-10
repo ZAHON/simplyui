@@ -178,14 +178,14 @@ describe('Button', () => {
 
   describe('Loader', () => {
     it('should support ref', () => {
-      const ref = createRef<HTMLDivElement>();
+      const ref = createRef<HTMLSpanElement>();
 
       render(
         <Button.Root loading={true}>
           <Button.Loader ref={ref}>{BUTTON_LOADER_CONTENT}</Button.Loader>
         </Button.Root>
       );
-      expect(ref.current).toBeInstanceOf(HTMLDivElement);
+      expect(ref.current).toBeInstanceOf(HTMLSpanElement);
     });
 
     it('should be div element when asChild property not provided', () => {
@@ -195,23 +195,23 @@ describe('Button', () => {
         </Button.Root>
       );
 
-      expect(screen.getByTestId(BUTTON_LOADER_TEST_ID)).toBeInstanceOf(HTMLDivElement);
+      expect(screen.getByTestId(BUTTON_LOADER_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      expect(container.querySelector(`div[data-testid="${BUTTON_LOADER_TEST_ID}"]`)).toBeInTheDocument();
+      expect(container.querySelector(`span[data-testid="${BUTTON_LOADER_TEST_ID}"]`)).toBeInTheDocument();
     });
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
         <Button.Root loading={true}>
           <Button.Loader asChild data-testid={BUTTON_LOADER_TEST_ID}>
-            <span>{BUTTON_LOADER_CONTENT}</span>
+            <div>{BUTTON_LOADER_CONTENT}</div>
           </Button.Loader>
         </Button.Root>
       );
 
-      expect(screen.getByTestId(BUTTON_LOADER_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
+      expect(screen.getByTestId(BUTTON_LOADER_TEST_ID)).toBeInstanceOf(HTMLDivElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      expect(container.querySelector(`div[data-testid="${BUTTON_LOADER_TEST_ID}"]`)).not.toBeInTheDocument();
+      expect(container.querySelector(`span[data-testid="${BUTTON_LOADER_TEST_ID}"]`)).not.toBeInTheDocument();
     });
 
     it('should be not render when loading property not provided on Root element', () => {
