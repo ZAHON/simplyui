@@ -13,8 +13,8 @@ const defaultProps: Partial<LoaderProps> = {
   variant: 'oval',
 };
 
-/** The loader element that indicate loading state. This component is based on the `div` element. */
-export const Loader = forwardRef<HTMLDivElement, LoaderProps>((props, ref) => {
+/** The loader element that indicate loading state. This component is based on the `span` element. */
+export const Loader = forwardRef<HTMLSpanElement, LoaderProps>((props, ref) => {
   const { variant, ...others } = applayComponentDefaultProps(defaultProps, props);
 
   switch (variant) {

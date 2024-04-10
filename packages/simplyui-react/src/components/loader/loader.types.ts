@@ -2,7 +2,7 @@ import type { ComponentPropsWithRef } from 'react';
 
 type HTMLAttributesToOmit = 'children';
 
-export interface LoaderProps extends Omit<ComponentPropsWithRef<'div'>, HTMLAttributesToOmit> {
+export interface LoaderProps extends Omit<ComponentPropsWithRef<'span'>, HTMLAttributesToOmit> {
   /**
    * The color of the loader.
    * @default "primary"

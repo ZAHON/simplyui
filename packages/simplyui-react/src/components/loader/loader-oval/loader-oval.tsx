@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { loaderOvalStyles } from './loader-oval.styles';
 
-export const LoaderOval = forwardRef<HTMLDivElement, LoaderOvalProps>((props, ref) => {
+export const LoaderOval = forwardRef<HTMLSpanElement, LoaderOvalProps>((props, ref) => {
   const { color, label, loaderSize, size, speedReduce, speedSafe, style, className, ...others } = props;
 
   const loaderStyle: LoaderOvalStyle = {
@@ -14,7 +14,7 @@ export const LoaderOval = forwardRef<HTMLDivElement, LoaderOvalProps>((props, re
   };
 
   return (
-    <div
+    <span
       ref={ref}
       role="status"
       style={loaderStyle}
@@ -22,7 +22,7 @@ export const LoaderOval = forwardRef<HTMLDivElement, LoaderOvalProps>((props, re
       {...others}
     >
       <span className="sr-only">{label}</span>
-    </div>
+    </span>
   );
 });
 

@@ -1,3 +1,3 @@
 import type { ComponentPropsWithRef } from 'react';
 
-export type LoaderDotsDotProps = ComponentPropsWithRef<'div'>;
+export type LoaderDotsDotProps = ComponentPropsWithRef<'span'>;

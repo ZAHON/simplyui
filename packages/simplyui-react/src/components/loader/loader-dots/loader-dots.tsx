@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 import { LoaderDotsDot } from './loader-dots-dot';
 import { loaderDotsStyles } from './loader-dots.styles';
 
-export const LoaderDots = forwardRef<HTMLDivElement, LoaderDotsProps>((props, ref) => {
+export const LoaderDots = forwardRef<HTMLSpanElement, LoaderDotsProps>((props, ref) => {
   const { color, label, loaderSize, size, speedReduce, speedSafe, style, className, ...others } = props;
 
   const loaderStyle: LoaderDotsStyle = {
@@ -15,7 +15,7 @@ export const LoaderDots = forwardRef<HTMLDivElement, LoaderDotsProps>((props, re
   };
 
   return (
-    <div
+    <span
       ref={ref}
       role="status"
       style={loaderStyle}
@@ -26,7 +26,7 @@ export const LoaderDots = forwardRef<HTMLDivElement, LoaderDotsProps>((props, re
       <LoaderDotsDot />
       <LoaderDotsDot />
       <span className="sr-only">{label}</span>
-    </div>
+    </span>
   );
 });
 

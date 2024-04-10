@@ -6,10 +6,10 @@ import { Loader } from './loader';
 describe('Loader', () => {
   describe('Variant dots', () => {
     it('should support ref', () => {
-      const ref = createRef<HTMLDivElement>();
+      const ref = createRef<HTMLSpanElement>();
 
       render(<Loader ref={ref} variant="dots" />);
-      expect(ref.current).toBeInstanceOf(HTMLDivElement);
+      expect(ref.current).toBeInstanceOf(HTMLSpanElement);
     });
 
     it('should have role="status" attribute', () => {
@@ -56,10 +56,10 @@ describe('Loader', () => {
 
   describe('Variant oval', () => {
     it('should support ref', () => {
-      const ref = createRef<HTMLDivElement>();
+      const ref = createRef<HTMLSpanElement>();
 
       render(<Loader ref={ref} variant="oval" />);
-      expect(ref.current).toBeInstanceOf(HTMLDivElement);
+      expect(ref.current).toBeInstanceOf(HTMLSpanElement);
     });
 
     it('should have role="status" attribute', () => {
