@@ -114,14 +114,14 @@ describe('Burger', () => {
 
   describe('Icon', () => {
     it('should support ref', () => {
-      const ref = createRef<HTMLDivElement>();
+      const ref = createRef<HTMLSpanElement>();
 
       render(
         <Burger.Root>
           <Burger.Icon ref={ref} />
         </Burger.Root>
       );
-      expect(ref.current).toBeInstanceOf(HTMLDivElement);
+      expect(ref.current).toBeInstanceOf(HTMLSpanElement);
     });
 
     it('should be div element when asChild property not provided', () => {
@@ -131,23 +131,23 @@ describe('Burger', () => {
         </Burger.Root>
       );
 
-      expect(screen.getByTestId(BURGER_ICON_TEST_ID)).toBeInstanceOf(HTMLDivElement);
+      expect(screen.getByTestId(BURGER_ICON_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      expect(container.querySelector(`div[data-testid="${BURGER_ICON_TEST_ID}"]`)).toBeInTheDocument();
+      expect(container.querySelector(`span[data-testid="${BURGER_ICON_TEST_ID}"]`)).toBeInTheDocument();
     });
 
     it('should be Slot element when asChild property provided', () => {
       const { container } = render(
         <Burger.Root>
           <Burger.Icon asChild data-testid={BURGER_ICON_TEST_ID}>
-            <span></span>
+            <div></div>
           </Burger.Icon>
         </Burger.Root>
       );
 
-      expect(screen.getByTestId(BURGER_ICON_TEST_ID)).toBeInstanceOf(HTMLSpanElement);
+      expect(screen.getByTestId(BURGER_ICON_TEST_ID)).toBeInstanceOf(HTMLDivElement);
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      expect(container.querySelector(`div[data-testid="${BURGER_ICON_TEST_ID}"]`)).not.toBeInTheDocument();
+      expect(container.querySelector(`span[data-testid="${BURGER_ICON_TEST_ID}"]`)).not.toBeInTheDocument();
     });
 
     it('should have not aria-hidden="true" attribute', () => {

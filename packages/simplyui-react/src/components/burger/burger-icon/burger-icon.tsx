@@ -6,13 +6,13 @@ import { Primitive } from '../../primitive';
 import { useBurgerContext } from '../burger-context';
 import { burgerIconStyles } from './burger-icon.styles';
 
-export const BurgerIcon = forwardRef<HTMLDivElement, BurgerIconProps>((props, ref) => {
+export const BurgerIcon = forwardRef<HTMLSpanElement, BurgerIconProps>((props, ref) => {
   const { className, children, ...others } = props;
 
   const { open, disabled } = useBurgerContext();
 
   return (
-    <Primitive.div
+    <Primitive.span
       ref={ref}
       aria-hidden="true"
       data-disabled={disabled ? '' : undefined}
@@ -21,7 +21,7 @@ export const BurgerIcon = forwardRef<HTMLDivElement, BurgerIconProps>((props, re
       {...others}
     >
       {children}
-    </Primitive.div>
+    </Primitive.span>
   );
 });
 

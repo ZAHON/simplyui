@@ -11,6 +11,6 @@ export type { BurgerRootProps as RootProps, BurgerIconProps as IconProps };
 export {
   /** Contains all the parts of a burger. This component is based on the `button` element. */
   BurgerRoot as Root,
-  /** The icon that indicate state of the burger. Must live inside `Burger`. This component is based on the `div` element. */
+  /** The icon that indicate state of the burger. Must live inside `Burger.Root`. This component is based on the `span` element. */
   BurgerIcon as Icon,
 };
