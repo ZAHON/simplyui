@@ -17,16 +17,16 @@ type Story = StoryObj<typeof Indicator.Root>;
 
 export const Default: Story = {
   render: () => {
-    const [size, setSize] = useState([3]);
+    const [size, setSize] = useState(3);
 
     return (
       <div style={{ maxWidth: '36rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', rowGap: '2rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.5rem' }}>
             <Label.Root asChild>
-              <span id="size">Size: {size[0]}</span>
+              <span id="size">Size: {size}</span>
             </Label.Root>
-            <Slider.Root min={1} max={9} value={[size[0]]} onValueChange={(value) => setSize([...value])}>
+            <Slider.Root min={1} max={9} value={size} onValueChange={(value) => setSize(value)}>
               <Slider.Track>
                 <Slider.Range />
               </Slider.Track>
@@ -34,8 +34,8 @@ export const Default: Story = {
             </Slider.Root>
           </div>
           <Indicator.Root>
-            <Indicator.Dot size={size[0].toString() as DotProps['size']} />
-            <Avatar.Root size={size[0].toString() as DotProps['size']}>
+            <Indicator.Dot size={size.toString() as DotProps['size']} />
+            <Avatar.Root size={size.toString() as DotProps['size']}>
               <Avatar.Image
                 src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
                 alt="A"
@@ -132,13 +132,13 @@ export const WithBorderDot: Story = {
 
 export const WithOffsetDot: Story = {
   render: () => {
-    const [offset, setOffset] = useState([6]);
+    const [offset, setOffset] = useState(6);
 
     return (
       <div style={{ maxWidth: '36rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', rowGap: '2rem' }}>
           <Indicator.Root>
-            <Indicator.Dot offset={offset[0]} position="bottom-end" withBorder />
+            <Indicator.Dot offset={offset} position="bottom-end" withBorder />
             <Avatar.Root radius="full">
               <Avatar.Image
                 src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
@@ -149,9 +149,9 @@ export const WithOffsetDot: Story = {
           </Indicator.Root>
           <div style={{ display: 'flex', flexDirection: 'column', rowGap: '0.25rem' }}>
             <Label.Root asChild>
-              <span id="offset">Offset: {offset[0]}</span>
+              <span id="offset">Offset: {offset}</span>
             </Label.Root>
-            <Slider.Root min={0} max={10} value={[offset[0]]} onValueChange={(value) => setOffset([...value])}>
+            <Slider.Root min={0} max={10} value={offset} onValueChange={(value) => setOffset(value)}>
               <Slider.Track>
                 <Slider.Range />
               </Slider.Track>
