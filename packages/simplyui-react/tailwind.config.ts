@@ -94,8 +94,8 @@ export default {
         kbd: 'inset 0 0.5px rgba(255, 255, 255, 0.1), inset 0 1px 5px hsl(var(--color-default-2)), 0px 0px 0px 0.5px hsl(var(--color-default-8)), 0px 2px 1px -1px hsl(var(--color-default-8)), 0 1px hsl(var(--color-default-8))',
       },
       animation: {
-        'collapsible-down': 'collapsible-down 200ms ease-out',
-        'collapsible-up': 'collapsible-up 200ms ease-out',
+        'collapsible-down': 'collapsible-down 300ms ease-out',
+        'collapsible-up': 'collapsible-up 300ms ease-out',
       },
       keyframes: {
         'loader-dots': {
